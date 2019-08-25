@@ -14,6 +14,14 @@ $(document).ready(function(){
 	$(".fitscreen").css("height", fitscreen);
     $(".default-banner").css("height", h);
 
+    var loader = function() {
+		setTimeout(function() {
+			if($('#ftco-loader').length > 0) {
+				$('#ftco-loader').removeClass('show');
+			}
+		}, 1);
+	};
+	loader();
 
     $("#inpt").val(window_height)
   //-------- Active Sticky Js ----------//
