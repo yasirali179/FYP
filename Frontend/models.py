@@ -108,7 +108,7 @@ class Trip(models.Model):
     Trip_Id = models.SlugField(max_length=150, unique=True, default=0);
     T_Name = models.CharField(max_length=200);
     imgs = models.ManyToManyField(Images, blank=True)
-    Destination_ = image = models.ForeignKey(Destinations, on_delete=models.CASCADE, null=True, blank=True)
+    Dest = models.ForeignKey(Destinations, on_delete=models.CASCADE, null=True, blank=True)
     reqs = models.ManyToManyField(Required_Gear, blank=True)
     noOfDays = models.PositiveIntegerField(default=0);
     noOfNights = models.PositiveIntegerField(default=0);
