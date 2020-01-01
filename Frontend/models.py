@@ -7,8 +7,27 @@ class User(models.Model):
     def __str__(self):
         return self.U_Name
 
+
+class Destinations(models.Model):
+    Des_Id = models.SlugField(max_length=150, unique=True, default=0);
+    Des_Name = models.CharField(max_length=200);
+    imgs = models.ManyToManyField('Images', blank=True)
+    Des_H1 = models.CharField(max_length=2000);
+    Des_Description1 = models.CharField(max_length=2000);
+    state = models.CharField(max_length=200);
+    Area = models.CharField(max_length=200);
+    Languages = models.CharField(max_length=200);
+    history1 = models.CharField(max_length=200);
+    history2 = models.CharField(max_length=200);
+    history3 = models.CharField(max_length=200);
+    Des_H1 = models.CharField(max_length=200);
+    revs = models.ManyToManyField('Review', blank=True)
+
+    def __str__(self):
+        return self.Des_Id
+
 class Images(models.Model):
-    imagesOf = models.CharField(max_length=200);
+    destination = models.ForeignKey(Destinations, on_delete=models.CASCADE, null=True, blank=True)
     img1 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
     img2 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
     img3 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
@@ -20,10 +39,10 @@ class Images(models.Model):
     img9 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
     img10 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
     def __str__(self):
-        return self.imagesOf
+        return self.image
 
 class Required_Gear(models.Model):
-    gearFor = models.CharField(max_length=200);
+    req = models.ForeignKey('Trip', on_delete=models.CASCADE, null=True, blank=True)
     req1 = models.CharField(max_length=200, default='-');
     req2 = models.CharField(max_length=200, default='-');
     req3 = models.CharField(max_length=200, default='-');
@@ -35,10 +54,10 @@ class Required_Gear(models.Model):
     req9 = models.CharField(max_length=200, default='-');
     req10 = models.CharField(max_length=200, default='-');
     def __str__(self):
-        return self.gearFor
+        return self.req
 
 class Services(models.Model):
-    servicesFor = models.CharField(max_length=200);
+    serv = models.ForeignKey('Trip', on_delete=models.CASCADE, null=True, blank=True)
     ser1 = models.CharField(max_length=200, default='-');
     ser2 = models.CharField(max_length=200, default='-');
     ser3 = models.CharField(max_length=200, default='-');
@@ -50,10 +69,10 @@ class Services(models.Model):
     ser9 = models.CharField(max_length=200, default='-');
     ser10 = models.CharField(max_length=200, default='-');
     def __str__(self):
-        return self.servicesFor
+        return self.serv
 
 class Activities(models.Model):
-    activitiesFor = models.CharField(max_length=200);
+    event_host = models.ForeignKey('Trip', on_delete=models.CASCADE, null=True, blank=True)
     act1 = models.CharField(max_length=200, default='-');
     act2 = models.CharField(max_length=200, default='-');
     act3 = models.CharField(max_length=200, default='-');
@@ -89,7 +108,7 @@ class Trip(models.Model):
     Trip_Id = models.SlugField(max_length=150, unique=True, default=0);
     T_Name = models.CharField(max_length=200);
     imgs = models.ManyToManyField(Images, blank=True)
-    Des = models.CharField(max_length=5000, default='-');
+    Destination_ = image = models.ForeignKey(Destinations, on_delete=models.CASCADE, null=True, blank=True)
     reqs = models.ManyToManyField(Required_Gear, blank=True)
     noOfDays = models.PositiveIntegerField(default=0);
     noOfNights = models.PositiveIntegerField(default=0);
