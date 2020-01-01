@@ -3,14 +3,15 @@ from Frontend.views import *
 
 urlpatterns = [
     path('', index, name="index"),
-    path('a', trips, name="trips"),
-    path('b', trip, name="trip"),
-    path('c', blogs, name="blogs"),
-    path('d', blog, name="blog"),
-    path('e', location, name="location"),
-    path('f', login, name="login"),
-    path('g', register, name="register"),
-    path('h', search_results, name="search_results"),
+    path('Trips', trips, name="trips"),
+    path('Trip', trip, name="trip"),
+    path('Blogs', blogs, name="blogs"),
+    path('Blog', blog, name="blog"),
+    path('Dest', Dest, name="Dest"),
+    path('Destinatins', Destinatins, name="Destinatins"),
+    path('Login', login, name="login"),
+    path('Register', register, name="register"),
+    path('search_results', search_results, name="search_results"),
 
 
 ]

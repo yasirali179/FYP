@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/search_results.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/Destinatins.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/murree.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/murree.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/blog_single.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/blog_single.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/location.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/location.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/location.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/Dest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/search_results.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trips.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trips.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +65,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LE" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Frontend/templates/Frontend" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -73,11 +73,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\FYP\Frontend\templates\Frontend" />
       <recent name="D:\FYP\Frontend\static\Frontend\img" />
       <recent name="D:\FYP\Frontend\static\Frontend\css" />
       <recent name="D:\FYP\Frontend\static\Frontend" />
       <recent name="D:\FYP\Frontend\static\Frontend\js" />
-      <recent name="D:\FYP\Frontend\templates\Frontend" />
     </key>
   </component>
   <component name="RunManager">
@@ -182,6 +182,7 @@
       <workItem from="1577864690278" duration="1440000" />
       <workItem from="1577866165860" duration="6261000" />
       <workItem from="1577874332596" duration="557000" />
+      <workItem from="1577900416755" duration="4110000" />
     </task>
     <servers />
   </component>
@@ -217,21 +218,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1577871044978" />
-    <state width="1322" height="182" key="GridCell.Tab.0.bottom" timestamp="1577874900237">
+    <state width="1322" height="2" key="GridCell.Tab.0.bottom" timestamp="1577904275291">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="182" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577874900237" />
-    <state width="1322" height="182" key="GridCell.Tab.0.center" timestamp="1577874900237">
+    <state width="1322" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577904275291" />
+    <state width="1322" height="2" key="GridCell.Tab.0.center" timestamp="1577904275290">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="182" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577874900237" />
-    <state width="1322" height="182" key="GridCell.Tab.0.left" timestamp="1577874900237">
+    <state width="1322" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577904275290" />
+    <state width="1322" height="2" key="GridCell.Tab.0.left" timestamp="1577904275289">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="182" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577874900237" />
-    <state width="1322" height="182" key="GridCell.Tab.0.right" timestamp="1577874900237">
+    <state width="1322" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577904275289" />
+    <state width="1322" height="2" key="GridCell.Tab.0.right" timestamp="1577904275290">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="182" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577874900237" />
+    <state width="1322" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577904275290" />
   </component>
 </project>

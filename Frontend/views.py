@@ -14,8 +14,10 @@ def blog(request):
 def blogs(request):
     return render(request,'Frontend/blog.html')
 
-def location(request):
-    return render(request,'Frontend/location.html')
+def Dest(request):
+    return render(request, 'Frontend/Dest.html')
+def Destinatins(request):
+    return render(request, 'Frontend/Destinatins.html')
 def login(request):
     return render(request,'Frontend/login.html')
 def register(request):

@@ -1,9 +1,17 @@
 ﻿<!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
+<!-- Mirrored from themeenergy.com/themes/html/book-your-travel/hotels.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 05:17:48 GMT -->
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="Book Your Travel - Online Booking HTML Template">
+	<meta name="description" content="Book Your Travel - Online Booking HTML Template">
+	<meta name="author" content="themeenergy.com">
+	
 
+	
 	<link rel="stylesheet" href="{% static 'Frontend/css/style.css' %}" />
 	<link rel="stylesheet" href="{% static 'Frontend/css/theme-turqoise.css' %}" id="template-color" />
 	<link rel="stylesheet" href="{% static 'Frontend/css/lightslider.min.css' %}" />
@@ -22,24 +30,24 @@
 		<div class="ball1"></div>
 	</div>
 	<!--- //loading animation -->
-	
+
 	<!--header-->
 	<header class="header">
 		<div class="wrap">
 			<!--logo-->
 			<div class="logo"><a href="{% url 'index' %}" title="Pak Tour Expert"><img src="images/txt/logo.png" alt="Pak Tour Expert" /></a></div>
 			<!--//logo-->
-			
-			
+
+
 			<!--search-->
 			<div class="search">
 				<form id="search-form" method="get" action="#">
-					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" /> 
+					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" />
 					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
 				</form>
 			</div>
 			<!--//search-->
-			
+
 			<!--contact-->
 			<div class="contact">
 				<span>24/7 Support number</span>
@@ -47,14 +55,14 @@
 			</div>
 			<!--//contact-->
 		</div>
-		
+
 		<!--main navigation-->
 		<nav class="main-nav">
 			<div class="wrap">
 				<ul class="slimmenu" id="nav">
 					<li><a href="{% url 'trips' %}" title=" ">One day Trips</a></li>
 					<li><a href="{% url 'trips' %}" title=" ">Multiple days Trips</a></li>
-					<li><a href="{% url 'Destinatins' %}" title=" ">Destinations</a></li>
+					<li><a href="{% url 'Dest' %}" title=" ">Destinations</a></li>
 					<li><a href="#" title=" ">Wishlist</a></li>
 					<li><a href="{% url 'index' %}" title=" ">Bookings</a></li>
 					<li class="has-mega"><a  title="Pages">Deals</a>
@@ -114,7 +122,7 @@
 		<!--//main navigation-->
 	</header>
 	<!--//header-->
-	
+
 	<!--slider-->
 	<div class="slider">
 		<ul id="hero-gallery" class="cS-hidden">
@@ -126,11 +134,11 @@
 			</li>
 			<li data-thumb="{% static 'Frontend/images/uploads/main.jpg' %}">
 				<img src="{% static 'Frontend/images/uploads/main.jpg' %}" alt="" />
-			</li>	
+			</li>
 		</ul>
 	</div>
 	<!--//slider-->
-	
+
 	<!--search-->
 	<div class="main-search">
 		<div class="wrap">
@@ -158,7 +166,7 @@
 							</div>
 							<div class="f-item one-half">
 								<input type="radio" name="radio" id="flight_and_hotel" value="form5" />
-								<label for="flight_and_hotel">Tour Operator</label>	
+								<label for="flight_and_hotel">Tour Operator</label>
 							</div>
 							<div class="f-item one-half">
 								<input type="radio" name="radio" id="rent_a_car" value="form6" />
@@ -167,7 +175,7 @@
 						</div>
 					</div>
 					<!--//column-->
-					
+
 					<div class="three-fourth">
 						<!--form hotel-->
 						<div class="form row" id="form1">
@@ -182,7 +190,7 @@
 								</div>
 							</div>
 							<!--//column-->
-							
+
 							<!--column-->
 							<div class="column  one-half">
 								<h5><span>03</span> When?</h5>
@@ -191,12 +199,12 @@
 										<label for="datepicker1">Destination date</label>
 										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker1" name="datepicker1" /></div>
 									</div>
-									
+
 								</div>
 							</div>
 							<!--//column-->
-						
-							
+
+
 						</div>	
 						<!--//form hotel-->
 
@@ -685,66 +693,16 @@
 	<!--//search-->
 	
 	<!--main-->
-	<main class="main">
+	<main class="main">		
 		<div class="wrap">
 			<div class="row">
+		
 				<div class="full-width">
-				
-					<!--latest offers-->
 					<header class="s-title">
-						<h2>Explore our latest offers</h2>
+						<h2>Most popular Destinations Around Pakistan</h2>
 					</header>
+                </div>
 					
-					<div class="offers">
-						<div class="row">
-							<!--column-->
-							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/img1.jpg" alt="" /></a></figure>
-								<div class="details">
-									<h3>Watch Snowfall in Malam Jabba @ 30% off</h3>
-									<a href="#" title="Explore our deals" class="gradient-button">Explore our deals</a>
-								</div>
-							</article>
-							<!--//column-->
-							
-							<!--column-->
-							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/nathiagali.jpg" alt="" /></a></figure>
-								<div class="details">
-									<h3>Spend New Year‘s Eve in Nathiagali</h3>
-									<a href="#" title="More info" class="gradient-button">More info</a>
-								</div>
-							</article>
-							<!--//column-->
-							
-							<!--column-->
-							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/murree.jpg" alt="" /></a></figure>
-								<div class="details">
-									<h3> Hot weekends offers in the Murree</h3>
-									<a href="#" title="Explore our deals" class="gradient-button">Explore our deals</a>
-								</div>
-							</article>
-							<!--//column-->
-							
-							<!--column-->
-							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/thailand.jpg" alt="" /></a></figure>
-								<div class="details">
-									<h3>Our weekly top offer: Azad Kashmir</h3>
-									<a href="#" title="More info" class="gradient-button">More info</a>
-								</div>
-							</article>
-							<!--//column-->
-						</div>
-					</div>
-					<!--//latest offers-->
-					
-					<header class="s-title">
-						<h2>Top Attractive Places around the Pakistan</h2>
-					</header>
-					
-					<!--top destinations-->
 					<div class="destinations">
 						<div class="row">
 							<article class="one-fourth">
@@ -767,118 +725,30 @@
                             </article>
 						</div>
 					</div>
-					<!--//top destinations-->
-			<div class="full-width">
-					<header class="s-title">
-						<h2>Most popular Trips</h2>
-					</header>
+			<div class="bottom-nav">
+						<!--back up button-->
+						<a href="#" class="scroll-to-top" title="Back up">Back up</a> 
+						<!--//back up button-->
+						</div>
+						<!--pager-->
+						<div class="pager">
+							<span><a href="#">First page</a></span>
+							<span><a href="#">&lt;</a></span>
+							<span class="current">1</span>
+							<span><a href="#">2</a></span>
+							<span><a href="#">3</a></span>
+							<span><a href="#">4</a></span>
+							<span><a href="#">5</a></span>
+							<span><a href="#">6</a></span>
+							<span><a href="#">7</a></span>
+							<span><a href="#">8</a></span>
+							<span><a href="#">&gt;</a></span>
+							<span><a href="#">Last page</a></span>
+						</div>
+						<!--//pager-->
 					
-					<div class="deals">
-						<div class="row">
-							<!--deal-->
-                                <article class="one-fourth">
-                                    <figure>
-                                        <a href="{% url 'trip' %}" >
-                                            <img  src="{% static 'Frontend/images/uploads/murree.jpg'%}"  width="270" height="152" /></a>
-                                    </figure>
-                                    <div class="details">
-                                        <a href="{% url 'trip' %}">
-                                            <h3>Trip to Saiful Malook Naran</h3>
-                                        </a>
-                                        <span class="date"> 1st Jan </span>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									    <span class="days"> 2 Days/1 Night </span>
-                                        <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. 29,000</em></span>
-										<div class="description"> <p>Starting Location: Islamabad</p> </div>
-                                        <a href="/holiday-package/saiful-malook-naran-tour-2-days-1-night-30070" title="Book now" class="gradient-button">Book now</a>
-                                    </div>
-                                </article>
-								
-
-								
-								</div>
-								</div>
-			
-					<!--info boxes-->
-					<div class="boxes">
-						<div class="row">
-						<!--column-->
-						<article class="one-fourth">
-							<div>
-								<h4>Handpicked Hotels</h4>
-								<p>All Book Your Travel Hotels fulfil strict selection criteria. Each hotel is chosen individually and inclusion cannot be bought. </p>
-							</div>
-						</article>
-						<!--//column-->
-						
-						<!--column-->
-						<article class="one-fourth">
-							<div>
-								<h4>Detailed Descriptions</h4>
-								<p>To give you an accurate impression of the hotel, we endeavor to publish transparent, balanced and precise hotel descriptions. </p>
-							</div>
-						</article>
-						<!--//column-->
-						
-						<!--column-->
-						<article class="one-fourth">
-							<div>
-								<h4>Exclusive Knowledge</h4>
-								<p>We’ve done our research. Our scouts are always busy finding out more about our hotels, the surroundings and activities on offer nearby.</p>
-							</div>
-						</article>
-						<!--//column-->
-						
-						<!--column-->
-						<article class="one-fourth">
-							<div>
-								<h4>Passionate Service</h4>
-								<p>Book Your Travels’s team will cater to your special requests. We offer expert and passionate advice for finding the right hotel. </p>
-							</div>
-						</article>
-						<!--//column-->
-						
-						<!--column-->
-						<article class="one-fourth">
-							<div>
-								<h4>Best Price Guarantee</h4>
-								<p>We offer the best hotels at the best prices. If you find the same room category on the same dates cheaper elsewhere, we will refund the difference. Guaranteed, and quickly. </p>
-							</div>
-						</article>
-						<!--//column-->
-						
-						<!--column-->
-						<article class="one-fourth">
-							<div>
-								<h4>Secure Booking</h4>
-								<p>Book Your Travel reservation system is secure and your credit card and personal information is encrypted.We work to high standards and guarantee your privacy. </p>
-							</div>
-						</article>
-						<!--//column-->
-						
-						<!--column-->
-						<article class="one-fourth">
-							<div>
-								<h4>Benefits for Hoteliers</h4>
-								<p>We provide a cost-effective model, a network of over 5000 partners and a personalised account management service to help you optimise your revenue.</p>
-							</div>
-						</article>
-						<!--//column-->
-						
-						<!--column-->
-						<article class="one-fourth">
-							<div>
-								<h4>Any Questions?</h4>
-								<p>Call us on <em>1-555-555-555</em> for individual, tailored advice for your perfect stay or <a href="contact.html" title="Contact">send us a message</a> with your hotel booking query.</p>
-							</div>
-						</article>
-						<!--//column-->
-					</div>
-				</div>
-					<!--//info boxes-->
-				</div>
-			</div>
 		</div>
+        </div>
 	</main>
 	<!--//main-->
 	
@@ -894,7 +764,7 @@
 					<p><em>E:</em> <a href="#" title="booking@mail.com">support@paktourexpert.com</a></p>
 				</article>
 				<!--//column-->
-				
+
 				<!--column-->
 				<article class="one-fourth">
 					<h6>support</h6>
@@ -906,7 +776,7 @@
 					</ul>
 				</article>
 				<!--//column-->
-				
+
 				<!--column-->
 				<article class="one-fourth">
 					<h6>Follow us</h6>
@@ -922,7 +792,7 @@
 						</ul>
 				</article>
 				<!--//column-->
-				
+
 				<!--column-->
 				<article class="one-fourth">
 					<h6>Don’t miss our exclusive offers</h6>
@@ -934,7 +804,7 @@
 					</form>
 				</article>
 				<!--//column-->
-				
+
 				<div class="bottom full-width">
 					<p > </p>
 					<nav>
@@ -988,9 +858,7 @@
 		})(jQuery);
 	</script>
 	
-	<!-- TEMPLATE STYLES -->
-	
-</body>
 
-<!-- Mirrored from themeenergy.com/themes/html/book-your-travel/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 05:21:00 GMT -->
+
+</body>
 </html>
