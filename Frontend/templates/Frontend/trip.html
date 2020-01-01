@@ -1,0 +1,672 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<!-- Mirrored from themeenergy.com/themes/html/book-your-travel/hotel.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 05:23:49 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="Book Your Travel - Online Booking HTML Template">
+	<meta name="description" content="Book Your Travel - Online Booking HTML Template">
+	<meta name="author" content="themeenergy.com">
+	
+	<title>Book Your Travel - Hotel</title>
+
+	<link rel="stylesheet" href="{% static 'Frontend/css/style.css' %}" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/theme-turqoise.css" id="template-color' %}" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/lightslider.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/lightgallery.min.css' %}" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto+Slab:400,700&amp;subset=latin,latin-ext,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="{% static 'Frontend/js/e808bf9397.js' %}"></script>
+	<link rel="shortcut icon" href="{% static 'Frontend/images/favicon.ico' %}" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/styler.css' %}" type="text/css" />
+	
+	 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body onload="initialize()">
+	<!--- loading animation -->
+	<div class="loading">
+		<div class="ball"></div>
+		<div class="ball1"></div>
+	</div>
+	<!--- //loading animation -->
+	
+	<!--header-->
+	<header class="header">
+		<div class="wrap">
+			<!--logo-->
+			<div class="logo"><a href="index.html" title="Book Your Travel"><img src="images/txt/logo.png" alt="Book Your Travel" /></a></div>
+			<!--//logo-->
+			
+			<!--ribbon-->
+			<div class="ribbon">
+				<nav>
+					<ul class="profile-nav">
+						<li class="active"><a href="#" title="My Account">My Account</a></li>
+						<li><a href="login.html" title="Login">Login</a></li>
+						<li><a href="my_account.html" title="Settings">Settings</a></li>
+					</ul>
+					<ul class="lang-nav">
+						<li class="active"><a href="#" title="English (US)">English (US)</a></li>
+						<li><a href="#" title="English (UK)">English (UK)</a></li>
+						<li><a href="#" title="Deutsch">Deutsch</a></li>
+						<li><a href="#" title="Italiano">Italiano</a></li>
+						<li><a href="#" title="Русский">Русский</a></li>
+					</ul>
+					<ul class="currency-nav">
+						<li class="active"><a href="#" title="$US Dollar">$US Dollar</a></li>
+						<li><a href="#" title="€ Euro">€ Euro</a></li>
+						<li><a href="#" title="£ Pound">£ Pound</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!--//ribbon-->
+			
+			<!--search-->
+			<div class="search">
+				<form id="search-form" method="get" action="http://themeenergy.com/themes/html/book-your-travel/search-form">
+					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" /> 
+					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
+				</form>
+			</div>
+			<!--//search-->
+			
+			<!--contact-->
+			<div class="contact">
+				<span>24/7 Support number</span>
+				<span class="number">1- 555 - 555 - 555</span>
+			</div>
+			<!--//contact-->
+		</div>
+		
+		<!--main navigation-->
+		<nav class="main-nav">
+			<div class="wrap">
+				<ul class="slimmenu" id="nav">
+					<li class="current"><a href="hotels.html" title="Hotels">Hotels</a>
+						<ul>
+							<li><a href="#">Secondary navigation</a></li>
+							<li><a href="#">Example links</a>
+								<ul>
+									<li><a href="#">Third level navigation</a></li>
+									<li><a href="#">Example links</a>
+										<ul>
+											<li><a href="#">Fourth level navigation</a></li>
+											<li><a href="#">Example links</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="flights.html" title="Flights">Flights</a></li>
+					<li><a href="flight_and_hotels.html" title="Flight + Hotel">Flight + Hotel</a></li>
+					<li><a href="self_caterings.html" title="Self catering">Self catering</a></li>
+					<li><a href="cruises.html" title="Cruises">Cruises</a></li>
+					<li><a href="car_rentals.html" title="Car rental">Car rental</a></li>
+					<li><a href="locations.html" title="Locations">Locations</a>
+						<ul>
+							<li><a href="location.html" title="Single Location">Single Location</a>
+						</ul>
+					</li>
+					<li><a href="hot_deals.html" title="Hot deals">Hot deals</a></li>
+					<li class="has-mega"><a href="#" title="Pages">Pages</a>
+						<ul class="mega">
+							<li>
+								<div class="row">
+									<div class="one-fifth">
+										<p>COMMON PAGES</p>
+										<ul>
+											<li><a href="page_left_sidebar.html" title="Page with left sidebar">Page with left sidebar</a></li>
+											<li><a href="page_right_sidebar.html" title="Page with right sidebar">Page with right sidebar</a></li>
+											<li><a href="page_both_sidebars.html" title="Page with both sidebars">Page with both sidebars</a></li>
+											<li><a href="page_no_sidebars.html" title="Page with no sidebars">Page with no sidebars</a></li>
+										</ul>
+									</div>
+									<div class="one-fifth">
+										<p>LISTING LAYOUTS</p>
+										<ul>
+											<li><a href="hotels_2col.html" title="Listing 2 columns">Listing 2 columns</a></li>
+											<li><a href="hotels_3col.html" title="Listing 3 columns">Listing 3 columns</a></li>
+											<li><a href="hotels.html" title="Listing 4 columns">Listing 4 columns</a></li>
+											<li><a href="hotel.html" title="Single listing">Single listing</a></li>
+										</ul>
+									</div>
+									<div class="one-fifth">
+										<p>USER PAGES</p>
+										<ul>
+											<li><a href="login.html" title="Login">Login</a></li>
+											<li><a href="register.html" title="Register">Register</a></li>
+											<li><a href="my_account.html" title="My Account">My account</a></li>
+											<li><a href="error.html" title="Error 404">Error 404</a></li>
+										</ul>
+									</div>
+									<div class="one-fifth">
+										<p>SPECIALTY PAGES</p>
+										<ul>
+											<li><a href="search_results.html" title="Search results hotels">Search results hotels</a></li>
+											<li><a href="search_results_flights.html" title="Search results flights">Search results flights</a></li>
+											<li><a href="get_inspired.html" title="Get inspired">Get inspired</a></li>
+											<li><a href="get_inspired_results.html" title="Get inspired results">Get inspired results</a></li>
+										</ul>
+									</div>
+									<div class="one-fifth">
+										<p>&nbsp;</p>
+										<ul>
+											<li><a href="booking-step1.html" title="Booking step 1">Booking step 1</a></li>
+											<li><a href="booking-step2.html" title="Booking step 2">Booking step 2</a></li>
+											<li><a href="booking-step3.html" title="Booking step 3">Booking step 3</a></li>
+											<li><a href="loading.html" title="Loading">Loading</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li><a href="contact.html" title="Contact">Contact</a></li>
+					<li><a href="blog.html" title="Blog">Blog</a>
+						<ul>
+							<li><a href="blog_single.html" title="Single Post">Single Post</a>
+						</ul>
+					</li>
+					<li><a href="http://themeforest.net/item/book-your-travel-online-booking-html-template/3813953?ref=themeenergy" title="Purchase">Purchase</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!--//main navigation-->
+	</header>
+	<!--//header-->
+	
+	<!--main-->
+	<main class="main">		
+		<div class="wrap">
+		
+			<!--breadcrumbs-->
+			<nav class="breadcrumbs">
+				<!--crumbs-->
+				<ul>
+					<li><a href="#" title="Home">Home</a></li>
+					<li><a href="#" title="Travel guides">Trips</a></li>
+					<li>Search Result</li>                                       
+				</ul>
+				<!--//crumbs-->
+				
+				<!--top right navigation-->
+				<ul class="top-right-nav">
+					<li><a href="search_results.html" title="Back to results">Back to results</a></li>
+					<li><a href="#" title="Change search">Change search</a></li>
+				</ul>
+				<!--//top right navigation-->
+			</nav>
+			<!--//breadcrumbs-->
+			
+			<div class="row">
+				<!--trip three-fourth content-->
+				<section class="three-fourth">
+				
+				    <h1>Saiful Malook Naran</h1>
+				
+					<!--gallery-->
+					<div class="gallery">
+						<ul id="image-gallery" class="cS-hidden">
+							<li data-thumb="images/uploads/trip_1.jpg"> 
+								<img src="images/uploads/trip_1.jpg" alt="" />
+							</li>
+							<li data-thumb="images/uploads/trip_2.jpg"> 
+								<img src="images/uploads/trip_2.jpg" alt="" />
+							</li>
+							<li data-thumb="images/uploads/trip_3.jpg"> 
+								<img src="images/uploads/trip_3.jpg" alt="" />
+							</li>
+							<li data-thumb="images/uploads/trip_4.jpg"> 
+								<img src="images/uploads/trip_4.jpg" alt="" />
+							</li>
+							<li data-thumb="images/uploads/trip_5.jpg"> 
+								<img src="images/uploads/trip_5.jpg" alt="" />
+							</li>
+							<li data-thumb="images/uploads/trip_6.jpg"> 
+								<img src="images/uploads/trip_6.jpg" alt="" />
+							</li>
+						</ul>
+					</div>
+					<!--//gallery-->
+				
+					<!--inner navigation-->
+					<nav class="inner-nav">
+						<ul>
+							<li><a href="#general_info" title="General Information">General Information</a></li>
+							<li><a href="#Trip_Itinerary" title="Trip Itinerary">Trip Itinerary</a></li>
+							<li><a href="#Facilities" title="Facilities">Facilities</a></li>
+							<li><a href="#Event_Host" title="Event Host">Event Host</a></li>
+							<li><a href="#Cancellation_Policy" title="Cancellation Policy">Cancellation Policy</a></li>
+							<li><a href="#Reviews" title="Reviews">Reviews</a></li>
+						</ul>
+					</nav>
+					<!--//inner navigation-->
+					
+					<!--General Information-->
+					<section id="general_info" class="tab-content">
+						<article>
+							<h2>General Information</h2>
+							<div class="text-wrap">
+								<p>The divine lake lies at the northern end of the Kaghan Valley near Naran, and in the north east of Mansehra district of Khyber Pakhtunkhuwa. It is the highest alpine lake of Pakistan at an altitude of 3,224 metres and 10,578 feet above sea level. The lake is kind of a bowl where multiple glacial waters accumulate. However, it consists of large eco-diversity which includes a rare brown trout fish, bulk amount of blue-green algae, and a variety of water-plants and phytoplankton. Trout fishing is quite popular in Kaghan and in Naran as well.</p>
+							</div>
+							
+							<h3>Required Gear</h3>
+							<ul class="Required_Gear">
+								
+								<li> Sun Block and Sun glasses </li>
+								<li> Beanie (highly recommended) </li>
+								<li> Hand wash/soap/sanitizer, wipes, tooth paste and all other necessities </li>
+								<li> Muffler (highly recommended) </li>
+								<li> Gloves (highly recommended) </li>
+								<li> Fleece/Sweaters </li>
+								<li> Trekking boots/Joggers/Comfortable Shoes/Slippers </li>
+								
+							</ul>
+							
+							<h3>Duration</h3>
+							<p> 2 Days/1 Night </p>
+							
+						</article>
+					</section>
+					<!--General Information-->
+					
+					<!--Trip Itinerary-->
+					<section id="Trip_Itinerary" class="tab-content">
+						<article>
+							<h2>Trip Itinerary</h2>
+							<div class="text-wrap">	
+								<h4>Day 1</h4>
+								<li>11:00 pm Departure from Islamabad</li>
+								<li>08:00 am Breakfast at Mansehra</li>
+								<li>10:00 am Sightseeing/Photography at River Kunhar near Balakot</li>
+								<li>11:00 am Sightseeing/Photography at Kiwai</li>
+								<li>12:00 pm Sightseeing/Photography at Shogran</li>
+								<li>01:00 pm Sightseeing/Photography at Siri/Paye Meadows</li>
+								<li>08:00 pm Dinner at Naran</li>
+							</div>
+							
+							<div class="text-wrap">	
+								<h4>Day 2</h4>
+								<li>08:00 am Breakfast </li>
+								<li>10:30 am Sightseeing/Photography at Lake Saif ul Malook</li>
+								<li>08:00 pm Dinner at Naran</li>
+							</div>
+							
+							<div class="text-wrap">	
+								<h4>Day 3</h4>
+								<li>07:00 am Breakfast</li>
+								<li>07:45 am Departure for Islamabad</li>
+								<li>11:30 pm Arrival at Lahore</li>
+							</div>
+							
+						</article>
+					</section>
+					<!--//Trip Itinerary-->
+					
+					<!--Facilities-->
+					<section id="Facilities" class="tab-content">
+						<article>
+							<h2>Facilities</h2>
+							<div class="text-wrap">	
+								<h4>Services</h4>
+								<ul class="three-col">
+									<li>Transport</li>
+									<li>Guide</li>
+									<li>Standard Meals</li>
+									<li>Basic first aid kit</li>
+									<li>Accommodation (3-4 persons sharing)</li>
+									<li>Photography</li>
+								</ul>
+							</div>
+							
+							<div class="text-wrap">	
+								<h4>Activities</h4>
+								<p>Sightseeing </p>
+							</div>
+						</article>
+					</section>
+					<!--//Facilities-->
+					
+					<!--Event Host-->
+					<section id="Event_Host" class="tab-content">
+						<article>
+							<h2>Event Host</h2>
+							<div class="text-wrap">	
+								<h4>Tour Operator</h4>
+								<p>Sk Tours
+								<br>Contact: +92 333 1234567</br></p>
+							</div>
+						</article>
+					</section>
+					<!--//Event Host-->
+					
+					<!--Cancellation Policy-->
+					<section id="Cancellation_Policy" class="tab-content">
+						<article>
+							<h2>Cancellation Policy</h2>
+							<div class="text-wrap">	
+								<li>30% of the total amount will be deducted if cancellation notified 7 days prior to the trip.</li>
+								<li>50% of the total amount will be deducted if cancellation notified 3 days prior to the trip.</li>
+								<li>100% of the total amount will be deducted if cancellation notified 2 days prior to the trip.</li>
+								<li>100% of the total amount will be deducted if cancellation notified 4 days prior to the trip.</li>
+								<li>100% of the total amount will be deducted if cancellation notified in the last 4 days prior to the &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; trip unless the trip is canceled by the management</li>
+							</div>
+						</article>
+					</section>
+					<!--//Cancellation Policy-->
+					
+					<!--Reviews-->
+					<section id="Reviews" class="tab-content">
+						<article>
+							<h2>Trip Score and Score Breakdown</h2>
+							<div class="score">
+								<span class="achieved">8 </span>
+								<span> / 10</span>
+								<p class="info">Based on 782 reviews</p>
+								<p class="disclaimer">Reviews are written by our customers <strong>after their trip</strong> to Lake Saiful Malook Naran.</p>
+							</div>
+							
+							<dl class="chart">
+								<dt>Comfort</dt>
+								<dd><span id="data-one" style="width:60%;">6</span></dd>
+								<dt>Location</dt>
+								<dd><span id="data-two" style="width:80%;">8</span></dd>
+								<dt>Guide</dt>
+								<dd><span id="data-three" style="width:100%;">10</span></dd>
+								<dt>Services</dt>
+								<dd><span id="data-four" style="width:70%;">7</span></dd>
+								<dt>Value for money</dt>
+								<dd><span id="data-five" style="width:90%;">9</span></dd>
+							</dl>
+						</article>
+						
+						<article>
+							<h2>Reviews</h2>
+							<ul class="reviews">
+								<!--review-->
+								<li>
+									<figure class="left">
+										<img src="images/uploads/avatar.jpg" alt="avatar" />
+										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
+									</figure>
+									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
+									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
+								</li>
+								<!--//review-->
+								
+								<!--review-->
+								<li>
+									<figure class="left">
+										<img src="images/uploads/avatar.jpg" alt="avatar" />
+										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
+									</figure>
+									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
+									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
+								</li>
+								<!--//review-->
+								
+								<!--review-->
+								<li>
+									<figure class="left">
+										<img src="images/uploads/avatar.jpg" alt="avatar" />
+										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
+									</figure>
+									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
+									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
+								</li>
+								<!--//review-->
+								
+								<!--review-->
+								<li>
+									<figure class="left">
+										<img src="images/uploads/avatar.jpg" alt="avatar" />
+										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
+									</figure>
+									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
+									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
+								</li>
+								<!--//review-->
+								
+								<!--review-->
+								<li>
+									<figure class="left">
+										<img src="images/uploads/avatar.jpg" alt="avatar" />
+										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
+									</figure>
+									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
+									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
+								</li>
+								<!--//review-->
+								
+								<!--review-->
+								<li>
+									<figure class="left">
+										<img src="images/uploads/avatar.jpg" alt="avatar" />
+										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
+									</figure>
+									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
+									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
+								</li>
+								<!--//review-->
+							</ul>
+						</article>
+					</section>
+					<!--//Reviews-->
+					
+				</section>
+				<!--//trip content-->
+				
+				<!--sidebar-->
+				<aside class="one-fourth right-sidebar">
+				
+					<!--testimonials-->
+					<article class="testimonials">
+						<blockquote>Loved the service and the location was just amazing... Perfect!” </blockquote>
+						<span class="name">- John Doe, Solo Traveller</span>
+					</article>
+					<!--//testimonials-->
+					
+					<!--Need Help Booking?-->
+					<article class="widget">
+						<h4>Need Help Booking?</h4>
+						<p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your holiday needs.</p>
+						<p class="number">1- 555 - 555 - 555</p>
+					</article>
+					<!--//Need Help Booking?-->
+					
+					<!--Why Book with us?-->
+					<article class="widget">
+						<h4>Why Book with us?</h4>
+						<h5>Low rates</h5>
+						<p>Get the best rates, or get a refund.No booking fees. Save money!</p>
+						<h5>Largest Selection</h5>
+						<p>140,000+ hotels worldwide130+ airlinesOver 3 million guest reviews</p>
+						<h5>We’re Always Here</h5>
+						<p>Call or email us, anytimeGet 24-hour support before, during, and after your trip</p>
+					</article>
+					<!--//Why Book with us?-->
+				
+				</aside>
+				<!--//sidebar-->
+			</div>
+			<!--//row-->
+		</div>
+	</main>
+	<!--//main-->
+	
+	<!--footer-->
+	<footer class="footer">
+		<div class="wrap">
+			<div class="row">
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Book Your Travel</h6>
+					<p>1400 PennsylSUVia Ave. Washington, DC</p>
+					<p><em>P:</em> 24/7 customer support: 1-555-555-5555</p>
+					<p><em>E:</em> <a href="#" title="booking@mail.com">booking@mail.com</a></p>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Customer support</h6>
+					<ul>
+						<li><a href="#" title="Faq">Faq</a></li>
+						<li><a href="#" title="How do I make a reservation?">How do I make a reservation?</a></li>
+						<li><a href="#" title="Payment options">Payment options</a></li>
+						<li><a href="#" title="Booking tips">Booking tips</a></li>
+					</ul>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Follow us</h6>
+					<ul class="social">
+							<li><a href="#" title="facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
+							<li><a href="#" title="youtube"><i class="fa  fa-fw fa-youtube"></i></a></li>
+							<li><a href="#" title="rss"><i class="fa  fa-fw fa-rss"></i></a></li>
+							<li><a href="#" title="gplus"><i class="fa fa-fw fa-google-plus"></i></a></li>
+							<li><a href="#" title="linkedin"><i class="fa fa-fw fa-linkedin"></i></a></li>
+							<li><a href="#" title="twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+							<li><a href="#" title="pinterest"><i class="fa fa-fw fa-pinterest-p"></i></a></li>
+							<li><a href="#" title="vimeo"><i class="fa fa-fw fa-vimeo"></i></a></li>
+						</ul>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Don’t miss our exclusive offers</h6>
+					<form id="newsletter" action="http://themeenergy.com/themes/html/book-your-travel/newsletter.php" method="post">
+						<fieldset>
+							<input type="email" id="newsletter_signup" name="newsletter_signup" placeholder="Enter your email here" />
+							<input type="submit" id="newsletter_submit" name="newsletter_submit" value="Signup" class="gradient-button" />
+						</fieldset>
+					</form>
+				</article>
+				<!--//column-->
+				
+				<div class="bottom full-width">
+					<p class="copy">Copyright 2016 Book your travel ltd. All rights reserved</p>
+					<nav>
+						<ul>
+							<li><a href="#" title="About us">About us</a></li>
+							<li><a href="contact.html" title="Contact">Contact</a></li>
+							<li><a href="#" title="Partners">Partners</a></li>
+							<li><a href="#" title="Customer service">Customer service</a></li>
+							<li><a href="#" title="FAQ">FAQ</a></li>
+							<li><a href="#" title="Careers">Careers</a></li>
+							<li><a href="#" title="Terms & Conditions">Terms &amp; Conditions</a></li>
+							<li><a href="#" title="Privacy statement">Privacy statement</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!---footer-->
+	
+	<script src="{% static 'Frontend/js/jquery.min.js' %}"></script>
+	<script src="{% static 'Frontend/js/jquery-ui.min.js' %}"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
+	<script type="text/javascript"  src="{% static 'Frontend/js/infobox.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/jquery.uniform.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/jquery.slimmenu.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/lightslider.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/lightgallery-all.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/scripts.js' %}"></script>
+	<script type="text/javascript">
+	function initialize() {
+		var secheltLoc = new google.maps.LatLng(49.47216, -123.76307);
+
+		var myMapOptions = {
+			 zoom: 15
+			,center: secheltLoc
+			,mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var theMap = new google.maps.Map(document.getElementById("map_canvas"), myMapOptions);
+
+
+		var marker = new google.maps.Marker({
+			map: theMap,
+			draggable: true,
+			position: new google.maps.LatLng(49.47216, -123.76307),
+			visible: true
+		});
+
+		var boxText = document.createElement("div");
+		boxText.innerHTML = "<strong>Best ipsum hotel</strong>1400 PennsylSUVia Ave,Washington DCwww.bestipsumhotel.com";
+
+		var myOptions = {
+			 content: boxText
+			,disableAutoPan: false
+			,maxWidth: 0
+			,pixelOffset: new google.maps.Size(-140, 0)
+			,zIndex: null
+			,closeBoxURL: ""
+			,infoBoxClearance: new google.maps.Size(1, 1)
+			,isHidden: false
+			,pane: "floatPane"
+			,enableEventPropagation: false
+		};
+
+		google.maps.event.addListener(marker, "click", function (e) {
+			ib.open(theMap, this);
+		});
+
+		var ib = new InfoBox(myOptions);
+		ib.open(theMap, marker);
+	}
+	</script>
+	
+	<script type="text/javascript">
+    	 $(document).ready(function() {
+            $('#image-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                thumbItem:6,
+                slideMargin: 0,
+                speed:500,
+                auto:true,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }  
+            });
+			
+			$('#gallery1,#gallery2,#gallery3,#gallery4').lightGallery({
+				download:false
+			});
+		});
+    </script>
+	
+	<!-- TEMPLATE STYLES -->
+	<div id="template-styles">
+		<h2>Template Styles <a href="#"><img class="s-s-icon" src="images/settings.png" alt="Style switcher" /></a></h2>
+		<div>
+		<h3>Colors</h3>
+			<ul class="colors" >
+				<li><a href="#" class="yellow" title="yellow"></a></li>
+				<li><a href="#" class="orange" title="orange"></a></li>
+				<li><a href="#" class="strawberry" title="strawberry"></a></li>
+				<li><a href="#" class="pink" title="pink"></a></li>
+				<li><a href="#" class="purple" title="purple"></a></li>
+				<li><a href="#" class="blue" title="blue"></a></li>
+				<li><a href="#" class="turqoise" title="turqoise"></a></li>
+				<li><a href="#" class="black" title="black"></a></li>
+			</ul>
+		</div>
+	</div>
+	<script src="js/styler.js"></script>
+	</body>
+
+<!-- Mirrored from themeenergy.com/themes/html/book-your-travel/hotel.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 05:24:06 GMT -->
+</html>
