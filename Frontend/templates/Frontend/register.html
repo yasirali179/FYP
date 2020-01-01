@@ -12,14 +12,14 @@
 	
 	<title>Book Your Travel - Home</title>
 	
-	<link rel="stylesheet" href="Frontend/css/style.css' %}" />
-	<link rel="stylesheet" href="Frontend/css/theme-turqoise.css' %}" id="template-color" />
-	<link rel="stylesheet" href="Frontend/css/lightslider.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/style.css' %}" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/theme-turqoise.css' %}" id="template-color" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/lightslider.min.css' %}" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto+Slab:400,700&amp;subset=latin,latin-ext,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script src="Frontend/js/e808bf9397.js' %}"></script>
-	<link rel="shortcut icon" href="Frontend/images/favicon.ico' %}" />
-	<link rel="stylesheet" href="Frontend/css/styler.css' %}" type="text/css" />
+<script src="{% static 'Frontend/js/e808bf9397.js' %}"></script>
+	<link rel="shortcut icon" href="{% static 'Frontend/images/favicon.ico' %}" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/styler.css' %}" type="text/css" />
 	
 	 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,7 +40,7 @@
 	<header class="header">
 		<div class="wrap">
 			<!--logo-->
-			<div class="logo"><a href="index.html" title="Book Your Travel"><img src="images/txt/logo.png" alt="Book Your Travel" /></a></div>
+			<div class="logo"><a href="index.html" title="Book Your Travel"><img src="images/txt/logo.png' %}" alt="Book Your Travel" /></a></div>
 			<!--//logo-->
 			
 			<!--ribbon-->
@@ -185,14 +185,14 @@
 	<!--slider-->
 	<div class="slider">
 		<ul id="hero-gallery" class="cS-hidden">
-			<li data-thumb="images/uploads/slider7.jpg"> 
-				<img src="images/uploads/slider7.jpg" alt="" />
+			<li data-thumb="{% static 'Frontend/images/uploads/slider7.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/slider7.jpg' %}" alt="" />
 			</li>
-			<li data-thumb="images/uploads/slider3.jpg"> 
-				<img src="images/uploads/slider3.jpg" alt="" />
+			<li data-thumb="{% static 'Frontend/images/uploads/slider3.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/slider3.jpg' %}" alt="" />
 			</li>
-			<li data-thumb="images/uploads/slider2.jpg"> 
-				<img src="images/uploads/slider2.jpg" alt="" />
+			<li data-thumb="{% static 'Frontend/images/uploads/slider2.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/slider2.jpg' %}" alt="" />
 			</li>	
 		</ul>
 	</div>
@@ -787,7 +787,7 @@
 						<div class="row">
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/img1.jpg" alt="" /></a></figure>
+								<figure><a href="#" title=""><img src="{% static 'Frontend/images/uploads/img1.jpg' %}" alt="" /></a></figure>
 								<div class="details">
 									<h3>Winter beach escapes 30% off</h3>
 									<a href="#" title="Explore our deals" class="gradient-button">Explore our deals</a>
@@ -1357,7 +1357,7 @@
 	
 	<!-- TEMPLATE STYLES -->
 	<div id="template-styles">
-		<h2>Template Styles <a href="#"><img class="s-s-icon" src="images/settings.png" alt="Style switcher" /></a></h2>
+		<h2>Template Styles <a href="#"><img class="s-s-icon" src="{% static 'Frontend/images/settings.png' %}" alt="Style switcher" /></a></h2>
 		<div>
 		<h3>Colors</h3>
 			<ul class="colors" >

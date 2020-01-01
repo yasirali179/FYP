@@ -11,6 +11,5 @@ admin.site.register(Services)
 admin.site.register(Activities)
 admin.site.register(Tour_Operator)
 admin.site.register(Review)
-
 admin.site.register(Trip)
 

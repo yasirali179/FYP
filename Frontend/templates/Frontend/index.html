@@ -1,5 +1,6 @@
-﻿{% load static %}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+{% load static %}
+
 
 <html lang="en">
 
@@ -125,14 +126,14 @@
 	<!--slider-->
 	<div class="slider">
 		<ul id="hero-gallery" class="cS-hidden">
-			<li data-thumb="images/uploads/main.jpg"> 
-				<img src="images/uploads/main.jpg" alt="" />
+			<li data-thumb="{% static 'Frontend/images/uploads/main.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/main.jpg' %}" alt="" />
 			</li>
-			<li data-thumb="images/uploads/main.jpg"> 
-				<img src="images/uploads/main.jpg" alt="" />
+			<li data-thumb="{% static 'Frontend/images/uploads/main.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/main.jpg' %}" alt="" />
 			</li>
-			<li data-thumb="images/uploads/main.jpg"> 
-				<img src="images/uploads/main.jpg" alt="" />
+			<li data-thumb="{% static 'Frontend/images/uploads/main.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/main.jpg' %}" alt="" />
 			</li>	
 		</ul>
 	</div>

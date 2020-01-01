@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -10,13 +11,13 @@
 	
 	<title>Book Your Travel - Location</title>
 	
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/theme-turqoise.css" id="template-color" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/style.css' %}" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/theme-turqoise.css' %}" id="template-color" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto+Slab:400,700&amp;subset=latin,latin-ext,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<script src="js/e808bf9397.js"></script>
-	<link rel="shortcut icon" href="images/favicon.ico" />
-	<link rel="stylesheet" href="css/styler.css" type="text/css" />
+	<script src="{% static 'Frontend/js/e808bf9397.js' %}"></script>
+	<link rel="shortcut icon" href="{% static 'Frontend/images/favicon.ico' %}" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/styler.css' %}" type="text/css" />
 	
 </head>
 <body class="single-location">
@@ -31,7 +32,7 @@
 	<header class="header">
 		<div class="wrap">
 			<!--logo-->
-			<div class="logo"><a href="index.html" title="Book Your Travel"><img src="images/txt/logo.png" alt="Book Your Travel" /></a></div>
+			<div class="logo"><a href="index.html" title="Book Your Travel"><img src="{% static 'Frontend/images/txt/logo.png' %}" alt="Book Your Travel" /></a></div>
 			<!--//logo-->
 			
 			<!--ribbon-->
@@ -210,7 +211,7 @@
 					<section id="general_info" class="tab-content">
 						<article>
 							<h2>Skardu</h2>
-							<figure><img src="images/uploads/skardu.jpg" alt="Things to do - London general" /></figure>
+							<figure><img src="{% static 'Frontend/images/uploads/skardu.jpg' %}" alt="Things to do - London general" /></figure>
 							<p><strong>Skardu is a diverse and exciting city with some of the best sights and attractions in the world. </strong></p>
 							<p>See Skardu from above on the Skardu Eye; cherish the nature; examine some of the world’s most precious treasures at the Skardu castle.</p>
 						
@@ -255,7 +256,7 @@
 					<section id="culture" class="tab-content">
 						<article>
 							<h2>Culture and history</h2>
-							<figure><img src="images/uploads/skardu2.jpg" alt="Things to do - London general" /></figure>
+							<figure><img src="images/uploads/skardu2.jpg' %}" alt="Things to do - London general" /></figure>
 							<p><strong>For a display of Balti culture and ceremony, watch the women playing traditional musical instruments.</strong></p>
 							<p>The most elegant part of the women dress of Gilgit Baltistan is the traditional cap. Various types of caps are used. The most popular cap is the beautiful embroidered Iraghi cap with the traditional piece of the jewel called silsila. Many other types of caps are used in various regions. </p>
 							<p>The traditional cap is soft round topped woollen hat. It is made by the local artisan and is available in various colours. Whitecaps are most popular in the region and considered as a part of the formal local dress. In many areas people especially the older generation still wear their traditional cap all the time with pride. They consider it a sign of honour. The most striking feature of the cap is the duck plume and the feather stuck in front or on the side of the cap. It gives a very elegant look to the cap. It is considered a part of formal dress cap and used in groom's dress.</p>
@@ -462,7 +463,7 @@
 								<!--review-->
 								<li>
 									<figure class="left">
-										<img src="images/uploads/avatar.jpg" alt="avatar" />
+										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
 										<address><span>Anonymous</span><br />Solo Traveller North way<br />22/06/2016</address>
 									</figure>
 									<div class="rev pro"><p>It was a warm friendly place. Too close to nature and lush green trees freshen my mind.</p></div>
@@ -473,7 +474,7 @@
 								<!--review-->
 								<li>
 									<figure class="left">
-										<img src="images/uploads/avatar.jpg" alt="avatar" />
+										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
 										<address><span>Anonymous</span><br />Solo Traveller North way<br />22/06/2016</address>
 									</figure>
 									<div class="rev pro"><p>It was a warm friendly place. Too close to nature and lush green trees freshen my mind.</p></div>
@@ -484,7 +485,7 @@
 								<!--review-->
 								<li>
 									<figure class="left">
-										<img src="images/uploads/avatar.jpg" alt="avatar" />
+										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
 										<address><span>Anonymous</span>Solo Traveller North way22/06/2016</address>
 									</figure>
 									<div class="rev pro"><p>It was a warm friendly place. Too close to nature and lush green trees freshen my mind.</p></div>
@@ -495,7 +496,7 @@
 								<!--review-->
 								<li>
 									<figure class="left">
-										<img src="images/uploads/avatar.jpg" alt="avatar" />
+										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
 										<address><span>Anonymous</span><br />Solo Traveller North way<br />22/06/2016</address>
 									</figure>
 									<div class="rev pro"><p>It was a warm friendly place. Too close to nature and lush green trees freshen my mind.</p></div>
@@ -506,7 +507,7 @@
 								<!--review-->
 								<li>
 									<figure class="left">
-										<img src="images/uploads/avatar.jpg" alt="avatar" />
+										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
 										<address><span>Anonymous</span><br />Solo Traveller North way<br />22/06/2016</address>
 									</figure>
 									<div class="rev pro"><p>It was a warm friendly place. Too close to nature and lush green trees freshen my mind.</p></div>
@@ -628,15 +629,15 @@
 	</footer>
 	<!---footer-->
 	
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="js/jquery.uniform.min.js"></script>
-	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
+	<script src="{% static 'Frontend/js/jquery.min.js' %}"></script>
+	<script src="{% static 'Frontend/js/jquery-ui.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/jquery.uniform.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/jquery.slimmenu.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/scripts.js' %}"></script>
 	
 	<!-- TEMPLATE STYLES -->
 	<div id="template-styles">
-		<h2>Template Styles <a href="#"><img class="s-s-icon" src="images/settings.png" alt="Style switcher" /></a></h2>
+		<h2>Template Styles <a href="#"><img class="s-s-icon" src="{% static 'Frontend/images/settings.png' %}" alt="Style switcher" /></a></h2>
 		<div>
 		<h3>Colors</h3>
 			<ul class="colors" >

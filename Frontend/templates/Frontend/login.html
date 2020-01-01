@@ -40,7 +40,7 @@
 	<header class="header">
 		<div class="wrap">
 			<!--logo-->
-			<div class="logo"><a href="index.html" title="Book Your Travel"><img src="images/txt/logo.png" alt="Book Your Travel" /></a></div>
+			<div class="logo"><a href="index.html" title="Book Your Travel"><img src="{% static 'Frontend/images/txt/logo.png' %}" alt="Book Your Travel" /></a></div>
 			<!--//logo-->
 			
 			<!--ribbon-->
@@ -185,14 +185,14 @@
 	<!--slider-->
 	<div class="slider">
 		<ul id="hero-gallery" class="cS-hidden">
-			<li data-thumb="images/uploads/slider7.jpg"> 
-				<img src="images/uploads/slider7.jpg" alt="" />
+			<li data-thumb="{% static 'Frontend/images/uploads/slider7.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/slider7.jpg' %}" alt="" />
 			</li>
-			<li data-thumb="images/uploads/slider3.jpg"> 
-				<img src="images/uploads/slider3.jpg" alt="" />
+			<li data-thumb="{% static 'Frontend/images/uploads/slider3.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/slider3.jpg' %}" alt="" />
 			</li>
-			<li data-thumb="images/uploads/slider2.jpg"> 
-				<img src="images/uploads/slider2.jpg" alt="" />
+			<li data-thumb="{% static 'Frontend/images/uploads/slider2.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/slider2.jpg' %}" alt="" />
 			</li>	
 		</ul>
 	</div>
@@ -787,7 +787,7 @@
 						<div class="row">
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/img1.jpg" alt="" /></a></figure>
+								<figure><a href="#" title=""><img src="{% static 'Frontend/images/uploads/img1.jpg' %}" alt="" /></a></figure>
 								<div class="details">
 									<h3>Winter beach escapes 30% off</h3>
 									<a href="#" title="Explore our deals" class="gradient-button">Explore our deals</a>
@@ -797,7 +797,7 @@
 							
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/paris.jpg" alt="" /></a></figure>
+								<figure><a href="#" title=""><img src="{% static 'Frontend/images/uploads/paris.jpg' %}" alt="" /></a></figure>
 								<div class="details">
 									<h3>Spend New Year‘s Eve in Paris</h3>
 									<a href="#" title="More info" class="gradient-button">More info</a>
@@ -807,7 +807,7 @@
 							
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/img2.jpg" alt="" /></a></figure>
+								<figure><a href="#" title=""><img src="{% static 'Frontend/images/uploads/img2.jpg' %}" alt="" /></a></figure>
 								<div class="details">
 									<h3>Skiing weekends in the Alpes</h3>
 									<a href="#" title="Explore our deals" class="gradient-button">Explore our deals</a>
@@ -817,7 +817,7 @@
 							
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/thailand.jpg" alt="" /></a></figure>
+								<figure><a href="#" title=""><img src="{% static 'Frontend/images/uploads/thailand.jpg' %}" alt="" /></a></figure>
 								<div class="details">
 									<h3>Our weekly top offer: Thailand</h3>
 									<a href="#" title="More info" class="gradient-button">More info</a>
@@ -837,7 +837,7 @@
 						<div class="row">
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="location.html" title=""><img src="images/uploads/paris.jpg" alt="" /></a></figure>
+								<figure><a href="location.html" title=""><img src="{% static 'Frontend/images/uploads/paris.jpg' %}" alt="" /></a></figure>
 								<div class="details">
 									<a href="location.html" title="View all" class="gradient-button">View all</a>
 									<h4>Paris</h4>
@@ -862,7 +862,7 @@
 							
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="location.html" title=""><img src="images/uploads/amsterdam.jpg" alt="" /></a></figure>
+								<figure><a href="location.html" title=""><img src="{% static 'Frontend/images/uploads/amsterdam.jpg' %}" alt="" /></a></figure>
 								<div class="details">
 									<a href="location.html" title="View all" class="gradient-button">View all</a>
 									<h4>Amsterdam</h4>
@@ -887,7 +887,7 @@
 							
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="location.html" title=""><img src="images/uploads/saint-petersburg.jpg" alt="" /></a></figure>
+								<figure><a href="location.html" title=""><img src="{% static 'Frontend/images/uploads/saint-petersburg.jpg' %}" alt="" /></a></figure>
 								<div class="details">
 									<a href="location.html" title="View all" class="gradient-button">View all</a>
 									<h4>St Petersburg</h4>
@@ -912,7 +912,7 @@
 							
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="location.html" title=""><img src="images/uploads/prague.jpg" alt="" /></a></figure>
+								<figure><a href="location.html" title=""><img src="{% static 'Frontend/images/uploads/prague.jpg" alt="" /></a></figure>
 								<div class="details">
 									<a href="location.html" title="View all" class="gradient-button">View all</a>
 									<h4>Prague</h4>
@@ -936,7 +936,7 @@
 							<!--//column-->
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="location.html" title=""><img src="images/uploads/prague.jpg" alt="" /></a></figure>
+								<figure><a href="location.html" title=""><img src="{% static 'Frontend/images/uploads/prague.jpg" alt="" /></a></figure>
 								<div class="details">
 									<a href="location.html" title="View all" class="gradient-button">View all</a>
 									<h4>Prague</h4>
@@ -962,7 +962,7 @@
 							<!--column-->
 							<article class="one-fourth promo">
 								<div class="ribbon-small">- 20%</div>
-								<figure><a href="hot_deals.html" title=""><img src="images/uploads/paris.jpg" alt="" /></a></figure>
+								<figure><a href="hot_deals.html" title=""><img src="{% static 'Frontend/images/uploads/paris.jpg" alt="" /></a></figure>
 								<div class="details">
 									<a href="hot_deals.html" title="View all" class="gradient-button">View all</a>
 									<h4>Paris</h4>
@@ -987,7 +987,7 @@
 							
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="location.html" title=""><img src="images/uploads/amsterdam.jpg" alt="" /></a></figure>
+								<figure><a href="location.html" title=""><img src="{% static 'Frontend/images/uploads/amsterdam.jpg" alt="" /></a></figure>
 								<div class="details">
 									<a href="location.html" title="View all" class="gradient-button">View all</a>
 									<h4>Amsterdam</h4>
@@ -1012,7 +1012,7 @@
 							
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="location.html" title=""><img src="images/uploads/saint-petersburg.jpg" alt="" /></a></figure>
+								<figure><a href="location.html" title=""><img src="{% static 'Frontend/images/uploads/saint-petersburg.jpg" alt="" /></a></figure>
 								<div class="details">
 									<a href="location.html" title="View all" class="gradient-button">View all</a>
 									<h4>St Petersburg</h4>
@@ -1036,7 +1036,7 @@
 							<!--//column-->
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="location.html" title=""><img src="images/uploads/saint-petersburg.jpg" alt="" /></a></figure>
+								<figure><a href="location.html" title=""><img src="{% static 'Frontend/images/uploads/saint-petersburg.jpg" alt="" /></a></figure>
 								<div class="details">
 									<a href="location.html" title="View all" class="gradient-button">View all</a>
 									<h4>St Petersburg</h4>
@@ -1061,7 +1061,7 @@
 							
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="location.html" title=""><img src="images/uploads/prague.jpg" alt="" /></a></figure>
+								<figure><a href="location.html" title=""><img src="{% static 'Frontend/images/uploads/prague.jpg" alt="" /></a></figure>
 								<div class="details">
 									<a href="location.html" title="View all" class="gradient-button">View all</a>
 									<h4>Prague</h4>
@@ -1086,7 +1086,7 @@
 							
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="location.html" title=""><img src="images/uploads/paris.jpg" alt="" /></a></figure>
+								<figure><a href="location.html" title=""><img src="{% static 'Frontend/images/uploads/paris.jpg" alt="" /></a></figure>
 								<div class="details">
 									<a href="location.html" title="View all" class="gradient-button">View all</a>
 									<h4>Paris</h4>
@@ -1111,7 +1111,7 @@
 							
 							<!--column-->
 							<article class="one-fourth">
-								<figure><a href="location.html" title=""><img src="images/uploads/amsterdam.jpg" alt="" /></a></figure>
+								<figure><a href="location.html" title=""><img src="{% static 'Frontend/images/uploads/amsterdam.jpg" alt="" /></a></figure>
 								<div class="details">
 									<a href="location.html" title="View all" class="gradient-button">View all</a>
 									<h4>Amsterdam</h4>
@@ -1355,7 +1355,7 @@
 	
 	<!-- TEMPLATE STYLES -->
 	<div id="template-styles">
-		<h2>Template Styles <a href="#"><img class="s-s-icon" src="images/settings.png" alt="Style switcher" /></a></h2>
+		<h2>Template Styles <a href="#"><img class="s-s-icon" src="{% static 'Frontend/images/settings.png' %}" alt="Style switcher" /></a></h2>
 		<div>
 		<h3>Colors</h3>
 			<ul class="colors" >
