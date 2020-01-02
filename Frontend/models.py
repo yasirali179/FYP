@@ -22,12 +22,13 @@ class Destinations(models.Model):
     history3 = models.CharField(max_length=200);
     Des_H1 = models.CharField(max_length=200);
     revs = models.ManyToManyField('Review', blank=True)
+    display = models.BooleanField(default=False)
 
     def __str__(self):
         return self.Des_Id
 
 class Images(models.Model):
-    destination = models.ForeignKey(Destinations, on_delete=models.CASCADE, null=True, blank=True)
+    img_id = models.PositiveIntegerField(default=0);
     img1 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
     img2 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
     img3 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
@@ -42,7 +43,7 @@ class Images(models.Model):
         return self.image
 
 class Required_Gear(models.Model):
-    req = models.ForeignKey('Trip', on_delete=models.CASCADE, null=True, blank=True)
+    require_id = models.PositiveIntegerField(default=0);
     req1 = models.CharField(max_length=200, default='-');
     req2 = models.CharField(max_length=200, default='-');
     req3 = models.CharField(max_length=200, default='-');
@@ -57,7 +58,7 @@ class Required_Gear(models.Model):
         return self.req
 
 class Services(models.Model):
-    serv = models.ForeignKey('Trip', on_delete=models.CASCADE, null=True, blank=True)
+    service_id = models.PositiveIntegerField(default=0);
     ser1 = models.CharField(max_length=200, default='-');
     ser2 = models.CharField(max_length=200, default='-');
     ser3 = models.CharField(max_length=200, default='-');
@@ -72,7 +73,7 @@ class Services(models.Model):
         return self.serv
 
 class Activities(models.Model):
-    event_host = models.ForeignKey('Trip', on_delete=models.CASCADE, null=True, blank=True)
+    activity_id = models.PositiveIntegerField(default=0);
     act1 = models.CharField(max_length=200, default='-');
     act2 = models.CharField(max_length=200, default='-');
     act3 = models.CharField(max_length=200, default='-');
@@ -98,7 +99,7 @@ class Review(models.Model):
     Rev_Id = models.SlugField(max_length=150, unique=True, default=0);
     reviewFor = models.CharField(max_length=200);
     reviewBy = models.CharField(max_length=100, default="Anonymous");
-   # addedOn = models.DateField.auto_now();
+    created_at = models.DateTimeField(auto_now_add=True);
     rev_good = models.CharField(max_length=5000, default='-');
     rev_bad = models.CharField(max_length=5000, default='-');
     def __str__(self):
@@ -116,5 +117,7 @@ class Trip(models.Model):
     acts = models.ManyToManyField(Activities, blank=True)
     event_host = models.ForeignKey(Tour_Operator, on_delete=models. CASCADE, null=True, blank=True)
     revs = models.ManyToManyField(Review, blank=True)
+    display = models.BooleanField(default=False)
     def __str__(self):
         return self.T_Name
+

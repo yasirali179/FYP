@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0005_auto_20200102_0134.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0006_auto_20200102_0136.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0007_auto_20200102_0939.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0008_auto_20200102_0939.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0009_auto_20200102_1001.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -79,9 +79,10 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Frontend/static/Frontend/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LE" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -200,6 +201,7 @@
       <workItem from="1577874332596" duration="557000" />
       <workItem from="1577900416755" duration="7492000" />
       <workItem from="1577910386592" duration="7395000" />
+      <workItem from="1577939516985" duration="2246000" />
     </task>
     <servers />
   </component>
@@ -231,25 +233,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1577870278796" />
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1577910405585">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1577939568922">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1577910405585" />
-    <state width="1322" height="129" key="GridCell.Tab.0.bottom" timestamp="1577917829307">
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1577939568922" />
+    <state width="1322" height="207" key="GridCell.Tab.0.bottom" timestamp="1577941462668">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="129" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577917829307" />
-    <state width="1322" height="129" key="GridCell.Tab.0.center" timestamp="1577917829307">
+    <state width="1322" height="207" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577941462668" />
+    <state width="1322" height="207" key="GridCell.Tab.0.center" timestamp="1577941462668">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="129" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577917829307" />
-    <state width="1322" height="129" key="GridCell.Tab.0.left" timestamp="1577917829307">
+    <state width="1322" height="207" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577941462668" />
+    <state width="1322" height="207" key="GridCell.Tab.0.left" timestamp="1577941462667">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="129" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577917829307" />
-    <state width="1322" height="129" key="GridCell.Tab.0.right" timestamp="1577917829307">
+    <state width="1322" height="207" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577941462667" />
+    <state width="1322" height="207" key="GridCell.Tab.0.right" timestamp="1577941462668">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="129" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577917829307" />
+    <state width="1322" height="207" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577941462668" />
   </component>
 </project>

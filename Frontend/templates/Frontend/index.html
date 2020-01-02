@@ -101,13 +101,24 @@
 					<li><a href="#" title=" ">News</a></li>
 					<li><a href="{% url 'blogs' %}" title="Blog">Blogs</a></li>
 					<li><a href="#" title="Contact">Contact Us</a></li>
-					<li><a  title="Login/ Signup" >Login/ Signup</a>
+                     {% if username is not None %}
+                    <li><a  title="Login/ Signup" >Hi {{ username }}</a>
+					<ul>
+							<li><a href="{% url 'login' %}">Profile</a></li>
+							<li><a href="{% url 'register' %}">Logout</a></li>
+
+						</ul>
+					</li>
+                {% else %}
+                    <li><a  title="Login/ Signup" >Login/ Signup</a>
 					<ul>
 							<li><a href="{% url 'login' %}">Login</a></li>
 							<li><a href="{% url 'register' %}">Signup</a></li>
-							<li><a href="{% url 'index' %}">Settings</a></li>
+
 						</ul>
 					</li>
+                {% endif %}
+
 				</ul>
 			</div>
 		</nav>

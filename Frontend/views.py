@@ -1,8 +1,16 @@
 from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from Frontend.models import *
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def index(request):
+    context = {
+        'username': request.session.get("username", None),
+        'trips': Trip.objects.filter(display=True),
+        'destination': Destinations.objects.filter(display=True),
+    }
     if request.method == 'POST':
         username = request.POST.get("datepicker11")
         print(username)
@@ -10,19 +18,37 @@ def index(request):
 
 
 def login(request):
+    if request.session.get("username", None) is not None:
+        return redirect(reverse('index'))
     if request.method == 'POST':
-
-        email = request.POST.get("email")
+        ns_name = request.POST.get("ns_name")
         password = request.POST.get("password")
-        print(email+password)
+        abc = User.objects.filter(U_Name__iexact=ns_name).count()
+        if abc is not 0:
+            d = User.objects.get(U_Name_iexact=ns_name)
+            if d.U_pswd == password:
+                request.session["username"] = d.U_Name
+                return redirect(reverse('index'))
+            else:
+                return render(request,'Frontend/login.html', {'label': "Password Error"})
+        else:
+            return render(request,'Frontend/login.html', {'label': "Account Not Exist"})
     return render(request,'Frontend/login.html')
 
 def register(request):
+    if request.session.get("username", None) is not None:
+        return redirect(reverse('index'))
     if request.method == 'POST':
         username = request.POST.get("ns_name")
         email = request.POST.get("email")
         password = request.POST.get("password")
-        print(username+email+password)
+        abc = User.objects.filter(U_Name__exact=username).count()
+        if abc is not 0:
+            return render(request,'Frontend/register.html', {'label': "Already Exist"})
+        else:
+            c = User.objects.create(U_Name=username, U_pswd=password, U_email=email)
+            request.session["username"] = c.U_Name
+            return redirect(reverse('index'))
     return render(request,'Frontend/register.html')
 
 
