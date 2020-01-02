@@ -1,121 +1,6 @@
-﻿
-<!DOCTYPE html>
+﻿{% extends 'Frontend/repeater.html' %}
 {% load static %}
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-
-	
-	<link rel="stylesheet" href="{% static 'Frontend/css/style.css' %}" />
-	<link rel="stylesheet" href="{% static 'Frontend/css/theme-turqoise.css' %}" id="template-color" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto+Slab:400,700&amp;subset=latin,latin-ext,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<script src="js/e808bf9397.js"></script>
-	<link rel="shortcut icon" href="{% static 'Frontend/images/favicon.ico' %}" />
-	<link rel="stylesheet" href="{% static 'Frontend/css/styler.css' %}" type="text/css" />
-	
-    	<title>Pak Tour Expert - Home</title>
-</head>
-<body>
-	<!--- loading animation -->
-	<div class="loading">
-		<div class="ball"></div>
-		<div class="ball1"></div>
-	</div>
-	<!--- //loading animation -->
-
-	<!--header-->
-	<header class="header">
-		<div class="wrap">
-			<!--logo-->
-			<div class="logo"><a href="{% url 'index' %}" title="Pak Tour Expert"><img src="images/txt/logo.png" alt="Pak Tour Expert" /></a></div>
-			<!--//logo-->
-
-
-			<!--search-->
-			<div class="search">
-				<form id="search-form" method="get" action="#">
-					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" />
-					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
-				</form>
-			</div>
-			<!--//search-->
-
-			<!--contact-->
-			<div class="contact">
-				<span>24/7 Support number</span>
-				<span class="number">+92 42 111 222 333</span>
-			</div>
-			<!--//contact-->
-		</div>
-
-		<!--main navigation-->
-		<nav class="main-nav">
-			<div class="wrap">
-				<ul class="slimmenu" id="nav">
-					<li><a href="{% url 'trips' %}" title=" ">One day Trips</a></li>
-					<li><a href="{% url 'trips' %}" title=" ">Multiple days Trips</a></li>
-					<li><a href="{% url 'Destinatins' %}" title=" ">Destinations</a></li>
-					<li><a href="#" title=" ">Wishlist</a></li>
-					<li><a href="{% url 'index' %}" title=" ">Bookings</a></li>
-					<li class="has-mega"><a  title="Pages">Deals</a>
-					<ul class="mega">
-							<li>
-								<div class="row">
-									<div class="one-third">
-										<p>DESTINATIONS</p>
-										<ul>
-											<li><a href="#" title=" ">Tour Packages Azad Kashmir</a></li>
-											<li><a href="#" title=" ">Tour Packages Hunza / Gilgit</a></li>
-											<li><a href="#" title=" ">Tour Packages Kaghan / Naran</a></li>
-											<li><a href="#" title=" ">Tour Packages Skardu</a></li>
-											<li><a href="#" title=" ">Tour Packages Khyber Pakhtunkhwa</a></li>
-											<li><a href="#" title=" ">Tour Packages Fairy Meadows</a></li>
-										</ul>
-									</div>
-									<div class="one-third">
-										<p>ACTIVITIES</p>
-										<ul>
-											<li><a href="#" title=" ">Advanced Treks</a></li>
-											<li><a href="#" title=" ">Cliff Diving</a></li>
-											<li><a href="#" title=" ">Mountaineering</a></li>
-											<li><a href="#" title=" ">Trekking</a></li>
-											<li><a href="#" title=" ">Paragliding</a></li>
-											<li><a href="#" title=" ">Flying</a></li>
-										</ul>
-									</div>
-									<div class="one-third">
-										<p>GROUP PACKAGES</p>
-										<ul>
-											<li><a href="#" title=" ">Group Packages Azad Kashmir</a></li>
-											<li><a href="#" title=" ">Group Packages Hunza / Gilgit</a></li>
-											<li><a href="#" title=" ">Group Packages Kaghan / Naran</a></li>
-											<li><a href="#" title=" ">Group Packages Skardu</a></li>
-											<li><a href="#" title=" ">Group Packages Khyber Pakhtunkhwa</a></li>
-											<li><a href="#" title=" ">Group Packages Fairy Meadows</a></li>
-										</ul>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li><a href="#" title=" ">News</a></li>
-					<li><a href="{% url 'blogs' %}" title="Blog">Blogs</a></li>
-					<li><a href="#" title="Contact">Contact Us</a></li>
-					<li><a  title="Login/ Signup" >Login/ Signup</a>
-					<ul>
-							<li><a href="{% url 'login' %}">Login</a></li>
-							<li><a href="{% url 'register' %}">Signup</a></li>
-							<li><a href="{% url 'index' %}">Settings</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<!--//main navigation-->
-	</header>
-	<!--//header-->
-	<!--main-->
+{% block content %}
 	<main class="main">		
 		<div class="wrap">
 			<!--breadcrumbs-->
@@ -247,28 +132,35 @@
 
 					<!--Need Help Booking?-->
 					<article class="widget">
-						<h4>Need Help Booking?</h4>
+						<h4>Need Help</h4>
 						<p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your holiday needs.</p>
 						<p class="number">1- 555 - 555 - 555</p>
 					</article>
 					<!--//Need Help Booking?-->
-					
-					<!--Why Book with us?-->
+
+					<!--Why us?-->
 					<article class="widget">
-						<h4>Why Book with us?</h4>
-						<h5>Low rates</h5>
-						<p>Get the best rates, or get a refund.No booking fees. Save money!</p>
-						<h5>Largest Selection</h5>
-						<p>140,000+ hotels worldwide130+ airlinesOver 3 million guest reviews</p>
+						<h4>Why us?</h4>
+						<h5>Best Recommendation</h5>
+						<p>Get the best suggestions, or get the best trip recommendation free of cost.</p>
+						<h5>Best Platform</h5>
+						<p>140+ travelling companies 3 million guest reviews</p>
 						<h5>We’re Always Here</h5>
 						<p>Call or email us, anytimeGet 24-hour support before, during, and after your trip</p>
 					</article>
+					<!--//Why us?-->
+
+
+
+
+
+				<!--//sidebar-->
 					<!--//Why Book with us?-->
 					
 					<!--Blog search-->
 					<article class="widget">
 						<h4>Search</h4>
-						<p>Lorem ipsum dolor sit amet</p>
+						<p> </p>
 						<div class="row">
 							<div class="f-item full-width">
 								<input type="search" id="blogsearch" name="blogsearch" placeholder="Search the blog" />
@@ -294,23 +186,7 @@
 					<!--//Blog archives-->
 					
 					<!--Deal of the day-->
-					<article class="widget">
-						<h4>Deal of the day</h4>
-						<div class="deal-of-the-day">
-							<figure><a href="hotel.html"><img src="{% static 'Frontend/images/uploads/hotel3.jpg' %}" alt=""  /></a></figure>
-							<h3><a href="hotel.html">Plaza Resort Hotel &amp; SPA
-								<span class="stars">
-									<i class="material-icons">&#xE838;</i>
-									<i class="material-icons">&#xE838;</i>
-									<i class="material-icons">&#xE838;</i>
-									<i class="material-icons">&#xE838;</i>
-								</span>
-							</a></h3>
-							<p>From <span class="price">$ 100 <small>/ per night</small></span></p>
-							<span class="rating"> 8 /10</span>
-						</div>
-					</article>
-					<!--//Deal of the day-->
+
 				</aside>
 				<!--//sidebar-->
 			</div>
@@ -318,88 +194,4 @@
 		</div>
 	</main>
 	<!--//main-->
-	
-	<!--footer-->
-	<footer class="footer">
-		<div class="wrap">
-			<div class="row">
-				<!--column-->
-				<article class="one-fourth">
-					<h6>Book Your Travel</h6>
-					<p>1400 PennsylSUVia Ave. Washington, DC</p>
-					<p><em>P:</em> 24/7 customer support: 1-555-555-5555</p>
-					<p><em>E:</em> <a href="#" title="booking@mail.com">booking@mail.com</a></p>
-				</article>
-				<!--//column-->
-				
-				<!--column-->
-				<article class="one-fourth">
-					<h6>Customer support</h6>
-					<ul>
-						<li><a href="#" title="Faq">Faq</a></li>
-						<li><a href="#" title="How do I make a reservation?">How do I make a reservation?</a></li>
-						<li><a href="#" title="Payment options">Payment options</a></li>
-						<li><a href="#" title="Booking tips">Booking tips</a></li>
-					</ul>
-				</article>
-				<!--//column-->
-				
-				<!--column-->
-				<article class="one-fourth">
-					<h6>Follow us</h6>
-					<ul class="social">
-							<li><a href="#" title="facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
-							<li><a href="#" title="youtube"><i class="fa  fa-fw fa-youtube"></i></a></li>
-							<li><a href="#" title="rss"><i class="fa  fa-fw fa-rss"></i></a></li>
-							<li><a href="#" title="gplus"><i class="fa fa-fw fa-google-plus"></i></a></li>
-							<li><a href="#" title="linkedin"><i class="fa fa-fw fa-linkedin"></i></a></li>
-							<li><a href="#" title="twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
-							<li><a href="#" title="pinterest"><i class="fa fa-fw fa-pinterest-p"></i></a></li>
-							<li><a href="#" title="vimeo"><i class="fa fa-fw fa-vimeo"></i></a></li>
-						</ul>
-				</article>
-				<!--//column-->
-				
-				<!--column-->
-				<article class="one-fourth">
-					<h6>Don’t miss our exclusive offers</h6>
-					<form id="newsletter" action="http://themeenergy.com/themes/html/book-your-travel/newsletter.php" method="post">
-						<fieldset>
-							<input type="email" id="newsletter_signup" name="newsletter_signup" placeholder="Enter your email here" />
-							<input type="submit" id="newsletter_submit" name="newsletter_submit" value="Signup" class="gradient-button" />
-						</fieldset>
-					</form>
-				</article>
-				<!--//column-->
-				
-				<div class="bottom full-width">
-					<p class="copy">Copyright 2016 Book your travel ltd. All rights reserved</p>
-					<nav>
-						<ul>
-							<li><a href="#" title="About us">About us</a></li>
-							<li><a href="contact.html" title="Contact">Contact</a></li>
-							<li><a href="#" title="Partners">Partners</a></li>
-							<li><a href="#" title="Customer service">Customer service</a></li>
-							<li><a href="#" title="FAQ">FAQ</a></li>
-							<li><a href="#" title="Careers">Careers</a></li>
-							<li><a href="#" title="Terms & Conditions">Terms &amp; Conditions</a></li>
-							<li><a href="#" title="Privacy statement">Privacy statement</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!---footer-->
-	<script src="{% static 'Frontend/js/jquery.min.js' %}"></script>
-	<script src="{% static 'Frontend/js/jquery-ui.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'Frontend/js/jquery.uniform.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'Frontend/js/jquery.slimmenu.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'Frontend/js/scripts.js' %}"></script>
-	
-	<!-- TEMPLATE STYLES -->
-
-</body>
-
-<!-- Mirrored from themeenergy.com/themes/html/book-your-travel/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 05:24:15 GMT -->
-</html>
+	{% endblock %}

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="{% static 'Frontend/css/style.css' %}" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/theme-turqoise.css' %}" id="template-color" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/lightslider.min.css' %}" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto+Slab:400,700&amp;subset=latin,latin-ext,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="{% static 'Frontend/js/e808bf9397.js' %}"></script>
+	<link rel="shortcut icon" href="{% static 'Frontend/images/favicon.ico' %}" />
+	<link rel="stylesheet" href="{% static 'Frontend/css/styler.css' %}" type="text/css" />
+
+    	<title>Pak Tour Expert - Home</title>
+</head>
+<body>
+	<!--- loading animation -->
+	<div class="loading">
+		<div class="ball"></div>
+		<div class="ball1"></div>
+	</div>
+	<!--- //loading animation -->
+
+	<!--header-->
+	<header class="header">
+		<div class="wrap">
+			<!--logo-->
+			<div class="logo"><a href="{% url 'index' %}" title="Pak Tour Expert"><img src="{% static 'Frontend/images/txt/logo.png'%}" alt="Pak Tour Expert" /></a></div>
+			<!--//logo-->
+
+
+			<!--search-->
+			<div class="search">
+				<form id="search-form" method="get" action="#">
+					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" />
+					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
+				</form>
+			</div>
+			<!--//search-->
+
+			<!--contact-->
+			<div class="contact">
+				<span>24/7 Support number</span>
+				<span class="number">+92 42 111 222 333</span>
+			</div>
+			<!--//contact-->
+		</div>
+
+		<!--main navigation-->
+		<nav class="main-nav">
+			<div class="wrap">
+				<ul class="slimmenu" id="nav">
+					<li><a href="{% url 'trips1' %}" title=" ">One day Trips</a></li>
+					<li><a href="{% url 'trips2' %}" title=" ">Multiple days Trips</a></li>
+					<li><a href="{% url 'places' %}" title=" ">Destinations</a></li>
+                    <li><a href="{% url 'touroperator' %}" title=" ">Tour Operators</a></li>
+					<li><a href="#" title=" ">Wishlist</a></li>
+					<li><a href="{% url 'index' %}" title=" ">Bookings</a></li>
+					<li class="has-mega"><a  title="Pages">Deals</a>
+					<ul class="mega">
+							<li>
+								<div class="row">
+									<div class="one-third">
+										<p>DESTINATIONS</p>
+										<ul>
+											<li><a href="#" title=" ">Tour Packages Azad Kashmir</a></li>
+											<li><a href="#" title=" ">Tour Packages Hunza / Gilgit</a></li>
+											<li><a href="#" title=" ">Tour Packages Kaghan / Naran</a></li>
+											<li><a href="#" title=" ">Tour Packages Skardu</a></li>
+											<li><a href="#" title=" ">Tour Packages Khyber Pakhtunkhwa</a></li>
+											<li><a href="#" title=" ">Tour Packages Fairy Meadows</a></li>
+										</ul>
+									</div>
+									<div class="one-third">
+										<p>ACTIVITIES</p>
+										<ul>
+											<li><a href="#" title=" ">Advanced Treks</a></li>
+											<li><a href="#" title=" ">Cliff Diving</a></li>
+											<li><a href="#" title=" ">Mountaineering</a></li>
+											<li><a href="#" title=" ">Trekking</a></li>
+											<li><a href="#" title=" ">Paragliding</a></li>
+											<li><a href="#" title=" ">Flying</a></li>
+										</ul>
+									</div>
+									<div class="one-third">
+										<p>GROUP PACKAGES</p>
+										<ul>
+											<li><a href="#" title=" ">Group Packages Azad Kashmir</a></li>
+											<li><a href="#" title=" ">Group Packages Hunza / Gilgit</a></li>
+											<li><a href="#" title=" ">Group Packages Kaghan / Naran</a></li>
+											<li><a href="#" title=" ">Group Packages Skardu</a></li>
+											<li><a href="#" title=" ">Group Packages Khyber Pakhtunkhwa</a></li>
+											<li><a href="#" title=" ">Group Packages Fairy Meadows</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#" title=" ">News</a></li>
+					<li><a href="{% url 'blogs' %}" title="Blog">Blogs</a></li>
+					<li><a href="#" title="Contact">Contact Us</a></li>
+                     {% if username is not None %}
+                    <li><a  title=" Hi {{ username }}" >Hi {{ username }}</a>
+					<ul>
+							<li><a href="{% url 'login' %}">Profile</a></li>
+							<li><a href="{% url 'logout' %}">Logout</a></li>
+
+						</ul>
+					</li>
+                {% else %}
+                    <li><a  title="Login/ Signup" >Login/ Signup</a>
+					<ul>
+							<li><a href="{% url 'login' %}">Login</a></li>
+							<li><a href="{% url 'register' %}">Signup</a></li>
+
+						</ul>
+					</li>
+                {% endif %}
+
+				</ul>
+			</div>
+		</nav>
+		<!--//main navigation-->
+	</header>
+	<!--//header-->
+
+	<!--slider-->
+	<div class="slider">
+		<ul id="hero-gallery" class="cS-hidden">
+			<li data-thumb="{% static 'Frontend/images/uploads/main.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/main.jpg' %}" alt="" />
+			</li>
+			<li data-thumb="{% static 'Frontend/images/uploads/main.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/main.jpg' %}" alt="" />
+			</li>
+			<li data-thumb="{% static 'Frontend/images/uploads/main.jpg' %}">
+				<img src="{% static 'Frontend/images/uploads/main.jpg' %}" alt="" />
+			</li>
+		</ul>
+	</div>
+	<!--//slider-->
+
+	<!--search-->
+	<div class="main-search">
+		<div class="wrap">
+			<form id="main-search" method="POST">
+                     {% csrf_token %}
+                <div class="row">
+					<!--column-->
+					<div class="column radios one-fourth">
+						<h5><span>01</span> What?</h5>
+						<div class="row">
+							<div class="f-item one-half">
+								<input type="radio" name="radio" id="radioo1" value="form1" checked  />
+								<label for="Trips">Trips</label>
+							</div>
+							<div class="f-item one-half">
+								<input type="radio" name="radio" id="radioo2" value="form4" />
+								<label for="self_catering">Hotels</label>
+							</div>
+							<div class="f-item one-half">
+								<input type="radio" name="radio" id="radioo3" value="form2" />
+								<label for="flight">Destinatins</label>
+							</div>
+							<div class="f-item one-half">
+								<input type="radio" name="radio" id="radioo4" value="form5" />
+								<label for="cruise">Weather</label>
+							</div>
+							<div class="f-item one-half">
+								<input type="radio" name="radio" id="radioo5" value="form3" />
+								<label for="flight_and_hotel">Tour Operator</label>
+							</div>
+							<div class="f-item one-half">
+								<input type="radio" name="radio" id="radioo6" value="form6" />
+								<label for="rent_a_car">Dates</label>
+							</div>
+						</div>
+					</div>
+					<!--//column-->
+
+					<div class="three-fourth">
+						<!--form hotel-->
+						<div class="form row" id="form1">
+							<!--column-->
+							<div class="column one-half">
+								<h5><span>02</span> Where?</h5>
+								<div class="row">
+									<div class="f-item full-width">
+										<label for="destination1">Your Trip Name</label>
+										<input type="text" placeholder="Enter Desire trip name" id="destinationn1" name="destinationn1" />
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+
+							<!--column-->
+							<div class="column  one-half">
+								<h5><span>03</span> When?</h5>
+								<div class="row">
+									<div class="f-item datepicker">
+										<label for="datepicker1">Trip date</label>
+										<div class="datepicker-wrap"><input type="text" placeholder=" choose Date" id="datepicker11" name="datepicker11" /></div>
+									</div>
+
+								</div>
+							</div>
+							<!--//column-->
+
+
+						</div>
+						<!--//form hotel-->
+<!--form hotel-->
+						<div class="form row" id="form2">
+							<!--column-->
+							<div class="column one-half">
+								<h5><span>02</span> Where?</h5>
+								<div class="row">
+									<div class="f-item full-width">
+										<label for="destination1">Your destination</label>
+										<input type="text" placeholder="Enter City, region, district or Place" id="destinationn2" name="destinationn2" />
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+
+							<!--column-->
+							<div class="column  one-half">
+								<h5><span>03</span> When?</h5>
+								<div class="row">
+									<div class="f-item datepicker">
+										<label for="datepicker1">Destination date</label>
+										<div class="datepicker-wrap"><input type="text" placeholder="Choose Date" id="datepicker12" name="datepicker12" /></div>
+									</div>
+
+								</div>
+							</div>
+							<!--//column-->
+
+
+						</div>
+						<!--//form hotel-->
+<!--form hotel-->
+						<div class="form row" id="form3">
+							<!--column-->
+							<div class="column one-half">
+								<h5><span>02</span> Where?</h5>
+								<div class="row">
+									<div class="f-item full-width">
+										<label for="destination1">Trip Operator</label>
+										<input type="text" placeholder="Enter Trip Operator Name" id="destinationn3" name="destinationn3" />
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+
+							<!--column-->
+							<div class="column  one-half">
+								<h5><span>03</span> When?</h5>
+								<div class="row">
+									<div class="f-item datepicker">
+										<label for="datepicker1">Destination date</label>
+										<div class="datepicker-wrap"><input type="text" placeholder="choose Date" id="datepicker13" name="datepicker13" /></div>
+									</div>
+
+								</div>
+							</div>
+							<!--//column-->
+
+
+						</div>
+						<!--//form hotel-->
+
+						<!--form hotel-->
+						<div class="form row" id="form4">
+							<!--column-->
+							<div class="column one-half">
+								<h5><span>02</span> Where?</h5>
+								<div class="row">
+									<div class="f-item full-width">
+										<label for="destination1">Your destination</label>
+										<input type="text" placeholder="City, region, district or Place" id="destination4" name="destination" />
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+
+							<!--column-->
+							<div class="column  one-half">
+								<h5><span>03</span> When?</h5>
+								<div class="row">
+									<div class="f-item datepicker">
+										<label for="datepicker1">Destination date</label>
+										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker4" name="datepicker1" /></div>
+									</div>
+
+								</div>
+							</div>
+							<!--//column-->
+
+
+						</div>
+						<!--//form hotel-->
+
+						<!--form hotel-->
+						<div class="form row" id="form5">
+							<!--column-->
+							<div class="column one-half">
+								<h5><span>02</span> Where?</h5>
+								<div class="row">
+									<div class="f-item full-width">
+										<label for="destination1">Your destination</label>
+										<input type="text" placeholder="City, region, district or Place" id="destination5" name="destination" />
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+
+							<!--column-->
+							<div class="column  one-half">
+								<h5><span>03</span> When?</h5>
+								<div class="row">
+									<div class="f-item datepicker">
+										<label for="datepicker1">Destination date</label>
+										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker5" name="datepicker1" /></div>
+									</div>
+
+								</div>
+							</div>
+							<!--//column-->
+
+
+						</div>
+						<!--//form hotel-->
+
+						<!--form hotel-->
+						<div class="form row" id="form6">
+							<!--column-->
+							<div class="column one-half">
+								<h5><span>02</span> Where?</h5>
+								<div class="row">
+									<div class="f-item full-width">
+										<label for="destination1">Your destination</label>
+										<input type="text" placeholder="City, region, district or Place" id="destination6" name="destination" />
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+
+							<!--column-->
+							<div class="column  one-half">
+								<h5><span>03</span> When?</h5>
+								<div class="row">
+									<div class="f-item datepicker">
+										<label for="datepicker1">Destination date</label>
+										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker6" name="datepicker1" /></div>
+									</div>
+
+								</div>
+							</div>
+							<!--//column-->
+
+
+						</div>
+						<!--//form hotel-->
+					</div>
+					<input type="submit" value="Proceed to results" class="gradient-button search-submit" id="search-submit" />
+				</div>
+			</form>
+		</div>
+	</div>
+	<!--//search-->
+    {% block content %}
+    {% endblock %}
+
+
+
+	<!--footer-->
+	<footer class="footer">
+		<div class="wrap">
+			<div class="row">
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Pak Tour Expert</h6>
+					<p>FAST NUCES, Lahore, Pakistan</p>
+					<p><em>Phone:</em> 24/7 customer support: +92-42-111-222-333</p>
+					<p><em>E:</em> <a href="#" title="booking@mail.com">support@paktourexpert.com</a></p>
+				</article>
+				<!--//column-->
+
+				<!--column-->
+				<article class="one-fourth">
+					<h6>support</h6>
+					<ul>
+						<li><a href="#" title="Faq">FAQs</a></li>
+						<li><a href="#" title="How do I make a reservation?">Policies</a></li>
+						<li><a href="#" title="Payment options">Careers</a></li>
+						<li><a href="#" title="Booking tips">Press Release</a></li>
+					</ul>
+				</article>
+				<!--//column-->
+
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Follow us</h6>
+					<ul class="social">
+							<li><a href="#" title="facebook"><i class="fa fa-fw fa-facebook"></i></a></li>
+							<li><a href="#" title="youtube"><i class="fa  fa-fw fa-youtube"></i></a></li>
+							<li><a href="#" title="rss"><i class="fa  fa-fw fa-rss"></i></a></li>
+							<li><a href="#" title="gplus"><i class="fa fa-fw fa-google-plus"></i></a></li>
+							<li><a href="#" title="linkedin"><i class="fa fa-fw fa-linkedin"></i></a></li>
+							<li><a href="#" title="twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+							<li><a href="#" title="pinterest"><i class="fa fa-fw fa-pinterest-p"></i></a></li>
+							<li><a href="#" title="vimeo"><i class="fa fa-fw fa-vimeo"></i></a></li>
+						</ul>
+				</article>
+				<!--//column-->
+
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Don’t miss our exclusive offers</h6>
+					<form id="newsletter" action="#" method="post">
+						<fieldset>
+							<input type="email" id="newsletter_signup" name="newsletter_signup" placeholder="Enter your email here" />
+							<input type="submit" id="newsletter_submit" name="newsletter_submit" value="Signup" class="gradient-button" />
+						</fieldset>
+					</form>
+				</article>
+				<!--//column-->
+
+				<div class="bottom full-width">
+					<p > </p>
+					<nav>
+						<ul>
+							<li><a href="#" title="About us">About us</a></li>
+							<li><a href="contact.html" title="Contact">Contact</a></li>
+							<li><a href="#" title="Partners">Partners</a></li>
+							<li><a href="#" title="Customer service">Customer service</a></li>
+							<li><a href="#" title="FAQ">FAQ</a></li>
+							<li><a href="#" title="Careers">Careers</a></li>
+							<li><a href="#" title="Terms & Conditions">Terms &amp; Conditions</a></li>
+							<li><a href="#" title="Privacy statement">Privacy statement</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!---footer-->
+
+
+
+	<script src="{% static 'Frontend/js/jquery.min.js' %}"></script>
+	<script src="{% static 'Frontend/js/jquery-ui.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/jquery.uniform.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/jquery.slimmenu.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/lightslider.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Frontend/js/scripts.js' %}"></script>
+	<script type="text/javascript">
+		(function( $ ) {
+			$(document).ready(function(){
+				$('.form').hide();
+				$('#form1').show();
+				$('.f-item:nth-child(1)').addClass('active');
+				$('.f-item:nth-child(1) span').addClass('checked');
+
+				$('#hero-gallery').lightSlider({
+					gallery:true,
+					item:1,
+					pager:false,
+					gallery:false,
+					slideMargin: 0,
+					speed:2000,
+					pause:6000,
+					mode: 'fade',
+					auto:true,
+					loop:true,
+					onSliderLoad: function() {
+						$('#hero-gallery').removeClass('cS-hidden');
+					}
+				});
+			});
+		})(jQuery);
+	</script>
+
+	<!-- TEMPLATE STYLES -->
+
+</body>
+
+<!-- Mirrored from themeenergy.com/themes/html/book-your-travel/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 05:21:00 GMT -->
+</html>

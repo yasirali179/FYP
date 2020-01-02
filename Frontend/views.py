@@ -6,36 +6,14 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def index(request):
-    type=0
-    tripp=None
-    destt=None
-    oprr=None
+
     if request.method == 'POST':
         radio = request.POST.get("radio")
-        print(radio)
-        if radio == "form1":
-            dest = request.POST.get("destinationn1")
-            date = request.POST.get("datepicker11")
-            type=1
-            tripp=Trip.objects.filter(T_Name__contains="dest")
-        if radio == "form2":
-            dest = request.POST.get("destinationn2")
-            date = request.POST.get("datepicker12")
-            type=2
-            destt=Destinations.objects.filter(T_Name__contains="dest")
-        if radio == "form3":
-            dest = request.POST.get("destinationn3")
-            date = request.POST.get("datepicker13")
-            type=3
-            oprr=Tour_Operator.objects.filter(T_Name__contains="dest")
-        context = {
-            'username': request.session.get("username", None),
-            'trips': tripp,
-            'destinations': destt,
-            'operators': oprr,
-            'type': type,
-        }
-        return render(request, 'Frontend/search_results.html',context)
+        request.session["radio"] = radio
+        request.session["dest1"]  = request.POST.get("destinationn1")
+        request.session["dest2"] = request.POST.get("destinationn2")
+        request.session["dest3"] = request.POST.get("destinationn3")
+        return redirect(reverse('search_results'))
     else:
         context = {
             'username': request.session.get("username", None),
@@ -48,8 +26,10 @@ def index(request):
 
 
 def login(request):
+    label=" "
     if request.session.get("username", None) is not None:
         return redirect(reverse('index'))
+
     if request.method == 'POST':
         nsname = request.POST.get("ns_name")
         password = request.POST.get("password")
@@ -60,10 +40,34 @@ def login(request):
                 request.session["username"] = d.U_Name
                 return redirect(reverse('index'))
             else:
-                return render(request,'Frontend/login.html', {'label': "Password Error"})
+                context = {
+                    'username': request.session.get("username", None),
+                    'trips': Trip.objects.filter(display=True),
+                    'destinations': Destinations.objects.filter(display=True),
+                    'deals': Deal.objects.all(),
+                    'operators': Tour_Operator.objects.all(),
+                    'label': "password Error"
+                }
+                return render(request,'Frontend/login.html',context)
         else:
-            return render(request,'Frontend/login.html', {'label': "Account Not Exist"})
-    return render(request,'Frontend/login.html')
+            context = {
+                'username': request.session.get("username", None),
+                'trips': Trip.objects.filter(display=True),
+                'destinations': Destinations.objects.filter(display=True),
+                'deals': Deal.objects.all(),
+                'operators': Tour_Operator.objects.all(),
+                'label': "Account Not Exist"
+            }
+            return render(request,'Frontend/login.html', context)
+    context = {
+        'username': request.session.get("username", None),
+        'trips': Trip.objects.filter(display=True),
+        'destinations': Destinations.objects.filter(display=True),
+        'deals': Deal.objects.all(),
+        'operators': Tour_Operator.objects.all(),
+        'label': " "
+    }
+    return render(request,'Frontend/login.html',context)
 
 def register(request):
     if request.session.get("username", None) is not None:
@@ -74,12 +78,28 @@ def register(request):
         password = request.POST.get("password")
         abc = User.objects.filter(U_Name__exact=username).count()
         if abc is not 0:
-            return render(request,'Frontend/register.html', {'label': "Already Exist"})
+            context = {
+                'username': request.session.get("username", None),
+                'trips': Trip.objects.filter(display=True),
+                'destinations': Destinations.objects.filter(display=True),
+                'deals': Deal.objects.all(),
+                'operators': Tour_Operator.objects.all(),
+                'label': "Already Exist"
+            }
+            return render(request,'Frontend/register.html',context)
         else:
             c = User.objects.create(U_Name=username, U_pswd=password, U_email=email)
             request.session["username"] = c.U_Name
             return redirect(reverse('index',))
-    return render(request,'Frontend/register.html')
+    context = {
+        'username': request.session.get("username", None),
+        'trips': Trip.objects.filter(display=True),
+        'destinations': Destinations.objects.filter(display=True),
+        'deals': Deal.objects.all(),
+        'operators': Tour_Operator.objects.all(),
+        'label': " "
+    }
+    return render(request,'Frontend/register.html',context)
 
 
 def logout(request):
@@ -87,33 +107,108 @@ def logout(request):
     return redirect(reverse('index'))
 
 
-def trips(request):
-    trips=Trip.objects.all()
+def trips1(request):
+    if request.method == 'POST':
+        radio = request.POST.get("radio")
+        request.session["radio"] = radio
+        request.session["dest1"]  = request.POST.get("destinationn1")
+        request.session["dest2"] = request.POST.get("destinationn2")
+        request.session["dest3"] = request.POST.get("destinationn3")
+        return redirect(reverse('search_results'))
     context = {
-
         'username': request.session.get("username", None),
-        'trips' : Trip.objects.all()
+        'trips' : Trip.objects.filter(noOfDays=1)
     }
     return render(request,'Frontend/trips.html',context)
-def trip(request):
-    return render(request,'Frontend/trip.html')
+
+def trips2(request):
+    if request.method == 'POST':
+        radio = request.POST.get("radio")
+        request.session["radio"] = radio
+        request.session["dest1"]  = request.POST.get("destinationn1")
+        request.session["dest2"] = request.POST.get("destinationn2")
+        request.session["dest3"] = request.POST.get("destinationn3")
+        return redirect(reverse('search_results'))
+    context = {
+        'username': request.session.get("username", None),
+        'trips' : Trip.objects.all(),
+    }
+    return render(request,'Frontend/trips.html',context)
+def trip(request,articalvalue):
+    if request.method == 'POST':
+        radio = request.POST.get("radio")
+        request.session["radio"] = radio
+        request.session["dest1"]  = request.POST.get("destinationn1")
+        request.session["dest2"] = request.POST.get("destinationn2")
+        request.session["dest3"] = request.POST.get("destinationn3")
+        return redirect(reverse('search_results'))
+    context = {
+        'username': request.session.get("username", None),
+        'p': Trip.objects.get(Trip_Id=articalvalue)
+    }
+    return render(request,'Frontend/trip.html',context)
+
+def operator(request,articalvalue):
+    print(articalvalue)
+    if request.method == 'POST':
+        radio = request.POST.get("radio")
+        request.session["radio"] = radio
+        request.session["dest1"]  = request.POST.get("destinationn1")
+        request.session["dest2"] = request.POST.get("destinationn2")
+        request.session["dest3"] = request.POST.get("destinationn3")
+        return redirect(reverse('search_results'))
+    context = {
+        'username': request.session.get("username", None),
+        'p': Tour_Operator.objects.get(Op_Id=articalvalue)
+    }
+    return render(request,'Frontend/operator.html',context)
+
+
 def blog(request):
     return render(request,'Frontend/blog_single.html')
 def blogs(request):
     return render(request,'Frontend/blog.html')
 
 def Places(request):
+    if request.method == 'POST':
+        radio = request.POST.get("radio")
+        request.session["radio"] = radio
+        request.session["dest1"]  = request.POST.get("destinationn1")
+        request.session["dest2"] = request.POST.get("destinationn2")
+        request.session["dest3"] = request.POST.get("destinationn3")
+        return redirect(reverse('search_results'))
     context = {
         'username': request.session.get("username", None),
         'destinations': Destinations.objects.all(),
     }
     return render(request, 'Frontend/places.html',context)
 
-def place(request):
-
-    return render(request, 'Frontend/place.html')
+def place(request,articalvalue):
+    obj=Destinations.objects.get(Des_Id=articalvalue)
+    obj1=Trip.objects.filter(Dest=obj)
+    print(obj1)
+    if request.method == 'POST':
+        radio = request.POST.get("radio")
+        request.session["radio"] = radio
+        request.session["dest1"]  = request.POST.get("destinationn1")
+        request.session["dest2"] = request.POST.get("destinationn2")
+        request.session["dest3"] = request.POST.get("destinationn3")
+        return redirect(reverse('search_results'))
+    context = {
+        'username': request.session.get("username", None),
+        'p': obj,
+        'trips':obj1
+    }
+    return render(request, 'Frontend/place.html',context)
 
 def touroperator(request):
+    if request.method == 'POST':
+        radio = request.POST.get("radio")
+        request.session["radio"] = radio
+        request.session["dest1"]  = request.POST.get("destinationn1")
+        request.session["dest2"] = request.POST.get("destinationn2")
+        request.session["dest3"] = request.POST.get("destinationn3")
+        return redirect(reverse('search_results'))
     context = {
         'username': request.session.get("username", None),
         'operators': Tour_Operator.objects.all(),
@@ -121,14 +216,42 @@ def touroperator(request):
     return render(request, 'Frontend/touroperators.html',context)
 
 def search_results(request):
+    if request.method == 'POST':
+        radio = request.POST.get("radio")
+        request.session["radio"] = radio
+        request.session["dest1"]  = request.POST.get("destinationn1")
+        request.session["dest2"] = request.POST.get("destinationn2")
+        request.session["dest3"] = request.POST.get("destinationn3")
+        return redirect(reverse('search_results'))
+    context=search(request)
+    return render(request,'Frontend/search_results.html',context)
+
+def search(request):
+    type = 0
+    tripp = None
+    destt = None
+    oprr = None
+    radio = request.session.get("radio", None)
+    if radio == "form1":
+        dest = request.session.get("dest1", None)
+        type = 1
+        tripp = Trip.objects.filter(T_Name__contains=dest)
+    if radio == "form2":
+        dest = request.session.get("dest2", None)
+        type = 2
+        destt = Destinations.objects.filter(Des_Name__contains=dest)
+    if radio == "form3":
+        dest = request.session.get("dest3", None)
+        type = 3
+        oprr = Tour_Operator.objects.filter(Operator_Name__contains=dest)
     context = {
         'username': request.session.get("username", None),
-        'trips': Trip.objects.filter(display=True),
-        'destinations': Destinations.objects.filter(display=True),
-        'deals': Deal.objects.all(),
-        'operators': Tour_Operator.objects.all(),
-        'type':'1',
+        'trips': tripp,
+        'destinations': destt,
+        'operators': oprr,
+        'type': type,
     }
-    return render(request,'Frontend/search_results.html',context)
+    return context
+
 
 
