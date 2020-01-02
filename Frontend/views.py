@@ -6,26 +6,28 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def index(request):
+    usrname= request.session.get("username", None)
+
     context = {
-        'username': request.session.get("username", None),
+        'username': usrname,
         'trips': Trip.objects.filter(display=True),
         'destination': Destinations.objects.filter(display=True),
     }
     if request.method == 'POST':
         username = request.POST.get("datepicker11")
         print(username)
-    return render(request,'Frontend/index.html')
+    return render(request,'Frontend/index.html',context)
 
 
 def login(request):
     if request.session.get("username", None) is not None:
         return redirect(reverse('index'))
     if request.method == 'POST':
-        ns_name = request.POST.get("ns_name")
+        nsname = request.POST.get("ns_name")
         password = request.POST.get("password")
-        abc = User.objects.filter(U_Name__iexact=ns_name).count()
+        abc = User.objects.filter(U_Name__iexact=nsname).count()
         if abc is not 0:
-            d = User.objects.get(U_Name_iexact=ns_name)
+            d = User.objects.get(U_Name__iexact=nsname)
             if d.U_pswd == password:
                 request.session["username"] = d.U_Name
                 return redirect(reverse('index'))
@@ -52,6 +54,9 @@ def register(request):
     return render(request,'Frontend/register.html')
 
 
+def logout(request):
+    request.session.clear()
+    return redirect(reverse('index'))
 
 
 def trips(request):

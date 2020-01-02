@@ -2,13 +2,76 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0007_auto_20200102_0939.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0008_auto_20200102_0939.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0009_auto_20200102_1001.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0010_auto_20200102_1109.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0011_auto_20200102_1109.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_1GMdE2z.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_1_12Pd7vO.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_1_Mud4W3C.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_1_OR8ZTDB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_1_V8gZsts.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_1_WerZQFx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_1_a75IXnf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_1_aDF2aNX.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_1_wpaPIVu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_2_50lsqeJ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_2_S6pg6mb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_2_S7OAcwG.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_2_ScacMoj.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_2_aoQTqpH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_2_hu7eDNV.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_2_nlRYb5M.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_3_2ZawCc5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_3_9v1EqPy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_3_ABZB8FB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_3_IUOFRHR.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_3_JssFkPR.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_3_Sg1vz8K.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_3_k97DkZ4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_3_oYMolyd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_3_sfSph8U.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_3_uj2ty1v.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_4_IehwFH3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_4_OqSDldq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_4_YNYPZYU.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_4_YQH5shZ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_4_d6cBCu7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_4_fnzHIGb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_4_gPUEixR.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_5_1WcYUD4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_5_R65N5NH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_5_VP27sfM.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_5_jRqoRNB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_7XpCHbH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_8sTwYVx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_W6ROxEq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_bJErVE1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/download_fPr8bta.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_1_eZKz1i5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_1_lQF9P9X.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_1ny9q5N.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_2_J2NrqyN.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_2_aRcL8wr.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_3_40sT3xJ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_3_eWhgwk5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_Mv0RoSx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_WHA7e3l.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trip/images_bsZwDQh.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -201,7 +264,7 @@
       <workItem from="1577874332596" duration="557000" />
       <workItem from="1577900416755" duration="7492000" />
       <workItem from="1577910386592" duration="7395000" />
-      <workItem from="1577939516985" duration="2246000" />
+      <workItem from="1577939516985" duration="5880000" />
     </task>
     <servers />
   </component>
@@ -225,10 +288,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577866183238">
+    <state x="274" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577944116175">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1577866183238" />
+    <state x="274" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1577944116175" />
     <state x="0" y="0" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577870278796">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -237,21 +300,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1577939568922" />
-    <state width="1322" height="207" key="GridCell.Tab.0.bottom" timestamp="1577941462668">
+    <state width="1322" height="159" key="GridCell.Tab.0.bottom" timestamp="1577945660128">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="207" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577941462668" />
-    <state width="1322" height="207" key="GridCell.Tab.0.center" timestamp="1577941462668">
+    <state width="1322" height="159" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577945660127" />
+    <state width="1322" height="159" key="GridCell.Tab.0.center" timestamp="1577945660127">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="207" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577941462668" />
-    <state width="1322" height="207" key="GridCell.Tab.0.left" timestamp="1577941462667">
+    <state width="1322" height="159" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577945660127" />
+    <state width="1322" height="159" key="GridCell.Tab.0.left" timestamp="1577945660126">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="207" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577941462667" />
-    <state width="1322" height="207" key="GridCell.Tab.0.right" timestamp="1577941462668">
+    <state width="1322" height="159" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577945660126" />
+    <state width="1322" height="159" key="GridCell.Tab.0.right" timestamp="1577945660127">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="207" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577941462668" />
+    <state width="1322" height="159" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577945660127" />
   </component>
 </project>

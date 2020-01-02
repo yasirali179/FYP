@@ -102,10 +102,10 @@
 					<li><a href="{% url 'blogs' %}" title="Blog">Blogs</a></li>
 					<li><a href="#" title="Contact">Contact Us</a></li>
                      {% if username is not None %}
-                    <li><a  title="Login/ Signup" >Hi {{ username }}</a>
+                    <li><a  title=" Hi {{ username }}" >Hi {{ username }}</a>
 					<ul>
 							<li><a href="{% url 'login' %}">Profile</a></li>
-							<li><a href="{% url 'register' %}">Logout</a></li>
+							<li><a href="{% url 'logout' %}">Logout</a></li>
 
 						</ul>
 					</li>

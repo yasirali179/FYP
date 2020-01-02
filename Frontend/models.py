@@ -25,22 +25,22 @@ class Destinations(models.Model):
     display = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.Des_Id
+        return str(self.Des_Id)
 
 class Images(models.Model):
     img_id = models.PositiveIntegerField(default=0);
     img1 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
-    img2 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
-    img3 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
-    img4 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
-    img5 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
-    img6 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
-    img7 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
-    img8 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
-    img9 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
-    img10 = models.FileField(upload_to='Trip/', null=True, verbose_name="")
+    img2 = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
+    img3 = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
+    img4 = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
+    img5 = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
+    img6 = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
+    img7 = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
+    img8 = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
+    img9 = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
+    img10 = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
     def __str__(self):
-        return self.image
+        return str(self.img_id)
 
 class Required_Gear(models.Model):
     require_id = models.PositiveIntegerField(default=0);
@@ -55,7 +55,7 @@ class Required_Gear(models.Model):
     req9 = models.CharField(max_length=200, default='-');
     req10 = models.CharField(max_length=200, default='-');
     def __str__(self):
-        return self.req
+        return str(self.require_id)
 
 class Services(models.Model):
     service_id = models.PositiveIntegerField(default=0);
@@ -70,7 +70,7 @@ class Services(models.Model):
     ser9 = models.CharField(max_length=200, default='-');
     ser10 = models.CharField(max_length=200, default='-');
     def __str__(self):
-        return self.serv
+        return str(self.service_id)
 
 class Activities(models.Model):
     activity_id = models.PositiveIntegerField(default=0);
@@ -85,7 +85,7 @@ class Activities(models.Model):
     act9 = models.CharField(max_length=200, default='-');
     act10 = models.CharField(max_length=200, default='-');
     def __str__(self):
-        return self.activitiesFor
+        return str(self.activity_id)
 
 class Tour_Operator(models.Model):
     Op_Id = models.SlugField(max_length=150, unique=True, default=0);
@@ -103,7 +103,7 @@ class Review(models.Model):
     rev_good = models.CharField(max_length=5000, default='-');
     rev_bad = models.CharField(max_length=5000, default='-');
     def __str__(self):
-        return self.reviewFor
+        return str(self.reviewFor)
 
 class Trip(models.Model):
     Trip_Id = models.SlugField(max_length=150, unique=True, default=0);

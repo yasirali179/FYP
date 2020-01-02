@@ -963,12 +963,12 @@
                      {% csrf_token %}
 					<h3>Log in</h3>
 					<div class="f-item full-width">
-						<label for="email">E-mail address</label>
-						<input type="email" id="email" name="email" />
+						<label for="username">Username</label>
+						<input type="text" id="ns_name" name="ns_name"  required/>
 					</div>
 					<div class="f-item full-width">
 						<label for="password">Password</label>
-						<input type="password" id="password" name="password" />
+						<input type="password" id="password" name="password" required />
 					</div>
 					<div class="f-item checkbox full-width">
 						<input type="checkbox" id="remember_me" name="checkbox" />

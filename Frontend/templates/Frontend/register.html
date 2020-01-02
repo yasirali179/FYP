@@ -962,16 +962,16 @@
                      {% csrf_token %}
                     <h3>Register</h3>
 					<div class="f-item full-width">
-						<label for="f_name">Name and surname</label>
-						<input type="text" id="ns_name" name="ns_name" />
+						<label for="f_name">Username</label>
+						<input type="text" id="ns_name" name="ns_name"  required/>
 					</div>
 					<div class="f-item full-width">
-						<label for="email">E-mail address</label>
+						<label for="email">E-mail address (optional)</label>
 						<input type="email" id="email" name="email" />
 					</div>
 					<div class="f-item full-width">
 						<label for="password">Password</label>
-						<input type="password" id="password" name="password" />
+						<input type="password" id="password" name="password" required />
 					</div>
 					<div class="f-item checkbox full-width">
 						<input type="checkbox" id="newsletter_s" name="newsletter" />
