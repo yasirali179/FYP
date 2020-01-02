@@ -12,6 +12,7 @@ class Destinations(models.Model):
     Des_Id = models.SlugField(max_length=150, unique=True, default=0);
     Des_Name = models.CharField(max_length=200);
     imgs = models.ManyToManyField('Images', blank=True)
+    pic = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
     Des_H1 = models.CharField(max_length=2000);
     Des_Description1 = models.CharField(max_length=2000);
     state = models.CharField(max_length=200);
@@ -23,6 +24,8 @@ class Destinations(models.Model):
     Des_H1 = models.CharField(max_length=200);
     revs = models.ManyToManyField('Review', blank=True)
     display = models.BooleanField(default=False)
+    Op_review = models.CharField(max_length=11, default=0);
+    Op_rating = models.CharField(max_length=100, default=0);
 
     def __str__(self):
         return str(self.Des_Id)
@@ -89,14 +92,17 @@ class Activities(models.Model):
 
 class Tour_Operator(models.Model):
     Op_Id = models.SlugField(max_length=150, unique=True, default=0);
-    Op_Name = models.CharField(max_length=100);
+    pic = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
+    Operator_Name = models.CharField(max_length=100);
     Op_phone = models.CharField(max_length=11, default=0);
     Op_email = models.CharField(max_length=100, default=0);
+    Op_review = models.CharField(max_length=11, default=0);
+    Op_rating = models.CharField(max_length=100, default=0);
     def __str__(self):
-        return self.Op_Name
+        return self.Operator_Name
 
 class Review(models.Model):
-    Rev_Id = models.SlugField(max_length=150, unique=True, default=0);
+    Rev_Id = models.SlugField(max_length=150,    unique = True, default = 0);
     reviewFor = models.CharField(max_length=200);
     reviewBy = models.CharField(max_length=100, default="Anonymous");
     created_at = models.DateTimeField(auto_now_add=True);
@@ -109,6 +115,7 @@ class Trip(models.Model):
     Trip_Id = models.SlugField(max_length=150, unique=True, default=0);
     T_Name = models.CharField(max_length=200);
     imgs = models.ManyToManyField(Images, blank=True)
+    pic  = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
     Dest = models.ForeignKey(Destinations, on_delete=models.CASCADE, null=True, blank=True)
     reqs = models.ManyToManyField(Required_Gear, blank=True)
     noOfDays = models.PositiveIntegerField(default=0);
@@ -118,6 +125,15 @@ class Trip(models.Model):
     event_host = models.ForeignKey(Tour_Operator, on_delete=models. CASCADE, null=True, blank=True)
     revs = models.ManyToManyField(Review, blank=True)
     display = models.BooleanField(default=False)
+    price = models.PositiveIntegerField(default=0);
+    startLocation = models.CharField(max_length=200);
+    startDate = models.CharField(max_length=200);
     def __str__(self):
         return self.T_Name
 
+class Deal(models.Model):
+    deal_Id = models.SlugField(max_length=150, unique=True, default=0);
+    deal_Name = models.CharField(max_length=200);
+    pic  = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
+    def __str__(self):
+        return str(self.deal_Id)

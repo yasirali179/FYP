@@ -54,7 +54,8 @@
 				<ul class="slimmenu" id="nav">
 					<li><a href="{% url 'trips' %}" title=" ">One day Trips</a></li>
 					<li><a href="{% url 'trips' %}" title=" ">Multiple days Trips</a></li>
-					<li><a href="{% url 'Destinatins' %}" title=" ">Destinations</a></li>
+					<li><a href="{% url 'places' %}" title=" ">Destinations</a></li>
+                    <li><a href="{% url 'touroperator' %}" title=" ">Tour Operators</a></li>
 					<li><a href="#" title=" ">Wishlist</a></li>
 					<li><a href="{% url 'index' %}" title=" ">Bookings</a></li>
 					<li class="has-mega"><a  title="Pages">Deals</a>
@@ -157,23 +158,23 @@
 								<label for="Trips">Trips</label>
 							</div>
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="self_catering" value="form2" />
+								<input type="radio" name="radio" id="radioo2" value="form4" />
 								<label for="self_catering">Hotels</label>
 							</div>
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="flight" value="form3" />
+								<input type="radio" name="radio" id="radioo3" value="form2" />
 								<label for="flight">Destinatins</label>
 							</div>
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="cruise" value="form4" />
+								<input type="radio" name="radio" id="radioo4" value="form5" />
 								<label for="cruise">Weather</label>
 							</div>
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="flight_and_hotel" value="form5" />
+								<input type="radio" name="radio" id="radioo5" value="form3" />
 								<label for="flight_and_hotel">Tour Operator</label>
 							</div>
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="rent_a_car" value="form6" />
+								<input type="radio" name="radio" id="radioo6" value="form6" />
 								<label for="rent_a_car">Dates</label>
 							</div>
 						</div>
@@ -219,7 +220,7 @@
 								<div class="row">
 									<div class="f-item full-width">
 										<label for="destination1">Your destination</label>
-										<input type="text" placeholder="City, region, district or Place" id="destination2" name="destination" />
+										<input type="text" placeholder="City, region, district or Place" id="destinationn2" name="destinationn2" />
 									</div>
 								</div>
 							</div>
@@ -231,7 +232,7 @@
 								<div class="row">
 									<div class="f-item datepicker">
 										<label for="datepicker1">Destination date</label>
-										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker2" name="datepicker1" /></div>
+										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker12" name="datepicker12" /></div>
 									</div>
 
 								</div>
@@ -249,7 +250,7 @@
 								<div class="row">
 									<div class="f-item full-width">
 										<label for="destination1">Your destination</label>
-										<input type="text" placeholder="City, region, district or Place" id="destination3" name="destination" />
+										<input type="text" placeholder="City, region, district or Place" id="destinationn3" name="destinationn3" />
 									</div>
 								</div>
 							</div>
@@ -261,7 +262,7 @@
 								<div class="row">
 									<div class="f-item datepicker">
 										<label for="datepicker1">Destination date</label>
-										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker3" name="datepicker1" /></div>
+										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker13" name="datepicker13" /></div>
 									</div>
 
 								</div>
@@ -379,67 +380,42 @@
 				<div class="full-width">
 				
 					<!--latest offers-->
-					<header class="s-title">
-						<h2>Explore our latest offers</h2>
-					</header>
-					
+					<header class="s-title"><h2>Explore our latest offers</h2></header>
 					<div class="offers">
 						<div class="row">
 							<!--column-->
+                            {% for deal in deals %}
 							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/img1.jpg" alt="" /></a></figure>
+								<figure><a href="#" title=""><img src="{{deal.pic.url}}" alt="" style="height:200px;width:100%;background-size:cover;"/></a></figure>
 								<div class="details">
-									<h3>Watch Snowfall in Malam Jabba @ 30% off</h3>
+									<h3>{{ deal.deal_Name }}</h3>
 									<a href="#" title="Explore our deals" class="gradient-button">Explore our deals</a>
 								</div>
 							</article>
 							<!--//column-->
-							
+							{% endfor %}
 							<!--column-->
-							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/nathiagali.jpg" alt="" /></a></figure>
-								<div class="details">
-									<h3>Spend New Year‘s Eve in Nathiagali</h3>
-									<a href="#" title="More info" class="gradient-button">More info</a>
-								</div>
-							</article>
-							<!--//column-->
-							
-							<!--column-->
-							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/murree.jpg" alt="" /></a></figure>
-								<div class="details">
-									<h3> Hot weekends offers in the Murree</h3>
-									<a href="#" title="Explore our deals" class="gradient-button">Explore our deals</a>
-								</div>
-							</article>
-							<!--//column-->
-							
-							<!--column-->
-							<article class="one-fourth">
-								<figure><a href="#" title=""><img src="images/uploads/thailand.jpg" alt="" /></a></figure>
-								<div class="details">
-									<h3>Our weekly top offer: Azad Kashmir</h3>
-									<a href="#" title="More info" class="gradient-button">More info</a>
-								</div>
-							</article>
-							<!--//column-->
+
 						</div>
 					</div>
 					<!--//latest offers-->
-					
-					<header class="s-title">
-						<h2>Top Attractive Places around the Pakistan</h2>
-					</header>
-					
-					<!--top destinations-->
-					<div class="destinations">
+
+
+
+
+
+
+
+
+					<header class="s-title"><h2>Top Attractive Places around the Pakistan</h2></header>
+                    <div class="destinations">
 						<div class="row">
+                            {% for dest in destinations %}
 							<article class="one-fourth">
-                                <figure><a href="{% url 'Dest' %}" title=""><img src="{% static 'Frontend/images/uploads/murree.jpg'%}" alt="" /></a></figure>
+                                <figure><a href="Destinations/{{ dest.Des_Id }}" title=""><img src="{{dest.pic.url}}" alt="" style="height:200px;width:100%;background-size:cover;"/></a></figure>
                                 <div class="details">
                                     <!--<a href="location.html" title="View all" class="gradient-button">View all</a>-->
-                                    <h4>Skardu</h4> <span class="count">102 Rreviews</span>
+                                    <h4>{{dest.Des_Name}}</h4> <span class="count">{{dest.Op_review}} Rreviews</span>
                                     <span class="stars">
                                         <i class="material-icons">&#xE838;</i>
                                         <i class="material-icons">&#xE838;</i>
@@ -447,54 +423,87 @@
                                         <i class="material-icons">&#xE838;</i>
                                     </span>
                                     <span class="count">Average Rating</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">4.5</span>
+                                    <span class="">{{dest.Op_rating}}</span>
                                     <span class="count">Total Trips</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <span class="">150</span>
                                 </div>
                             </article>
+                            {% endfor %}
 						</div>
 					</div>
 					<!--//top destinations-->
-			<div class="full-width">
-					<header class="s-title">
-						<h2>Most popular Trips</h2>
-					</header>
-					
+
+
+
+
+
+					<header class="s-title"><h2>Most popular Trips</h2></header>
 					<div class="deals">
 						<div class="row">
 							<!--deal-->
+                            {% for trip in trips %}
                                 <article class="one-fourth">
                                     <figure>
-                                        <a href="{% url 'trip' %}" >
-                                            <img  src="{% static 'Frontend/images/uploads/murree.jpg'%}"  width="270" height="152" /></a>
+                                        <a href="Trip/{{ trip.Trip_Id }}" >
+                                            <img  src="{{trip.pic.url}}" style="height:200px;width:100%;background-size:cover;"  /></a>
                                     </figure>
                                     <div class="details">
-                                        <a href="{% url 'trip' %}">
-                                            <h3>Trip to Saiful Malook Naran</h3>
+                                        <a href="Trip/{{ trip.Trip_Id }}">
+                                            <h3>{{trip.T_Name}}</h3>
                                         </a>
-                                        <span class="date"> 1st Jan </span>
+                                        <span class="date"> {{trip.startDate}} </span>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									    <span class="days"> 2 Days/1 Night </span>
-                                        <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. 29,000</em></span>
-										<div class="description"> <p>Starting Location: Islamabad</p> </div>
-                                        <a href="/holiday-package/saiful-malook-naran-tour-2-days-1-night-30070" title="Book now" class="gradient-button">Book now</a>
+									    <span class="days"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
+                                        <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. {{trip.price}}</em></span>
+										<div class="description"> <p>Starting Location: {{trip.startLocation}}</p> </div>
+                                        <a href="#" title="Book now" class="gradient-button">Book now</a>
                                     </div>
                                 </article>
 								
-
+                                {% endfor %}
 								
 								</div>
 								</div>
-			
-					<!--info boxes-->
+
+
+
+			        <header class="s-title"><h2>Top Top Operators</h2></header>
+                    <div class="destinations">
+						<div class="row">
+                            {% for op in operators %}
+							<article class="one-fourth">
+                                <figure><a href="Operator/{{ op.Op_Id }}" title=""><img src="{{op.pic.url}}" alt="" style="height:200px;width:100%;background-size:cover;"/></a></figure>
+                                <div class="details">
+
+                                    <h4>{{op.Operator_Name}}</h4> <span class="count">{{op.Op_review}} Rreviews</span>
+                                    <span class="stars">
+                                        <i class="material-icons">&#xE838;</i>
+                                        <i class="material-icons">&#xE838;</i>
+                                        <i class="material-icons">&#xE838;</i>
+                                        <i class="material-icons">&#xE838;</i>
+                                    </span>
+                                    <span class="count">Average Rating</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="">{{op.Op_rating}}</span>
+                                    <span class="count">Total Trips</span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="">150</span>
+                                </div>
+                            </article>
+                            {% endfor %}
+						</div>
+					</div>
+
+
+
+                    <!--info boxes-->
 					<div class="boxes">
 						<div class="row">
 						<!--column-->
 						<article class="one-fourth">
 							<div>
 								<h4>Handpicked Hotels</h4>
-								<p>All Book Your Travel Hotels fulfil strict selection criteria. Each hotel is chosen individually and inclusion cannot be bought. </p>
+								<p>All Book Your Travel  fulfil strict selection criteria. Each bookin is chosen individually and inclusion cannot be bought. </p>
 							</div>
 						</article>
 						<!--//column-->
@@ -530,7 +539,7 @@
 						<article class="one-fourth">
 							<div>
 								<h4>Best Price Guarantee</h4>
-								<p>We offer the best hotels at the best prices. If you find the same room category on the same dates cheaper elsewhere, we will refund the difference. Guaranteed, and quickly. </p>
+								<p>We offer the best hotels at the best prices. If you find the same trip category on the same dates cheaper elsewhere, we will refund the difference. Guaranteed, and quickly. </p>
 							</div>
 						</article>
 						<!--//column-->
@@ -564,9 +573,10 @@
 					</div>
 				</div>
 					<!--//info boxes-->
-				</div>
+
 			</div>
 		</div>
+        </div>
 	</main>
 	<!--//main-->
 	

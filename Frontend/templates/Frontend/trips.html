@@ -62,7 +62,7 @@
 				<ul class="slimmenu" id="nav">
 					<li><a href="{% url 'trips' %}" title=" ">One day Trips</a></li>
 					<li><a href="{% url 'trips' %}" title=" ">Multiple days Trips</a></li>
-					<li><a href="{% url 'Dest' %}" title=" ">Destinations</a></li>
+					<li><a href="{% url 'places' %}" title=" ">Destinations</a></li>
 					<li><a href="#" title=" ">Wishlist</a></li>
 					<li><a href="{% url 'index' %}" title=" ">Bookings</a></li>
 					<li class="has-mega"><a  title="Pages">Deals</a>
@@ -706,25 +706,26 @@
 					<div class="deals">
 						<div class="row">
 							<!--deal-->
+                            {% for trip in trips %}
                                 <article class="one-fourth">
                                     <figure>
-                                        <a href="{% url 'trip' %}" >
-                                            <img  src="{% static 'Frontend/images/uploads/nathiagali.jpg'%}"  width="270" height="152" /></a>
+                                        <a href="trip/{{ trip.Trip_Id }}" >
+                                            <img  src="{{trip.pic.url}}"  style="height:200px;width:100%;background-size:cover;" /></a>
                                     </figure>
                                     <div class="details">
-                                        <a href="{% url 'trip' %}">
-                                            <h3>Trip to Saiful Malook Naran</h3>
+                                        <a href="trip/{{ trip.Trip_Id }}">
+                                            <h3>{{trip.T_Name}}</h3>
                                         </a>
-                                        <span class="date"> 1st Jan </span>
+                                        <span class="date"> {{trip.startDate}} </span>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									    <span class="days"> 2 Days/1 Night </span>
-                                        <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. 29,000</em></span>
-										<div class="description"> <p>Starting Location: Islamabad</p> </div>
-                                        <a href="/holiday-package/saiful-malook-naran-tour-2-days-1-night-30070" title="Book now" class="gradient-button">Book now</a>
+									    <span class="days"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
+                                        <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. {{trip.price}}</em></span>
+										<div class="description"> <p>Starting Location: {{trip.startLocation}}</p> </div>
+                                        <a href=#" title="Book now" class="gradient-button">Book now</a>
                                     </div>
                                 </article>
 
-
+                            {% endfor %}
 
 								</div>
 								</div>

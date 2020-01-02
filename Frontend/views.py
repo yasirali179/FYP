@@ -6,17 +6,45 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def index(request):
-    usrname= request.session.get("username", None)
-
-    context = {
-        'username': usrname,
-        'trips': Trip.objects.filter(display=True),
-        'destination': Destinations.objects.filter(display=True),
-    }
+    type=0
+    tripp=None
+    destt=None
+    oprr=None
     if request.method == 'POST':
-        username = request.POST.get("datepicker11")
-        print(username)
-    return render(request,'Frontend/index.html',context)
+        radio = request.POST.get("radio")
+        print(radio)
+        if radio == "form1":
+            dest = request.POST.get("destinationn1")
+            date = request.POST.get("datepicker11")
+            type=1
+            tripp=Trip.objects.filter(T_Name__contains="dest")
+        if radio == "form2":
+            dest = request.POST.get("destinationn2")
+            date = request.POST.get("datepicker12")
+            type=2
+            destt=Destinations.objects.filter(T_Name__contains="dest")
+        if radio == "form3":
+            dest = request.POST.get("destinationn3")
+            date = request.POST.get("datepicker13")
+            type=3
+            oprr=Tour_Operator.objects.filter(T_Name__contains="dest")
+        context = {
+            'username': request.session.get("username", None),
+            'trips': tripp,
+            'destinations': destt,
+            'operators': oprr,
+            'type': type,
+        }
+        return render(request, 'Frontend/search_results.html',context)
+    else:
+        context = {
+            'username': request.session.get("username", None),
+            'trips': Trip.objects.filter(display=True),
+            'destinations': Destinations.objects.filter(display=True),
+            'deals': Deal.objects.all(),
+            'operators': Tour_Operator.objects.all(),
+        }
+        return render(request,'Frontend/index.html',context)
 
 
 def login(request):
@@ -50,7 +78,7 @@ def register(request):
         else:
             c = User.objects.create(U_Name=username, U_pswd=password, U_email=email)
             request.session["username"] = c.U_Name
-            return redirect(reverse('index'))
+            return redirect(reverse('index',))
     return render(request,'Frontend/register.html')
 
 
@@ -60,7 +88,13 @@ def logout(request):
 
 
 def trips(request):
-    return render(request,'Frontend/trips.html')
+    trips=Trip.objects.all()
+    context = {
+
+        'username': request.session.get("username", None),
+        'trips' : Trip.objects.all()
+    }
+    return render(request,'Frontend/trips.html',context)
 def trip(request):
     return render(request,'Frontend/trip.html')
 def blog(request):
@@ -68,13 +102,33 @@ def blog(request):
 def blogs(request):
     return render(request,'Frontend/blog.html')
 
-def Dest(request):
-    return render(request, 'Frontend/Dest.html')
-def Destinatins(request):
-    return render(request, 'Frontend/Destinatins.html')
+def Places(request):
+    context = {
+        'username': request.session.get("username", None),
+        'destinations': Destinations.objects.all(),
+    }
+    return render(request, 'Frontend/places.html',context)
 
+def place(request):
+
+    return render(request, 'Frontend/place.html')
+
+def touroperator(request):
+    context = {
+        'username': request.session.get("username", None),
+        'operators': Tour_Operator.objects.all(),
+    }
+    return render(request, 'Frontend/touroperators.html',context)
 
 def search_results(request):
-    return render(request,'Frontend/search_results.html')
+    context = {
+        'username': request.session.get("username", None),
+        'trips': Trip.objects.filter(display=True),
+        'destinations': Destinations.objects.filter(display=True),
+        'deals': Deal.objects.all(),
+        'operators': Tour_Operator.objects.all(),
+        'type':'1',
+    }
+    return render(request,'Frontend/search_results.html',context)
 
 
