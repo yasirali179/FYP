@@ -24,7 +24,7 @@
 				<section class="three-fourth">
 				
 				    <h1>{{p.T_Name}}</h1>
-				
+				<figure><img src="{{p.pic.url}}" alt=" " /></figure>
 					<!--gallery-->
 					<div class="gallery">
 						<ul id="image-gallery" class="cS-hidden">
@@ -85,7 +85,7 @@
 							</ul>
 							
 							<h3>Duration</h3>
-							<p> 2 Days/1 Night </p>
+							<p> {{p.noOfDays}} Days/{{p.noOfNights}} Night </p>
 							
 						</article>
 					</section>
@@ -154,8 +154,9 @@
 							<h2>Event Host</h2>
 							<div class="text-wrap">	
 								<h4>Tour Operator</h4>
-								<p>Sk Tours
-								<br>Contact: +92 333 1234567</p>
+								<p>{{p.event_host.Operator_Name}}
+								<br>Contact: {{p.event_host.Op_phone}}
+                                <br>Email: {{ p.event_host.Op_email }}</p>
 							</div>
 						</article>
 					</section>

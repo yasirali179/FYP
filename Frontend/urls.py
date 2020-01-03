@@ -12,6 +12,7 @@ urlpatterns = [
     path('Destinations/<slug:articalvalue>', place, name="place"),
     path('Places', Places, name="places"),
     path('Operator/<slug:articalvalue>', operator, name="operator"),
+    path('Operator/Trip/<slug:articalvalue>', trip, name="trip"),
     path('Operator', touroperator, name="touroperator"),
     path('Login', login, name="login"),
     path('Register', register, name="register"),

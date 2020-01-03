@@ -28,7 +28,7 @@ class Destinations(models.Model):
     Op_rating = models.CharField(max_length=100, default=0);
 
     def __str__(self):
-        return str(self.Des_Id)
+        return str(self.Des_Name)
 
 class Images(models.Model):
     img_id = models.PositiveIntegerField(default=0);

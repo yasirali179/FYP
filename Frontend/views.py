@@ -6,7 +6,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def index(request):
-
     if request.method == 'POST':
         radio = request.POST.get("radio")
         request.session["radio"] = radio
@@ -135,6 +134,8 @@ def trips2(request):
     }
     return render(request,'Frontend/trips.html',context)
 def trip(request,articalvalue):
+    obj=Trip.objects.get(Trip_Id=articalvalue)
+
     if request.method == 'POST':
         radio = request.POST.get("radio")
         request.session["radio"] = radio
@@ -144,12 +145,13 @@ def trip(request,articalvalue):
         return redirect(reverse('search_results'))
     context = {
         'username': request.session.get("username", None),
-        'p': Trip.objects.get(Trip_Id=articalvalue)
+        'p':obj,
     }
     return render(request,'Frontend/trip.html',context)
 
 def operator(request,articalvalue):
-    print(articalvalue)
+    obj=Tour_Operator.objects.get(Op_Id=articalvalue)
+    obj1=Trip.objects.filter(event_host=obj)
     if request.method == 'POST':
         radio = request.POST.get("radio")
         request.session["radio"] = radio
@@ -159,7 +161,8 @@ def operator(request,articalvalue):
         return redirect(reverse('search_results'))
     context = {
         'username': request.session.get("username", None),
-        'p': Tour_Operator.objects.get(Op_Id=articalvalue)
+        'p':obj,
+        'trips': obj1
     }
     return render(request,'Frontend/operator.html',context)
 

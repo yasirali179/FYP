@@ -2,87 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/static/Frontend/images/txt/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/operator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/2-1_5AxkgOi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/8_erDYZbR.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/download_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/download_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/hunsa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/img_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/nathiagali.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/saiful-malook.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/skardu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/trip_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/trip_2_dnjQmuq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/trip_2_hFEV0SV.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/trip_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/trip_6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/trip_6_f4KvLYX.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Trip/trip_6_pJHoqq1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/txt/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/static/Frontend/images/txt/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/amsterdam.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/avatar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/car1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/car2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/car3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/car4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/cruise1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/cruise2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/cruise3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/cruise4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/cruise5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/cruise6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/get_inspired9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/hero_bg_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/hotel1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/hotel2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/hotel3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/hotel4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/hotel5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/hotel6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/london1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/london2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/london3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/london4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/venice.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/blog_single.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/blog_single.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/place.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/place.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/places.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/places.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/search_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/touroperators.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/touroperators.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/operator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/operator.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trips.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trips.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
@@ -284,6 +207,8 @@
       <workItem from="1577977948049" duration="1821000" />
       <workItem from="1577979830982" duration="673000" />
       <workItem from="1577984272934" duration="5772000" />
+      <workItem from="1578009391364" duration="722000" />
+      <workItem from="1578010156966" duration="1596000" />
     </task>
     <servers />
   </component>
@@ -319,22 +244,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1577979416124" />
-    <state width="1322" height="2" key="GridCell.Tab.0.bottom" timestamp="1577990170476">
+    <state width="1322" height="106" key="GridCell.Tab.0.bottom" timestamp="1578011755754">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577990170476" />
-    <state width="1322" height="2" key="GridCell.Tab.0.center" timestamp="1577990170475">
+    <state width="1322" height="106" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578011755754" />
+    <state width="1322" height="106" key="GridCell.Tab.0.center" timestamp="1578011755753">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577990170475" />
-    <state width="1322" height="2" key="GridCell.Tab.0.left" timestamp="1577990170475">
+    <state width="1322" height="106" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578011755753" />
+    <state width="1322" height="106" key="GridCell.Tab.0.left" timestamp="1578011755753">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577990170475" />
-    <state width="1322" height="2" key="GridCell.Tab.0.right" timestamp="1577990170476">
+    <state width="1322" height="106" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578011755753" />
+    <state width="1322" height="106" key="GridCell.Tab.0.right" timestamp="1578011755754">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577990170476" />
+    <state width="1322" height="106" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578011755754" />
     <state x="413" y="170" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1577970008498">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
