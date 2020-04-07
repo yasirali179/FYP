@@ -171,3 +171,24 @@ class newsfeed(models.Model):
 
     def __str__(self):
         return self.Title
+
+class News_Sraping_Url(models.Model):
+    Url_title=models.CharField(max_length=200, default=0);
+    url = models.URLField();
+
+    def __str__(self):
+        return self.Url_title
+
+class Trips_Sraping_Url(models.Model):
+    Url_title = models.CharField(max_length=200, default=0);
+    url = models.URLField();
+
+    def __str__(self):
+        return self.Url_title
+
+class Trips_Operators_Sraping_Url(models.Model):
+    Url_title = models.CharField(max_length=200, default=0);
+    url = models.URLField();
+
+    def __str__(self):
+        return self.Url_title

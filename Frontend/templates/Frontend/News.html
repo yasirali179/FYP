@@ -1,0 +1,139 @@
+﻿{% extends 'Frontend/repeater.html' %}
+{% load static %}
+{% block content %}
+	<main class="main">		
+		<div class="wrap">
+			<!--breadcrumbs-->
+			<nav class="breadcrumbs">
+				<!--crumbs-->
+				<ul>
+					<li><a href="#" title="Home">Home</a></li> 
+					<li>News</li>
+				</ul>
+				<!--//crumbs-->
+			</nav>
+			<!--//breadcrumbs-->
+			
+			<div class="row">
+				<!--three-fourth content-->
+				<div class="three-fourth">
+					<!--post-->
+                    {% for N in news %}
+					<article class="static-content post">
+						<header class="entry-header">
+							<h2><a href="#">{{ N.Title }}</a></h2>
+							<p class="entry-meta">
+								<span class="date">Date: {{N.date}}</span>
+								<span class="author">By: {{N.Source}}</span>
+								<span class="tags">Tags:
+									<a rel="category tag" title="View all posts in Travel" href="#">Travel</a>, 
+									<a rel="category tag" title="View all posts in Photography" href="#">Photography</a>
+								</span>
+								<span class="comments"><a href="#">4 Comments</a></span>
+							</p>
+						</header>
+						<div class="entry-featured"><a href="#"><figure><img src="{{N.url}}" alt="" /></figure></a></div>
+						<div class="entry-content">
+							<p> {{N.description}}</p>
+							<a href="blog_single.html" class="gradient-button">Continue reading</a>
+						</div>
+					</article>
+
+                    {% endfor %}
+
+					
+					<!--bottom navigation-->
+					<div class="bottom-nav">
+						<!--back up button-->
+						<a href="#" class="scroll-to-top" title="Back up">Back up</a> 
+						<!--//back up button-->
+						
+						<!--pager-->
+						<div class="pager">
+							<span><a href="#">First page</a></span>
+							<span><a href="#">&lt;</a></span>
+							<span class="current">1</span>
+							<span><a href="#">2</a></span>
+							<span><a href="#">3</a></span>
+							<span><a href="#">4</a></span>
+							<span><a href="#">5</a></span>
+							<span><a href="#">6</a></span>
+							<span><a href="#">7</a></span>
+							<span><a href="#">8</a></span>
+							<span><a href="#">&gt;</a></span>
+							<span><a href="#">Last page</a></span>
+						</div>
+						<!--//pager-->
+					</div>
+					<!--//bottom navigation-->
+				</div>
+				<!--//three-fourth content-->
+				
+				<!--sidebar-->
+				<aside class="one-fourth right-sidebar">
+
+					<!--Need Help Booking?-->
+					<article class="widget">
+						<h4>Need Help</h4>
+						<p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your holiday needs.</p>
+						<p class="number">1- 555 - 555 - 555</p>
+					</article>
+					<!--//Need Help Booking?-->
+
+					<!--Why us?-->
+					<article class="widget">
+						<h4>Why us?</h4>
+						<h5>Best Recommendation</h5>
+						<p>Get the best suggestions, or get the best trip recommendation free of cost.</p>
+						<h5>Best Platform</h5>
+						<p>140+ travelling companies 3 million guest reviews</p>
+						<h5>We’re Always Here</h5>
+						<p>Call or email us, anytimeGet 24-hour support before, during, and after your trip</p>
+					</article>
+					<!--//Why us?-->
+
+
+
+
+
+				<!--//sidebar-->
+					<!--//Why Book with us?-->
+					
+					<!--Blog search-->
+					<article class="widget">
+						<h4>Search</h4>
+						<p> </p>
+						<div class="row">
+							<div class="f-item full-width">
+								<input type="search" id="blogsearch" name="blogsearch" placeholder="Search the blog" />
+							</div>
+							<div class="f-item full-width">
+								<input type="submit" id="blogsearchsubmit" name="blogsearchsubmit" value="Search" class="gradient-button" />
+							</div>
+						</div>
+					</article>
+					<!--//Blog search-->
+					
+					<!--Blog archives-->
+					<article class="widget">
+						<h4>Archive</h4>
+						<ul>
+							<li><a href="#">December 2016</a></li>
+							<li><a href="#">November 2016</a></li>
+							<li><a href="#">October 2016</a></li>
+							<li><a href="#">September 2016</a></li>
+							<li><a href="#">August 2016</a></li>
+						</ul>
+					</article>
+					<!--//Blog archives-->
+					
+					<!--Deal of the day-->
+
+				</aside>
+				<!--//sidebar-->
+			</div>
+			<!--//main content-->
+		</div>
+	</main>
+	<!--//main-->
+	{% endblock %}

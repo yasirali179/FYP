@@ -25,11 +25,11 @@ admin.site.register(NewsLetterEmails)
 
 
 class EventAdminSite(AdminSite):
-    site_header = "UMSRA Events Admin"
-    site_title = "UMSRA Events Admin Portal"
-    index_title = "Welcome to UMSRA Researcher Events Portal"
+    site_header = "Tour Operator Admin Panel"
+    site_title = "Tour Operator Admin Panel"
+    index_title = "Welcome to Tour Operator Admin Panel"
 
-event_admin_site = EventAdminSite(name='event_admin')
+event_admin_site = EventAdminSite(name='Tour Operator')
 
 
 event_admin_site.register(NewsLetterEmails)

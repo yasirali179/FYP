@@ -1,0 +1,223 @@
+﻿{% extends 'Frontend/repeater.html' %}
+{% load static %}
+{% block content %}
+	
+	<!--main-->
+	<main class="main">		
+		<div class="wrap">
+			<!--breadcrumbs-->
+			<nav class="breadcrumbs">
+				<!--crumbs-->
+				<ul>
+					<li><a href="#" title="Home">Home</a></li> 
+					<li><a href="#" title="Blog">Blog</a></li> 
+					<li>Blog post</li>                                       
+				</ul>
+				<!--//crumbs-->
+			</nav>
+			<!--//breadcrumbs-->
+			
+			<div class="row">
+				<!--three-fourth content-->
+				<div class="three-fourth">
+					<!--post-->
+					<article class="static-content post">
+						<header class="entry-header">
+							<h1>Hunza Valley</h1>
+							<p class="entry-meta">
+								<span class="date">Date: February 10, 2019</span> 
+								<span class="author">By: admin</span> 
+								<span class="tags">Tags:
+									<a rel="category tag" title="View all posts in Travel" href="#">Travel</a>, 
+									<a rel="category tag" title="View all posts in Photography" href="#">Photography</a>
+								</span>
+								<span class="comments"><a href="#">4 Comments</a></span>
+							</p>
+						</header>
+						<div class="entry-featured"><figure><img src="{% static 'Frontend/s/hunza/hu.jpg'%}" alt="" /></figure></div>
+						<div class="entry-content">
+							<h2>Hunza Valley</h2>
+							<p><strong>Hunza known as Heaven on Earth, located in Gilgit-Baltistan region of Pakistan. Situated at north/west of Hunza River, surrounded by several high peaks including Rakaposhi, Hunza Peak, BojahagurDuanasir II, Darmyani Peak, Ghenta Sar, Ultar Sar and Ladyfinger Peak.</strong></p>
+							<p>Much renowned Hunza valley is often referred to as heaven on earth, enveloped in the grand Himalayas and the Karakoram mountain ranges, this place has been a great tourist attraction for many years.</p>
+							<blockquote><i class="fa fa-3x fa-pull-left fa-quote-left"></i> Hunza appears as a jewl among beautiful and serene valleys of Gilgit-Baltistan region of Pakistan.From winters to spring, the nature seems to be in a transition period.The enchanting sights of nature make worth watching views.</blockquote>
+							<p>Hunza is probably Pakistan's most visited valley, by the tourists. It is a fairy tale land surrounded by beautiful rugged & snow capped mountains. Only at a distance of 100 Kms. from Gilgit Hunza is a small town on Karakorum Highway. At the altitude of 7000 - 800 feet it is the first main town or stop.It is a spectacular journey through some of the most interesting villages of Karakorum Highway</p>
+
+						</div>
+					</article>
+					<!--//post-->
+					
+					<!--comments-->
+					<div class="comments">
+						<h2>4 comments</h2>	
+						<!--single comment-->
+						<div class="comment depth-0">
+							<div class="third">
+								<figure><img alt="avatar" src="{% static 'Frontend/images/uploads/avatar.jpg' %}" /></figure>
+								<address>
+									<span>Admin</span><br />
+									22.3.2019
+								</address>
+							</div>
+							<div class="comment-content">Hunza is one of the beautiful places on Earth</div>
+							<a href="#" class="reply">Reply</a>
+						</div>
+						<!--//single comment-->
+						
+						<!--single comment-->
+						<div class="comment depth-0">
+							<div class="third">
+								<figure><img alt="avatar" src="{% static 'Frontend/images/uploads/avatar.jpg' %}" /></figure>
+								<address>
+									<span>Admin</span><br />
+									22.3.2019
+								</address>
+							</div>
+							<div class="comment-content">Hunza is one of the beautiful places on Earth</div>
+							<a href="#" class="reply">Reply</a>
+						</div>
+						<!--//single comment-->
+						
+						<!--single comment-->
+						<div class="comment depth-1">
+							<div class="third">
+								<figure><img alt="avatar" src="{% static 'Frontend/images/uploads/avatar.jpg' %}" /></figure>
+								<address>
+									<span>Admin</span><br />
+									22.3.2019
+								</address>
+							</div>
+							<div class="comment-content">Hunza is one of the beautiful places on Earth</div>
+							<a href="#" class="reply">Reply</a>
+						</div>
+						<!--//single comment-->
+						
+						<!--single comment-->
+						<div class="comment depth-2">
+							<div class="third">
+								<figure><img alt="avatar" src="{% static 'Frontend/images/uploads/avatar.jpg' %}" /></figure>
+								<address>
+									<span>Admin</span><br />
+									22.3.2019
+								</address>
+							</div>
+							<div class="comment-content">Hunza is one of the beautiful places on Earth</div>
+							<a href="#" class="reply">Reply</a>
+						</div>
+						<!--//single comment-->
+						
+						<!--single comment-->
+						<div class="comment depth-0">
+							<div class="third">
+								<figure><img alt="avatar" src="{% static 'Frontend/images/uploads/avatar.jpg' %}" /></figure>
+								<address>
+									<span>Admin</span><br />
+									22.3.2019
+								</address>
+							</div>
+							<div class="comment-content">Hunza is one of the beautiful places on Earth</div>
+							<a href="#" class="reply">Reply</a>
+						</div>
+						<!--//single comment-->
+						
+						<!--post comment form-->
+						<article class="post-comment static-content">
+							<h3>Leave a reply</h3>
+							<form class="row">
+								<div class="f-item full-width">
+									<label for="name">Name</label>
+									<input type="text" id="name" />
+								</div>
+								<div class="f-item full-width">
+									<label for="eadress">E-mail</label>
+									<input type="email" id="eadress" />
+								</div>
+								<div class="f-item full-width">
+									<label for="comment">Comment</label>
+									<textarea id="comment" rows="10" cols="10"></textarea>
+								</div>
+								<div class="f-item full-width">
+									<input type="submit" value="Submit comment" class="gradient-button" />
+								</div>
+							</form>
+						</article>
+						<!--//post comment form-->
+					</div>
+					<!--//comments-->
+					
+					<!--bottom navigation-->
+					<div class="bottom-nav">
+						<!--back up button-->
+						<a href="#" class="scroll-to-top" title="Back up">Back up</a> 
+						<!--//back up button-->
+					</div>
+					<!--//bottom navigation-->
+				</div>
+				<!--//three-fourth content-->
+				<aside class="one-fourth right-sidebar">
+
+					<!--Need Help Booking?-->
+					<article class="widget">
+						<h4>Need Help</h4>
+						<p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your holiday needs.</p>
+						<p class="number">1- 555 - 555 - 555</p>
+					</article>
+					<!--//Need Help Booking?-->
+
+					<!--Why us?-->
+					<article class="widget">
+						<h4>Why us?</h4>
+						<h5>Best Recommendation</h5>
+						<p>Get the best suggestions, or get the best trip recommendation free of cost.</p>
+						<h5>Best Platform</h5>
+						<p>140+ travelling companies 3 million guest reviews</p>
+						<h5>We’re Always Here</h5>
+						<p>Call or email us, anytimeGet 24-hour support before, during, and after your trip</p>
+					</article>
+					<!--//Why us?-->
+
+
+
+
+
+				<!--//sidebar-->
+					<!--//Why Book with us?-->
+
+					<!--Blog search-->
+					<article class="widget">
+						<h4>Search</h4>
+						<p> </p>
+						<div class="row">
+							<div class="f-item full-width">
+								<input type="search" id="blogsearch" name="blogsearch" placeholder="Search the blog" />
+							</div>
+							<div class="f-item full-width">
+								<input type="submit" id="blogsearchsubmit" name="blogsearchsubmit" value="Search" class="gradient-button" />
+							</div>
+						</div>
+					</article>
+					<!--//Blog search-->
+
+					<!--Blog archives-->
+					<article class="widget">
+						<h4>Archive</h4>
+						<ul>
+							<li><a href="#">December 2016</a></li>
+							<li><a href="#">November 2016</a></li>
+							<li><a href="#">October 2016</a></li>
+							<li><a href="#">September 2016</a></li>
+							<li><a href="#">August 2016</a></li>
+						</ul>
+					</article>
+					<!--//Blog archives-->
+
+					<!--Deal of the day-->
+
+				</aside>
+			</div>
+			<!--//main content-->
+		</div>
+	</main>
+	<!--//main-->
+	
+
+	{% endblock %}

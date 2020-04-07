@@ -9,21 +9,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def index(request):
-    import requests
-    main_url = " https://newsapi.org/v2/everything?q=tourism-Pakistan&apiKey=5cc0c4c87f07471b8aa8acf009fbbd10"
-    open_bbc_page = requests.get(main_url).json()
-    article = open_bbc_page["articles"]
-    results = []
-
-    for ar in article:
-        abc=newsfeed.objects.create()
-        abc.Title=ar["title"]
-        a = ar["source"]
-        abc.Source=a["name"]
-        abc.date=ar["publishedAt"]
-        abc.description=ar["description"]
-        abc.url=ar["urlToImage"]
-        abc.save()
 
     if request.method == 'POST':
         radio = request.POST.get("radio")
@@ -323,3 +308,34 @@ def Subscribe_NewsLetter(request):
     else:
         data = "Enter valid Email"
     return HttpResponse(data)
+
+
+def News_single(request):
+    return render(request, 'Frontend/News_single.html')
+
+
+def News(request):
+    context = {
+        'news': newsfeed.objects.all(),
+    }
+    return render(request, 'Frontend/News.html',context)
+
+def Scrap(request):
+    import requests
+
+    main_url = "https://newsapi.org/v2/everything?q=tourism-Pakistan&apiKey=5cc0c4c87f07471b8aa8acf009fbbd10"
+    open_bbc_page = requests.get(main_url).json()
+    article = open_bbc_page["articles"]
+    results = []
+
+    for ar in article:
+        abc = newsfeed.objects.create()
+        abc.Title = ar["title"]
+        a = ar["source"]
+        abc.Source = a["name"]
+        abc.date = ar["publishedAt"]
+        abc.description = ar["description"]
+        abc.url = ar["urlToImage"]
+        abc.save()
+
+    return redirect(reverse('index'))
