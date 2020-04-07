@@ -105,7 +105,7 @@
                      {% if username is not None %}
                     <li><a  title=" Hi {{ username }}" >Hi {{ username }}</a>
 					<ul>
-							<li><a href="{% url 'login' %}">Profile</a></li>
+							<li><a href="{% url 'adminprofile' %}">Profile</a></li>
 							<li><a href="{% url 'logout' %}">Logout</a></li>
 
 						</ul>
@@ -421,14 +421,39 @@
 				<!--column-->
 				<article class="one-fourth">
 					<h6>Don’t miss our exclusive offers</h6>
-					<form id="newsletter" action="#" method="post">
+					<form id="prospects_form" >
 						<fieldset>
-							<input type="email" id="newsletter_signup" name="newsletter_signup" placeholder="Enter your email here" />
-							<input type="submit" id="newsletter_submit" name="newsletter_submit" value="Signup" class="gradient-button" />
+							<input type="email" id="EmailID1" name="newsletter_signup" placeholder="Enter your email here" required />
+							<input type="submit" id="newsletter_submit" name="newsletter_submit"  onclick="Myfun()" value="Signup" class="gradient-button" />
 						</fieldset>
+                         <label id="label1"></label>
 					</form>
 				</article>
 				<!--//column-->
+                 <script>
+                        function Myfun() {
+                           var abc=document.getElementById("EmailID1").value;
+                          $.ajax({
+                              type:"GET",
+                              url: '/ajax/Subscribe_NewsLetter/',
+                              data:{
+                                     EmailID: abc
+                                },
+                            success: function (data) {
+                                document.getElementById("label1").innerHTML = data;
+                            },
+                              failure: function(data) {
+                                  alert('Got an error dude');
+                              }
+
+                          });
+                        }
+
+
+                        $("#prospects_form").submit(function(e) {
+                            e.preventDefault();
+                        });
+                 </script>
 
 				<div class="bottom full-width">
 					<p > </p>

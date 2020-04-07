@@ -137,3 +137,37 @@ class Deal(models.Model):
     pic  = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
     def __str__(self):
         return str(self.deal_Id)
+
+class NewsLetterEmails(models.Model):
+    Email=models.CharField(max_length=200);
+    def __str__(self):
+        return self.Email
+
+class Destination_History(models.Model):
+    Destination_Name = models.ForeignKey(Destinations, on_delete=models.CASCADE, null=True, blank=True)
+    count=models.PositiveIntegerField(default=0)
+    def __str__(self):
+        return self.Destination_Name.Des_Name
+
+class Trip_History(models.Model):
+    Trip_Name= models.ForeignKey(Trip, on_delete=models.CASCADE, null=True, blank=True)
+    count=models.PositiveIntegerField(default=0)
+    def __str__(self):
+        return self.Trip_Name.T_Name
+
+class Tour_Operator_History(models.Model):
+    Tour_Operator_Name= models.ForeignKey(Tour_Operator, on_delete=models.CASCADE, null=True, blank=True)
+    count=models.PositiveIntegerField(default=0)
+    def __str__(self):
+        return self.Tour_Operator_Name.Operator_Name
+
+
+class newsfeed(models.Model):
+    Title= models.CharField(max_length=200, default=0);
+    Source= models.CharField(max_length=200, default=0);
+    description= models.CharField(max_length=1000, default=0);
+    url=models.URLField();
+    date= models.CharField(max_length=100, default=0);
+
+    def __str__(self):
+        return self.Title

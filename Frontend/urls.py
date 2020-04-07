@@ -1,4 +1,8 @@
+from django.conf.urls import url
 from django.urls import path
+
+from Frontend import admin
+
 from Frontend.views import *
 
 urlpatterns = [
@@ -18,5 +22,6 @@ urlpatterns = [
     path('Register', register, name="register"),
     path('search_results', search_results, name="search_results"),
     path('logout', logout, name="logout"),
+    url(r'^ajax/Subscribe_NewsLetter/$', Subscribe_NewsLetter, name='Subscribe_NewsLetter'),
 
 ]

@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0017_newsletteremails.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0018_destination_history_tour_operator_history_trip_history.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0019_newsfeed.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0020_auto_20200407_1902.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/adminprofile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FYP/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/FYP/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/operator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/operator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/static/Frontend/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/static/Frontend/images/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/places.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/places.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/search_results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/touroperators.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/touroperators.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trips.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trips.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
@@ -45,6 +59,13 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="Frontend_newsfeed: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
         <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
@@ -57,8 +78,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -85,6 +106,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -92,10 +114,10 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\FYP\Frontend\templates\Frontend" />
+      <recent name="D:\FYP\Frontend\static\Frontend\images" />
       <recent name="D:\FYP\Frontend\static\Frontend\images\txt" />
       <recent name="D:\FYP\media\Trip" />
       <recent name="D:\FYP\Frontend\static\Frontend\css" />
-      <recent name="D:\FYP\Frontend\static\Frontend\img" />
     </key>
   </component>
   <component name="RunManager">
@@ -209,6 +231,21 @@
       <workItem from="1577984272934" duration="5772000" />
       <workItem from="1578009391364" duration="722000" />
       <workItem from="1578010156966" duration="1596000" />
+      <workItem from="1578023774633" duration="3890000" />
+      <workItem from="1578174393625" duration="367000" />
+      <workItem from="1578174974556" duration="383000" />
+      <workItem from="1578239775294" duration="166000" />
+      <workItem from="1578677958951" duration="612000" />
+      <workItem from="1578907615617" duration="41000" />
+      <workItem from="1578978777813" duration="840000" />
+      <workItem from="1580373187549" duration="937000" />
+      <workItem from="1580663666452" duration="376000" />
+      <workItem from="1582917377414" duration="1585000" />
+      <workItem from="1583391538485" duration="1413000" />
+      <workItem from="1583763438540" duration="2544000" />
+      <workItem from="1585996264571" duration="12780000" />
+      <workItem from="1586267006628" duration="3629000" />
+      <workItem from="1586271836051" duration="1105000" />
     </task>
     <servers />
   </component>
@@ -232,38 +269,42 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="274" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577944116175">
+    <state x="168" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583391612670">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="274" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1577944116175" />
+    <state x="168" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1583391612669" />
     <state x="0" y="0" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577870278796">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1577870278796" />
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1577979416124">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1586019841882">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1577979416124" />
-    <state width="1322" height="106" key="GridCell.Tab.0.bottom" timestamp="1578011755754">
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586019841882" />
+    <state width="1322" height="54" key="GridCell.Tab.0.bottom" timestamp="1586272950401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="106" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578011755754" />
-    <state width="1322" height="106" key="GridCell.Tab.0.center" timestamp="1578011755753">
+    <state width="1322" height="54" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586272950401" />
+    <state width="1322" height="54" key="GridCell.Tab.0.center" timestamp="1586272950401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="106" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578011755753" />
-    <state width="1322" height="106" key="GridCell.Tab.0.left" timestamp="1578011755753">
+    <state width="1322" height="54" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586272950401" />
+    <state width="1322" height="54" key="GridCell.Tab.0.left" timestamp="1586272950400">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="106" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578011755753" />
-    <state width="1322" height="106" key="GridCell.Tab.0.right" timestamp="1578011755754">
+    <state width="1322" height="54" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586272950400" />
+    <state width="1322" height="54" key="GridCell.Tab.0.right" timestamp="1586272950401">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="106" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578011755754" />
-    <state x="413" y="170" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1577970008498">
+    <state width="1322" height="54" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586272950401" />
+    <state x="10" y="0" key="SettingsEditor" timestamp="1583764462491">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="170" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1577970008498" />
+    <state x="10" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1583764462491" />
+    <state x="413" y="170" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1583391900407">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="170" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1583391900407" />
     <state x="494" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577984880113">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
