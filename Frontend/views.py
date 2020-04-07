@@ -143,13 +143,12 @@ def trips2(request):
 
 def trip(request, articalvalue):
     obj = Trip.objects.get(Trip_Id=articalvalue)
+    reviews=Review.objects.filter(reviewFor=obj.T_Name)
 
     Trip_History.objects.get_or_create(Trip_Name=obj)
     abc = Trip_History.objects.get(Trip_Name=obj)
     abc.count = abc.count + 1
     abc.save()
-
-
     if request.method == 'POST':
         radio = request.POST.get("radio")
         request.session["radio"] = radio
@@ -160,6 +159,7 @@ def trip(request, articalvalue):
     context = {
         'username': request.session.get("username", None),
         'p': obj,
+        'revs':reviews,
     }
     return render(request, 'Frontend/trip.html', context)
 

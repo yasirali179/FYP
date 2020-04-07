@@ -206,70 +206,25 @@
 							<h2>Reviews</h2>
 							<ul class="reviews">
 								<!--review-->
+                                {% for rev in revs %}
 								<li>
 									<figure class="left">
 										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
-										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
+										<address><span>{{rev.reviewBy}}</span><br /><br />{{rev.created_at}}</address>
 									</figure>
-									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
-									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
-								</li>
+									<div class="rev "><p>{{rev.rev_good}}</p></div>
+									</li>
 								<!--//review-->
-								
+								{% endfor %}
 								<!--review-->
 								<li>
-									<figure class="left">
-										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
-										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
-									</figure>
-									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
-									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
-								</li>
+							        <input  id="review" name=" " placeholder="Place your Review" required />
+                                    <input type="submit" id="newsletter_submit" name="newsletter_submit"  onclick="Myfun()" value="Submit" class="gradient-button" />
+                                    <label id="label1"></label>
+                                </li>
 								<!--//review-->
-								
-								<!--review-->
-								<li>
-									<figure class="left">
-										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
-										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
-									</figure>
-									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
-									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
-								</li>
-								<!--//review-->
-								
-								<!--review-->
-								<li>
-									<figure class="left">
-										<img src="{% static 'Frontend//uploads/avatar.jpg' %}" alt="avatar" />
-										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
-									</figure>
-									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
-									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
-								</li>
-								<!--//review-->
-								
-								<!--review-->
-								<li>
-									<figure class="left">
-										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
-										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
-									</figure>
-									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
-									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
-								</li>
-								<!--//review-->
-								
-								<!--review-->
-								<li>
-									<figure class="left">
-										<img src="{% static 'Frontend//uploads/avatar.jpg' %}" alt="avatar" />
-										<address><span>Anonymous</span><br />Solo Traveller<br />22/06/2016</address>
-									</figure>
-									<div class="rev pro"><p>Excellent service from beginning till end of the trip. All arrangements were amazing especially the guide was very nice.</p></div>
-									<div class="rev con"><p>Not up to commitment! Changed the hotels on the day of check-in without any reason. The hotel staff was completely unprofessional.</p></div>
-								</li>
-								<!--//review-->
+
+
 							</ul>
 						</article>
 					</section>
