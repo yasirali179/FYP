@@ -128,6 +128,7 @@ class Trip(models.Model):
     price = models.PositiveIntegerField(default=0);
     startLocation = models.CharField(max_length=200);
     startDate = models.CharField(max_length=200);
+    active=models.BooleanField(default=False)
     def __str__(self):
         return self.T_Name
 

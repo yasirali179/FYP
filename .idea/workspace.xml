@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0021_news_sraping_url_trips_operators_sraping_url_trips_sraping_url.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/News.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/News_single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0022_trip_active.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
@@ -236,7 +233,8 @@
       <workItem from="1586267006628" duration="3629000" />
       <workItem from="1586271836051" duration="1105000" />
       <workItem from="1586273093480" duration="2241000" />
-      <workItem from="1586284463546" duration="286000" />
+      <workItem from="1586284463546" duration="704000" />
+      <workItem from="1586286304942" duration="2630000" />
     </task>
     <servers />
   </component>
@@ -272,22 +270,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586019841882" />
-    <state width="1322" height="8" key="GridCell.Tab.0.bottom" timestamp="1586279436984">
+    <state width="1322" height="121" key="GridCell.Tab.0.bottom" timestamp="1586288867658">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="8" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586279436984" />
-    <state width="1322" height="8" key="GridCell.Tab.0.center" timestamp="1586279436984">
+    <state width="1322" height="121" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586288867658" />
+    <state width="1322" height="121" key="GridCell.Tab.0.center" timestamp="1586288867657">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="8" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586279436984" />
-    <state width="1322" height="8" key="GridCell.Tab.0.left" timestamp="1586279436983">
+    <state width="1322" height="121" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586288867657" />
+    <state width="1322" height="121" key="GridCell.Tab.0.left" timestamp="1586288867657">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="8" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586279436983" />
-    <state width="1322" height="8" key="GridCell.Tab.0.right" timestamp="1586279436984">
+    <state width="1322" height="121" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586288867657" />
+    <state width="1322" height="121" key="GridCell.Tab.0.right" timestamp="1586288867658">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="8" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586279436984" />
+    <state width="1322" height="121" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586288867658" />
     <state x="10" y="0" key="SettingsEditor" timestamp="1583764462491">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -296,9 +294,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="170" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1583391900407" />
-    <state x="494" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577984880113">
+    <state x="494" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586287882991">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="494" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1577984880113" />
+    <state x="494" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1586287882991" />
   </component>
 </project>

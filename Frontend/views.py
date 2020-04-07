@@ -322,20 +322,20 @@ def News(request):
 
 def Scrap(request):
     import requests
-
-    main_url = "https://newsapi.org/v2/everything?q=tourism-Pakistan&apiKey=5cc0c4c87f07471b8aa8acf009fbbd10"
-    open_bbc_page = requests.get(main_url).json()
-    article = open_bbc_page["articles"]
-    results = []
-
-    for ar in article:
-        abc = newsfeed.objects.create()
-        abc.Title = ar["title"]
-        a = ar["source"]
-        abc.Source = a["name"]
-        abc.date = ar["publishedAt"]
-        abc.description = ar["description"]
-        abc.url = ar["urlToImage"]
-        abc.save()
-
+    urls=News_Sraping_Url.objects.all()
+    for url in urls:
+        main_url=url.url
+        # main_url = "https://newsapi.org/v2/everything?q=tourism-Pakistan&apiKey=5cc0c4c87f07471b8aa8acf009fbbd10"
+        open_bbc_page = requests.get(main_url).json()
+        article = open_bbc_page["articles"]
+        results = []
+        for ar in article:
+            abc = newsfeed.objects.create()
+            abc.Title = ar["title"]
+            a = ar["source"]
+            abc.Source = a["name"]
+            abc.date = ar["publishedAt"]
+            abc.description = ar["description"]
+            abc.url = ar["urlToImage"]
+            abc.save()
     return redirect(reverse('index'))

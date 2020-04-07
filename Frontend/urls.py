@@ -26,6 +26,7 @@ urlpatterns = [
     path('search_results', search_results, name="search_results"),
     path('logout', logout, name="logout"),
     url(r'^ajax/Subscribe_NewsLetter/$', Subscribe_NewsLetter, name='Subscribe_NewsLetter'),
-    path('Operator/', event_admin_site.urls),
+    path('myoperator/', event_admin_site.urls),
     path('scrap', Scrap, name="Scrap"),
+
 ]
