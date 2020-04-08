@@ -218,18 +218,38 @@
 								{% endfor %}
 								<!--review-->
 								<li>
-							        <input  id="review" name=" " placeholder="Place your Review" required />
-                                    <input type="submit" id="newsletter_submit" name="newsletter_submit"  onclick="Myfun()" value="Submit" class="gradient-button" />
-                                    <label id="label1"></label>
+							        <input  id="review" name=" " placeholder="Place your Review" />
+                                    <input type="submit" onclick="Myfuni({{ p.Trip_Id }})" value="Submit" class="gradient-button" />
+                                    <label id="label11"></label>
                                 </li>
 								<!--//review-->
-
 
 							</ul>
 						</article>
 					</section>
 					<!--//Reviews-->
-					
+					 <script>
+                        function Myfuni(hhhh) {
+                           var abc=document.getElementById("review").value;
+                            document.getElementById("label11").innerHTML="wait"
+                          $.ajax({
+                              type:"GET",
+                              url: '/ajax/Add_Review/',
+                              dataType: 'json',
+                              data:{
+                                     Item_id: hhhh,
+                                     content: abc,
+                                },
+                            success: function (data) {
+                                document.getElementById("label11").innerHTML = data.message;
+                            },
+                              failure: function(data) {
+                                  alert('Got an error dude');
+                              }
+
+                          });
+                        }
+                        </script>
 				</section>
 				<!--//trip content-->
 				

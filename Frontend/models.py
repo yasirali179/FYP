@@ -102,7 +102,6 @@ class Tour_Operator(models.Model):
         return self.Operator_Name
 
 class Review(models.Model):
-    Rev_Id = models.SlugField(max_length=150,    unique = True, default = 0);
     reviewFor = models.CharField(max_length=200);
     reviewBy = models.CharField(max_length=100, default="Anonymous");
     created_at = models.DateTimeField(auto_now_add=True);

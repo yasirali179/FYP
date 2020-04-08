@@ -28,6 +28,8 @@ admin.site.register(Trip_History)
 admin.site.register(Tour_Operator_History)
 admin.site.register(newsfeed)
 admin.site.register(NewsLetterEmails)
+admin.site.register(News_Sraping_Url)
+
 
 
 
@@ -35,9 +37,9 @@ admin.site.register(NewsLetterEmails)
 
 
 class EventAdminSite(AdminSite):
-    site_header = "UMSRA Events Admin"
-    site_title = "UMSRA Events Admin Portal"
-    index_title = "Welcome to UMSRA Researcher Events Portal"
+    site_header = "Tour Operator Admin"
+    site_title = "Tour Operator Admin Portal"
+    index_title = "Welcome to Tour Operator Portal"
 
 event_admin_site = EventAdminSite(name='event_admin')
 

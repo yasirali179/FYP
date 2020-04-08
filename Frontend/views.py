@@ -1,8 +1,13 @@
+from datetime import datetime
+
+
 from django.http import HttpResponse
-from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from Frontend.models import *
+from bs4 import BeautifulSoup as soup
+from urllib.request import urlopen as uReq
+
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
@@ -121,7 +126,7 @@ def trips1(request):
         return redirect(reverse('search_results'))
     context = {
         'username': request.session.get("username", None),
-        'trips': Trip.objects.filter(noOfDays=1)
+        'trips': Trip.objects.filter(noOfDays=1,active=True)
     }
     return render(request, 'Frontend/trips.html', context)
 
@@ -136,14 +141,14 @@ def trips2(request):
         return redirect(reverse('search_results'))
     context = {
         'username': request.session.get("username", None),
-        'trips': Trip.objects.filter(noOfDays__gt=1),
+        'trips': Trip.objects.filter(noOfDays__gt=1,active=True),
     }
     return render(request, 'Frontend/trips.html', context)
 
 
 def trip(request, articalvalue):
     obj = Trip.objects.get(Trip_Id=articalvalue)
-    reviews=Review.objects.filter(reviewFor=obj.T_Name)
+    reviews=Review.objects.filter(reviewFor=obj.Trip_Id)
 
     Trip_History.objects.get_or_create(Trip_Name=obj)
     abc = Trip_History.objects.get(Trip_Name=obj)
@@ -167,7 +172,6 @@ def trip(request, articalvalue):
 def operator(request, articalvalue):
     obj = Tour_Operator.objects.get(Op_Id=articalvalue)
     obj1 = Trip.objects.filter(event_host=obj)
-
 
     Tour_Operator_History.objects.get_or_create(Tour_Operator_Name=obj)
     abc = Tour_Operator_History.objects.get(Tour_Operator_Name=obj)
@@ -320,12 +324,41 @@ def News(request):
     }
     return render(request, 'Frontend/News.html',context)
 
-def Scrap(request):
+def tripScrap(request):
+    my_url = 'https://pakistantourntravel.com/tours/hunza-valley-tour-package/'
+    uClient = uReq(my_url)
+    page_html = uClient.read()
+    uClient.close()
+    page_soup = soup(page_html, "html.parser")
+    containers = page_soup.findAll("div", {"class": "wpb_column vc_column_container vc_col-sm-4"})
+    # print(len(containers))
+
+    for container in containers:
+        print(container.div.h2.a.text)
+        price = container.findAll("div", {"class": "ts-teaser-text ts-teaser-auto"})
+        print(price[0].text)
+
+    myurl = 'https://www.travelo.pk/packages.php'
+    uClients = uReq(myurl)
+    pageHtml = uClients.read()
+    uClients.close()
+    pageSoup = soup(pageHtml, "html.parser")
+    Containers = pageSoup.findAll("div", {"class": "col-sm-4"})
+    # print(len(Containers))
+
+    for Container in Containers:
+        print(Container.div.img["alt"])
+        price = Container.findAll("div", {"class": "price"})
+        print(price[0].text)
+
+    return redirect(reverse('index'))
+
+def newsScrap(request):
     import requests
-    urls=News_Sraping_Url.objects.all()
+    urls = News_Sraping_Url.objects.all()
     for url in urls:
-        main_url=url.url
-        # main_url = "https://newsapi.org/v2/everything?q=tourism-Pakistan&apiKey=5cc0c4c87f07471b8aa8acf009fbbd10"
+        main_url = url.url
+        main_url = "https://newsapi.org/v2/everything?q=tourism-Pakistan&apiKey=5cc0c4c87f07471b8aa8acf009fbbd10"
         open_bbc_page = requests.get(main_url).json()
         article = open_bbc_page["articles"]
         results = []
@@ -338,4 +371,44 @@ def Scrap(request):
             abc.description = ar["description"]
             abc.url = ar["urlToImage"]
             abc.save()
+    return redirect(reverse('index'))
+
+def Add_Review(request):
+    Trip_name = request.GET['Item_id']
+    content = request.GET['content']
+    print(Trip_name)
+    abc=Review.objects.create(reviewFor=Trip_name)
+    abc.rev_good=content
+    dateTimeObj = datetime.now()
+    abc.created_at=timestampStr = dateTimeObj.strftime("%H:%M:%S - %b %d %Y")
+    username=request.session.get("username", None)
+    if username is not None:
+        abc.reviewBy=username
+    abc.save();
+    data = "added sucessfully"
+    return HttpResponse(data)
+
+def sorting(request):
+    obj = Trip_History.objects.order_by('-count')
+    print("----------------------------------------")
+    print("Top trending Trips  ")
+    i = 1
+    for x in obj:
+        print(i, x.Trip_Name, x.count, )
+        i = i + 1
+    obj = Destination_History.objects.order_by('-count')
+    print("----------------------------------------")
+    print("Top trending Destinations  ")
+    i = 1
+    for x in obj:
+        print(i, x.Destination_Name, x.count, )
+        i = i + 1
+
+    obj = Tour_Operator_History.objects.order_by('-count')
+    print("----------------------------------------")
+    print("Top trending Tour Operators ")
+    i = 1
+    for x in obj:
+        print(i, x.Tour_Operator_Name, x.count, )
+        i = i + 1
     return redirect(reverse('index'))
