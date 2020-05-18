@@ -57,7 +57,6 @@
 					<li><a href="{% url 'places' %}" title=" ">Destinations</a></li>
                     <li><a href="{% url 'touroperator' %}" title=" ">Tour Operators</a></li>
 					<li><a href="#" title=" ">Wishlist</a></li>
-					<li><a href="{% url 'index' %}" title=" ">Bookings</a></li>
 					<li class="has-mega"><a  title="Pages">Deals</a>
 					<ul class="mega">
 							<li>
@@ -102,6 +101,7 @@
 					<li><a href="{% url 'News' %}" title=" ">News</a></li>
 					<li><a href="{% url 'blogs' %}" title="Blog">Blogs</a></li>
 					<li><a href="#" title="Contact">Contact Us</a></li>
+                    <li><a href="{% url 'cart' %}" title=" ">Cart [0]</a></li>
                      {% if username is not None %}
                     <li><a  title=" Hi {{ username }}" >Hi {{ username }}</a>
 					<ul>

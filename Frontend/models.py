@@ -192,3 +192,9 @@ class Trips_Operators_Sraping_Url(models.Model):
 
     def __str__(self):
         return self.Url_title
+
+
+
+class cart(models.Model):
+    User = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    reqs = models.ManyToManyField(Required_Gear, blank=True)
