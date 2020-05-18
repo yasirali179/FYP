@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0023_remove_review_rev_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0024_auto_20200518_2218.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0025_auto_20200518_2316.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/static/Frontend/images/uploads/avatar.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/News.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/News.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/static/Frontend/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/views.py" afterDir="false" />
@@ -49,7 +51,7 @@
         <item name="Django default" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="Frontend_newsfeed: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="Frontend_review: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -80,7 +82,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -89,23 +90,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Frontend/templates/Frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LE" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FYP\media" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\FYP\Frontend\static\Frontend\images\uploads" />
       <recent name="D:\FYP\Frontend\templates\Frontend" />
       <recent name="D:\FYP\Frontend\static\Frontend\images" />
       <recent name="D:\FYP\Frontend\static\Frontend\images\txt" />
       <recent name="D:\FYP\media\Trip" />
-      <recent name="D:\FYP\Frontend\static\Frontend\css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\FYP\media" />
     </key>
   </component>
   <component name="RunManager">
@@ -133,28 +134,6 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:Django default" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:Django default" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@301434a1" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -248,7 +227,18 @@
       <workItem from="1586284463546" duration="704000" />
       <workItem from="1586286304942" duration="4564000" />
       <workItem from="1586297762915" duration="3025000" />
-      <workItem from="1586329667086" duration="6506000" />
+      <workItem from="1586329667086" duration="10192000" />
+      <workItem from="1589223192971" duration="200000" />
+      <workItem from="1589223785670" duration="604000" />
+      <workItem from="1589230867330" duration="746000" />
+      <workItem from="1589618993793" duration="1065000" />
+      <workItem from="1589738085610" duration="783000" />
+      <workItem from="1589739795643" duration="2695000" />
+      <workItem from="1589799640122" duration="2250000" />
+      <workItem from="1589802175362" duration="1497000" />
+      <workItem from="1589819908413" duration="170000" />
+      <workItem from="1589820370810" duration="3185000" />
+      <workItem from="1589824019890" duration="1907000" />
     </task>
     <servers />
   </component>
@@ -276,34 +266,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="168" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1583391612669" />
-    <state x="0" y="0" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577870278796">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1589821116398">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1577870278796" />
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1586019841882">
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589821116398" />
+    <state width="1322" height="2" key="GridCell.Tab.0.bottom" timestamp="1589825836473">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586019841882" />
-    <state width="1322" height="166" key="GridCell.Tab.0.bottom" timestamp="1586340967178">
+    <state width="1322" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589825836473" />
+    <state width="1322" height="2" key="GridCell.Tab.0.center" timestamp="1589825836472">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="166" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586340967178" />
-    <state width="1322" height="166" key="GridCell.Tab.0.center" timestamp="1586340967177">
+    <state width="1322" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589825836472" />
+    <state width="1322" height="2" key="GridCell.Tab.0.left" timestamp="1589825836471">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="166" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586340967177" />
-    <state width="1322" height="166" key="GridCell.Tab.0.left" timestamp="1586340967177">
+    <state width="1322" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589825836471" />
+    <state width="1322" height="2" key="GridCell.Tab.0.right" timestamp="1589825836472">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="166" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586340967177" />
-    <state width="1322" height="166" key="GridCell.Tab.0.right" timestamp="1586340967177">
+    <state width="1322" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589825836472" />
+    <state x="10" y="0" key="SettingsEditor" timestamp="1589619028993">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="166" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586340967177" />
-    <state x="10" y="0" key="SettingsEditor" timestamp="1586331464778">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="10" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586331464778" />
+    <state x="10" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1589619028993" />
     <state x="413" y="170" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1586333200616">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

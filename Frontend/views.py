@@ -1,20 +1,16 @@
+import json
 from datetime import datetime
-
-
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from Frontend.models import *
 from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen as uReq
-
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
 
 # Create your views here.
 
 def index(request):
-
     if request.method == 'POST':
         radio = request.POST.get("radio")
         request.session["radio"] = radio
@@ -149,7 +145,6 @@ def trips2(request):
 def trip(request, articalvalue):
     obj = Trip.objects.get(Trip_Id=articalvalue)
     reviews=Review.objects.filter(reviewFor=obj.Trip_Id)
-
     Trip_History.objects.get_or_create(Trip_Name=obj)
     abc = Trip_History.objects.get(Trip_Name=obj)
     abc.count = abc.count + 1
@@ -376,17 +371,14 @@ def newsScrap(request):
 def Add_Review(request):
     Trip_name = request.GET['Item_id']
     content = request.GET['content']
-    print(Trip_name)
     abc=Review.objects.create(reviewFor=Trip_name)
     abc.rev_good=content
-    dateTimeObj = datetime.now()
-    abc.created_at=timestampStr = dateTimeObj.strftime("%H:%M:%S - %b %d %Y")
-    username=request.session.get("username", None)
-    if username is not None:
-        abc.reviewBy=username
-    abc.save();
-    data = "added sucessfully"
-    return HttpResponse(data)
+    abc.reviewBy=request.session.get("username", "Anonymouse")
+    abc.save()
+    data = {
+        'message':"Comment Added Sucessfully",
+    }
+    return HttpResponse(json.dumps(data))
 
 def sorting(request):
     obj = Trip_History.objects.order_by('-count')

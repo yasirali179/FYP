@@ -43,7 +43,8 @@
                                 <figure><a href="Destinations/{{ dest.Des_Id }}" title=""><img src="{{dest.pic.url}}" alt="" style="height:200px;width:100%;background-size:cover;"/></a></figure>
                                 <div class="details">
                                     <!--<a href="location.html" title="View all" class="gradient-button">View all</a>-->
-                                    <h4>{{dest.Des_Name}}</h4> <span class="count">{{dest.Op_review}} Rreviews</span>
+                                    <h4>{{dest.Des_Name}}</h4>
+                                    <span class="count">{{dest.Op_review}} Rreviews</span>
                                     <span class="stars">
                                         <i class="material-icons">&#xE838;</i>
                                         <i class="material-icons">&#xE838;</i>
@@ -74,16 +75,22 @@
                                 <article class="one-fourth">
                                     <figure>
                                         <a href="Trip/{{ trip.Trip_Id }}" >
-                                            <img  src="{{trip.pic.url}}" style="height:200px;width:100%;background-size:cover;"  /></a>
+                                            <img  src="{{trip.pic.url}}" style="height:200px;width:100%;"/></a>
                                     </figure>
                                     <div class="details">
                                         <a href="Trip/{{ trip.Trip_Id }}">
                                             <h3>{{trip.T_Name}}</h3>
                                         </a>
-                                        <span class="date"> {{trip.startDate}} </span>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									    <span class="days"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
-                                        <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. {{trip.price}}</em></span>
+                                        <div class="date">
+                                            <div style="text-align: left;display: inline">{{trip.startDate}}</div>
+                                            <div style="text-align: right;display: inline">{{trip.startDate}}</div>
+                                        </div>
+                                        <span  style="text-align: right"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
+                                        <span class="price" >
+                                            <meta itemprop="currency" content="PKR" />
+                                                    Price (per person)
+                                            <em itemprop="price">Rs. {{trip.price}}</em>
+                                        </span>
 										<div class="description"> <p>Starting Location: {{trip.startLocation}}</p> </div>
                                         <a href="#" title="Book now" class="gradient-button">Book now</a>
                                     </div>

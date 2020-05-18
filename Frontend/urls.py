@@ -1,9 +1,7 @@
 from django.conf.urls import url
 from django.urls import path
-
 from Frontend import admin
 from Frontend.admin import event_admin_site
-
 from Frontend.views import *
 
 urlpatterns = [
@@ -31,5 +29,4 @@ urlpatterns = [
     path('tripscrap/', tripScrap, name="Scrap"),
     path('newsscrap/', newsScrap, name="newsScrap"),
     path('sort/', sorting, name="sort"),
-
 ]

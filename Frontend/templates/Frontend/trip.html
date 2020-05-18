@@ -206,6 +206,7 @@
 							<h2>Reviews</h2>
 							<ul class="reviews">
 								<!--review-->
+
                                 {% for rev in revs %}
 								<li>
 									<figure class="left">
@@ -216,11 +217,34 @@
 									</li>
 								<!--//review-->
 								{% endfor %}
+                            <li>
+									<figure class="left">
+										<address><span>Anonymous</span><br />22/06/2016</address>
+									</figure>
+									<div class="rev pro"><p>It was a warm friendly place. Too close to nature and lush green trees freshen my mind.</p></div>
+
+								</li>
+								<!--//review-->
 								<!--review-->
-								<li>
-							        <input  id="review" name=" " placeholder="Place your Review" />
+                                <li id="cmnt" style="display: none">
+									<figure class="left">
+										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
+										<address><span> {{ username }}</span><br /><br />Now</address>
+									</figure>
+									<div class="rev "><p id="revdes"></p></div>
+									</li>
+								<li style="background-color: red">
+                                    {% if username is not None %}
+                                    <figure class="left">
+										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
+										<address><span>Anonymous</span><br />Solo Traveller North way<br />22/06/2016</address>
+									</figure>
+							        <input  id="reviewww" style="border: black 1px dotted " name=" " placeholder="Place your Review" />
                                     <input type="submit" onclick="Myfuni({{ p.Trip_Id }})" value="Submit" class="gradient-button" />
                                     <label id="label11"></label>
+                                    {% else %}
+                                    <label> Please login for add review</label>
+                                    {% endif %}
                                 </li>
 								<!--//review-->
 
@@ -230,7 +254,7 @@
 					<!--//Reviews-->
 					 <script>
                         function Myfuni(hhhh) {
-                           var abc=document.getElementById("review").value;
+                           var content=document.getElementById("reviewww").value;
                             document.getElementById("label11").innerHTML="wait"
                           $.ajax({
                               type:"GET",
@@ -238,10 +262,14 @@
                               dataType: 'json',
                               data:{
                                      Item_id: hhhh,
-                                     content: abc,
+                                     content: content,
                                 },
                             success: function (data) {
-                                document.getElementById("label11").innerHTML = data.message;
+                                document.getElementById("label11").innerHTML = data.message.toString();
+                                document.getElementById("label11").innerHTML="endwait"
+                                document.getElementById("revdes").innerHTML=content;
+                                document.getElementById("cmnt").style.display="block"
+
                             },
                               failure: function(data) {
                                   alert('Got an error dude');

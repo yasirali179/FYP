@@ -390,9 +390,10 @@ aside .widget h5			{font:700 14px 'Open Sans', Helvetica, Arial, sans-serif;padd
 .offers .details h3	a 			{color:#454545;font-weight:600;}
 .destinations .details 		{text-align:left;}
 .details 							{text-align:center;float:left;display:block;position:relative;background:#fff;padding:13px 15px 15px;width:100%;-webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);-moz-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);box-shadow:0 0 2px rgba(0, 0, 0, 0.1);}
-.details h3						{text-align:left;padding:0 75px 5px 0;}
+.details h3						{text-align:left;padding:0 75px 5px 0;height:70px;}
 .details .address				{text-align:left;display:inline-block;width:100%;color:#858585;padding:0 65px 12px 0;}
 .details .stars					{text-align:left;position:absolute;top:18px;right:15px;}
+.details .date                  { background-color: red}
 .stars    							{text-align:left;float:right;}
 .stars i  							{display:inline;float:left;color:#FFC904;font-size:16px;}
 .rating								{text-align:left;position:absolute;padding:0 0 0 19px;display:inline-block;float:right;white-space:nowrap;top:44px;right:15px;}
@@ -636,7 +637,7 @@ div.tags     		{border-top:1px solid #ccc;padding:18px 0 0;margin:0 0 15px;width
 .reviews li figure img 	{float:left;margin-right:15px;}
 .reviews address   			{font-size:11px;font-style:normal;}
 .reviews address span  	{font-size:12px;font-weight:600;}
-.reviews .rev   					{position:relative;padding:0 0 20px 32px;display:table;width:65%;float:right;}
+.reviews .rev   					{position:relative;padding:20px 0 20px 32px;display:table;width:65%;float:right;}
 .reviews .rev:before 		{position:absolute;top:0;left:0;width:22px;height:22px;line-height:22px;float:left;text-align:center;font-size:16px;font-weight:700;-webkit-border-radius:11px;-moz-border-radius:11px;border-radius:11px;color:#fff;}
 .reviews .pro:before		{content:"+";background:#43a047;}
 .reviews .con:before		{content:"-";background:#E14242;line-height:18px;font-size:21px;font-weight:700;}
@@ -1140,4 +1141,12 @@ section.error 		{text-align:center;}
 
 @media screen and (max-width: 380px) {
 .get_inspired li {height:220px;}
+}
+
+
+.dates{
+    text-align: left;
+}
+.dayss{
+    text-align: right;
 }
