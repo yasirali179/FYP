@@ -182,7 +182,32 @@
                     {% else %}
                     {% endif %}
 
+                         <script>
+                        function range(hhhh) {
+                           var content=document.getElementById("reviewww").value;
+                            document.getElementById("label11").innerHTML="wait"
+                          $.ajax({
+                              type:"GET",
+                              url: '/ajax/Add_Review/',
+                              dataType: 'json',
+                              data:{
+                                     Item_id: hhhh,
+                                     content: content,
+                                },
+                            success: function (data) {
+                                document.getElementById("label11").innerHTML = data.message.toString();
+                                document.getElementById("label11").innerHTML="endwait"
+                                document.getElementById("revdes").innerHTML=content;
+                                document.getElementById("cmnt").style.display="block"
 
+                            },
+                              failure: function(data) {
+                                  alert('Got an error dude');
+                              }
+
+                          });
+                        }
+                        </script>
 
 						<!--bottom navigation-->
 						<div class="bottom-nav">

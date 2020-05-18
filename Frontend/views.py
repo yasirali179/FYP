@@ -160,6 +160,7 @@ def trip(request, articalvalue):
         'username': request.session.get("username", None),
         'p': obj,
         'revs':reviews,
+        'totalreviews': reviews.count(),
     }
     return render(request, 'Frontend/trip.html', context)
 
@@ -375,8 +376,10 @@ def Add_Review(request):
     abc.rev_good=content
     abc.reviewBy=request.session.get("username", "Anonymouse")
     abc.save()
+
     data = {
         'message':"Comment Added Sucessfully",
+        'totalreviews':Review.objects.filter(reviewFor=Trip_name).count(),
     }
     return HttpResponse(json.dumps(data))
 
