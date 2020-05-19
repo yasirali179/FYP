@@ -30,22 +30,22 @@
 						    </thead>
 						    <tbody>
                              {% for user in users %}
-                                      <tr class="text-center" id="abc{{ user.items.id }}">
-                                        <td class="product-remove" onclick="remove({{ user.items.id }},1)"><a ><span class="ion-ios-close"></span></a></td>
+                                      <tr class="text-center" id="abc{{ user.items.Trip_Id }}">
+                                        <td class="product-remove" onclick="remove({{ user.items.Trip_Id }},1)"><a ><span class="ion-ios-close"></span></a></td>
                                         <td class="image-prod" >
-                                            <div href="item/{{ user.items.Item_Id }}"class="img" style="background-image:url({{ user.items.Item_Pic.url }});"></div></td>
+                                            <!--<div href="item/"class="img" style="background-image:url({{ user.items.Item_Pic.url }});"></div>--></td>
                                         <td class="product-name" >
-                                            <h3 > {{ user.items.Item_Name }}</h3>
+                                            <h3 > {{ user.items.T_Name }}</h3>
                                         </td>
-                                        <td class="price">
-                                             {% if user.items.Item_Is_Discount %}
-                                                Rs. {{ user.items.Item_Discount }}
-                                             {% else %}
-                                                Rs. {{ user.items.Item_Price }}
-                                             {% endif %}
-                                        </td>
+                                            <td class="price">
+                                                 {% if user.items.Item_Is_Discount %}
+                                                    Rs. {{ user.items.Discount_Price }}
+                                                 {% else %}
+                                                    Rs. {{ user.items.price }}
+                                                 {% endif %}
+                                            </td>
                                         <td class="quantity text-center">
-                                            <select id="leave{{ user.items.id }}" class="dropdown" onchange="Update({{ user.items.id }},this)"  >
+                                            <select id="leave{{ user.items.Trip_Id }}" class="dropdown" onchange="Update({{ user.items.Trip_Id }},this)"  >
                                               <option value="1">1</option>
                                               <option value="2" >2</option>
                                               <option value="3">3</option>
@@ -53,12 +53,12 @@
                                               <option value="5">5</option>
                                             </select>
                                              <script>
-                                                var element = document.getElementById("leave{{ user.items.id }}");
+                                                var element = document.getElementById("leave{{ user.items.Trip_Id }}");
                                                  element.value = {{ user.quantity }};
                                             </script>
                                       </td>
                                          <td class="total" >
-                                            Rs.<label id="Qtotal{{ user.items.id }}">{{ user.total}}</label>
+                                            Rs.<label id="Qtotal{{ user.items.Trip_Id }}">{{ user.total}}</label>
 
                                       </tr><!-- END TR-->
                                  <script>

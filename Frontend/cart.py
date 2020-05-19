@@ -29,7 +29,8 @@ def cart(request):
         if abc.items_in_cart.count() is not 0:
             return redirect(reverse('OrderConfirm'))
     if abc is not None:
-        context = {'users': Quantity.objects.filter(cart=abc),
+        context = {
+                    'users': Quantity.objects.filter(cart=abc),
                    'Total': abc.Total,
                    'username': request.session.get("username", None),
                    'Count': abc.items_in_cart.count(),
@@ -96,9 +97,9 @@ def Remove_from_Cart(request):
         abc.Total=0
         for a in Quantity.objects.filter(cart=abc):
             if a.items.Item_Is_Discount:
-                a.total = a.items.Item_Discount * a.quantity
+                a.total = a.items.Discount_Price * a.quantity
             else:
-                a.total = a.items.Item_Price * a.quantity
+                a.total = a.items.price * a.quantity
             abc.Total+=a.total
             a.save()
             abc.save()
