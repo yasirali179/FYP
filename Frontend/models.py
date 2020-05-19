@@ -107,6 +107,7 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True);
     rev_good = models.CharField(max_length=5000, default='-');
     rev_bad = models.CharField(max_length=5000, default='-');
+    approved=models.BooleanField(default=False);
     def __str__(self):
         return str(self.reviewFor)
 
@@ -125,9 +126,11 @@ class Trip(models.Model):
     revs = models.ManyToManyField(Review, blank=True)
     display = models.BooleanField(default=False)
     price = models.PositiveIntegerField(default=0);
+    Discount_Price=models.PositiveIntegerField(default=0);
     startLocation = models.CharField(max_length=200);
     startDate = models.CharField(max_length=200);
     active=models.BooleanField(default=False)
+    Item_Is_Discount=models.BooleanField(default=False);
     def __str__(self):
         return self.T_Name
 
@@ -194,7 +197,39 @@ class Trips_Operators_Sraping_Url(models.Model):
         return self.Url_title
 
 
+class Cart(models.Model):
+    Cart_id=models.CharField(max_length=100,default=0);
+    Cust = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
+    items_in_cart=models.ManyToManyField(Trip,through='Quantity',blank=True)
+    Total=models.DecimalField(default=0.000,max_digits=100,decimal_places=2)
 
-class cart(models.Model):
-    User = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    reqs = models.ManyToManyField(Required_Gear, blank=True)
+    def __str__(self):
+        return self.Cust.U_Name
+
+class Order(models.Model):
+    O_id=models.CharField(max_length=150,default=0)
+    O_PH = models.CharField(max_length=11, null=True, blank=True)
+    Cust = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
+    items_in_order = models.ManyToManyField(Trip,through='Quantity',blank=True)
+    O_Total = models.DecimalField(default=0.000, max_digits=100, decimal_places=2)
+    Order_Verified = models.BooleanField(default=False);
+    Order_Packed = models.BooleanField(default=False);
+    Order_shipped = models.BooleanField(default=False);
+    Order_Received = models.BooleanField(default=False);
+    Order_Claimed = models.BooleanField(default=False);
+    Order_Canceled = models.BooleanField(default=False);
+    Finish = models.BooleanField(default=False);
+    Comments = models.CharField(max_length=500,default=0)
+
+    def __str__(self):
+        return self.O_id
+
+class Quantity(models.Model):
+    items = models.ForeignKey(Trip, on_delete=models.CASCADE,null=True,blank=True)
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE,null=True,blank=True)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, blank=True)
+    quantity = models.PositiveIntegerField(default=0)
+    total= models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.items.T_Name

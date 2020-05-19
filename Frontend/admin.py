@@ -29,7 +29,16 @@ admin.site.register(Tour_Operator_History)
 admin.site.register(newsfeed)
 admin.site.register(NewsLetterEmails)
 admin.site.register(News_Sraping_Url)
+class TeachSubjectInline(admin.TabularInline):
+    model = Quantity
+    extra = 2 # how many rows to show
 
+class SchoolClassAdmin(admin.ModelAdmin):
+    inlines = (TeachSubjectInline,)
+
+admin.site.register(Cart, SchoolClassAdmin)
+admin.site.register(Quantity)
+admin.site.register(Order,SchoolClassAdmin)
 
 
 

@@ -30,23 +30,41 @@
 									    <span class="days"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
                                         <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. {{trip.price}}</em></span>
 										<div class="description"> <p>Starting Location: {{trip.startLocation}}</p> </div>
-                                        <a href=#" title="Book now" class="gradient-button">Book now</a>
+                                        <a  id="id{{ trip.Trip_Id }}" onclick="myFunction({{ trip.Trip_Id  }})" title="Book now" class="gradient-button">Book now</a>
                                     </div>
                                 </article>
 
+                                  <script>
+                        function myFunction( avc) {
+                            document.getElementById("id"+avc).innerHTML="wait"
+                          $.ajax({
+                              type:"GET",
+                              url: '/ajax/Add_in_Cart/',
+                              dataType: 'json',
+                              data:{
+                                     Item_id: avc,
+                                  quantity:1,
+
+                                },
+                            success: function (data) {
+                                document.getElementById("id"+avc).innerHTML = data.message;
+                                document.getElementById("Count").innerHTML = "<span class=\"icon-shopping_cart\"></span>["+data.Count.toString()+"]"
+                                //window.location.href=""
+                            },
+                              failure: function(data) {
+                                  alert('Got an error dude');
+                              }
+
+                          });
+                        }
+                        </script>
                             {% endfor %}
 
 								</div>
 								</div>
-			<div class="bottom-nav">
-							<!--back up button-->
-							<a href="#" class="scroll-to-top" title="Back up">Back up</a>
-							<!--//back up button-->
-
-							<!--pager-->
-						
-							<!--//pager-->
-						</div>
+			                <div class="bottom-nav">
+							    <a href="#" class="scroll-to-top" title="Back up">Back up</a>
+						    </div>
 					
 		</div>
         </div>

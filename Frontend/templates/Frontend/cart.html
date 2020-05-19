@@ -11,42 +11,148 @@
 						<h2>Most popular Trips</h2>
 					</header>
                 </div>
-					
-					<div class="deals">
-						<div class="row">
-							<!--deal-->
-                            {% for trip in trips %}
-                                <article class="one-fourth">
-                                    <figure>
-                                        <a href="Trip/{{ trip.Trip_Id }}" >
-                                            <img  src="{{trip.pic.url}}"  style="height:200px;width:100%;background-size:cover;" /></a>
-                                    </figure>
-                                    <div class="details">
-                                        <a href="Trip/{{ trip.Trip_Id }}">
-                                            <h3>{{trip.T_Name}}</h3>
-                                        </a>
-                                        <span class="date"> {{trip.startDate}} </span>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									    <span class="days"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
-                                        <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. {{trip.price}}</em></span>
-										<div class="description"> <p>Starting Location: {{trip.startLocation}}</p> </div>
-                                        <a href=#" title="Book now" class="gradient-button">Book now</a>
-                                    </div>
-                                </article>
 
-                            {% endfor %}
+			<section class="ftco-section ftco-cart">
+			<div class="container">
+				<div class="row">
+    			<div class="col-md-12 ftco-animate">
+    				<div class="cart-list">
+	    				<table class="table " >
+						    <thead class="thead-primary">
+						      <tr class="text-center">
+						        <th>&nbsp;</th>
+						        <th>&nbsp;</th>
+						        <th>Product</th>
+						        <th>Price</th>
+						        <th>Quantity</th>
+						        <th>Total</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+                             {% for user in users %}
+                                      <tr class="text-center" id="abc{{ user.items.id }}">
+                                        <td class="product-remove" onclick="remove({{ user.items.id }},1)"><a ><span class="ion-ios-close"></span></a></td>
+                                        <td class="image-prod" >
+                                            <div href="item/{{ user.items.Item_Id }}"class="img" style="background-image:url({{ user.items.Item_Pic.url }});"></div></td>
+                                        <td class="product-name" >
+                                            <h3 > {{ user.items.Item_Name }}</h3>
+                                        </td>
+                                        <td class="price">
+                                             {% if user.items.Item_Is_Discount %}
+                                                Rs. {{ user.items.Item_Discount }}
+                                             {% else %}
+                                                Rs. {{ user.items.Item_Price }}
+                                             {% endif %}
+                                        </td>
+                                        <td class="quantity text-center">
+                                            <select id="leave{{ user.items.id }}" class="dropdown" onchange="Update({{ user.items.id }},this)"  >
+                                              <option value="1">1</option>
+                                              <option value="2" >2</option>
+                                              <option value="3">3</option>
+                                              <option value="4">4</option>
+                                              <option value="5">5</option>
+                                            </select>
+                                             <script>
+                                                var element = document.getElementById("leave{{ user.items.id }}");
+                                                 element.value = {{ user.quantity }};
+                                            </script>
+                                      </td>
+                                         <td class="total" >
+                                            Rs.<label id="Qtotal{{ user.items.id }}">{{ user.total}}</label>
 
-								</div>
-								</div>
-			<div class="bottom-nav">
-							<!--back up button-->
-							<a href="#" class="scroll-to-top" title="Back up">Back up</a>
-							<!--//back up button-->
+                                      </tr><!-- END TR-->
+                                 <script>
+                        function remove(avc) {
+                            document.getElementById("PriceTotal").innerHTML = "wait"
+                            document.getElementById("PriceTotal1").innerHTML = "wait"
+                          $.ajax({
 
-							<!--pager-->
-						
-							<!--//pager-->
-						</div>
+                              type:"GET",
+                              url: '/ajax/Remove_from_Cart/',
+                              dataType: 'json',
+                              data:{
+                                     Item_id: avc,
+                                },
+                            success: function (data) {
+                                    $("#abc"+avc).remove();
+                                  document.getElementById("PriceTotal").innerHTML = data.PriceTotal.toString()
+                                  document.getElementById("PriceTotal1").innerHTML = data.PriceTotal.toString();
+                                  document.getElementById("Count").innerHTML = "<span class=\"icon-shopping_cart\"></span>["+data.Count.toString()+"]";
+                            },
+                              failure: function(data) {
+                            document.getElementById("PriceTotal").innerHTML = "ServerTimeout"
+                            document.getElementById("PriceTotal1").innerHTML = "ServerTimeout"
+                              }
+
+                          });
+
+                        }
+                        function Update(avc,ddlFruits) {
+                            var selectedText = ddlFruits.options[ddlFruits.selectedIndex].innerHTML;
+                            var quan = ddlFruits.value;
+                            document.getElementById("Qtotal"+avc).innerHTML = "wait"
+                            document.getElementById("PriceTotal").innerHTML = "wait"
+                            document.getElementById("PriceTotal1").innerHTML = "wait"
+                          $.ajax({
+                              type:"GET",
+                              url: '/ajax/Add_in_Cart/',
+                              dataType: 'json',
+                              data:{
+                                     Item_id: avc,
+                                     quantity:quan
+                                },
+                            success: function (data) {
+                                  document.getElementById("Qtotal"+avc).innerHTML = data.mytotal.toString();
+                                  document.getElementById("PriceTotal").innerHTML = data.PriceTotal.toString();
+                                  document.getElementById("PriceTotal1").innerHTML = data.PriceTotal.toString();
+                                  document.getElementById("Count").innerHTML = "<span class=\"icon-shopping_cart\"></span>["+data.Count.toString()+"]";
+                            },
+                              failure: function(data) {
+                                  document.getElementById("Qtotal"+avc).innerHTML = "ServerTimeout"
+                            document.getElementById("PriceTotal").innerHTML = "ServerTimeout"
+                            document.getElementById("PriceTotal1").innerHTML = "ServerTimeout"
+                              }
+
+                          });
+
+                        }
+                 </script>
+                             {% endfor %}
+						    </tbody>
+						  </table>
+					  </div>
+    			</div>
+    		</div>
+    		<div class="row justify-content-end">
+                <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
+    				<div class="cart-total mb-3">
+    					<h3>Cart Totals</h3>
+    					<p class="d-flex">
+    						<span>Subtotal</span>
+    						Rs. <span id="PriceTotal" >{{ Total }}</span>
+    					</p>
+    					<p class="d-flex">
+    						<span>Delivery</span>
+    						Rs. <span>0.00</span>
+    					</p>
+    					<p class="d-flex">
+    						<span>Discount</span>
+    						Rs. <span>0.00</span>
+    					</p>
+    					<hr>
+    					<p class="d-flex total-price">
+    						<span>Total</span>
+    						Rs. <span id="PriceTotal1">{{ Total }}</span>
+    					</p>
+    				</div>
+                     <form method="POST" class="form-horizontal">
+                        {% csrf_token %}
+                        <p class="text-center"><button type="submit" class="btn btn-primary py-3 px-4">Proceed to Checkout</button></p>
+                    </form>
+    			</div>
+    		</div>
+			</div>
+		</section>
 					
 		</div>
         </div>
