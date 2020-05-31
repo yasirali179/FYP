@@ -5,13 +5,6 @@
 	<main class="main">		
 		<div class="wrap">
 			<div class="row">
-		
-				<div class="full-width">
-					<header class="s-title">
-						<h2>Most popular Trips</h2>
-					</header>
-                </div>
-
 			<section class="ftco-section ftco-cart">
 			<div class="container">
 				<div class="row">
@@ -22,30 +15,29 @@
 						      <tr class="text-center">
 						        <th>&nbsp;</th>
 						        <th>&nbsp;</th>
-						        <th>Product</th>
-						        <th>Price</th>
-						        <th>Quantity</th>
+						        <th>Trip Name</th>
+						        <th>Price per Person</th>
+						        <th>No of People</th>
 						        <th>Total</th>
 						      </tr>
 						    </thead>
-						    <tbody>
-                             {% for user in users %}
-                                      <tr class="text-center" id="abc{{ user.items.Trip_Id }}">
-                                        <td class="product-remove" onclick="remove({{ user.items.Trip_Id }},1)"><a ><span class="ion-ios-close"></span></a></td>
+						    <tbody id="mytable">
+                                      <tr class="text-center" id="abc{{ items.Trip_Id }}">
+                                        <td class="product-remove" onclick="Update({{ items.Trip_Id }},this)"><a ><span class="ion-ios-close"></span></a></td>
                                         <td class="image-prod" >
-                                            <!--<div href="item/"class="img" style="background-image:url({{ user.items.Item_Pic.url }});"></div>--></td>
+                                            <div  class="img" style="background-image:url({{ items.pic.url }});"></div></td>
                                         <td class="product-name" >
-                                            <h3 > {{ user.items.T_Name }}</h3>
+                                            <a href="Trip/{{ items.Trip_Id }}"><h3  > {{ items.T_Name }}</h3></a>
                                         </td>
                                             <td class="price">
-                                                 {% if user.items.Item_Is_Discount %}
-                                                    Rs. {{ user.items.Discount_Price }}
+                                                 {% if items.Item_Is_Discount %}
+                                                    Rs. {{items.Discount_Price }}
                                                  {% else %}
-                                                    Rs. {{ user.items.price }}
+                                                    Rs. {{ items.price }}
                                                  {% endif %}
                                             </td>
                                         <td class="quantity text-center">
-                                            <select id="leave{{ user.items.Trip_Id }}" class="dropdown" onchange="Update({{ user.items.Trip_Id }},this)"  >
+                                            <select id="leave{{ items.Trip_Id }}" class="dropdown" onchange="Update({{ items.Trip_Id }},this)"  >
                                               <option value="1">1</option>
                                               <option value="2" >2</option>
                                               <option value="3">3</option>
@@ -53,46 +45,21 @@
                                               <option value="5">5</option>
                                             </select>
                                              <script>
-                                                var element = document.getElementById("leave{{ user.items.Trip_Id }}");
-                                                 element.value = {{ user.quantity }};
+                                                var element = document.getElementById("leave{{ items.Trip_Id }}");
+                                                 element.value = {{ quantity }};
                                             </script>
                                       </td>
                                          <td class="total" >
-                                            Rs.<label id="Qtotal{{ user.items.Trip_Id }}">{{ user.total}}</label>
+                                            Rs.<label id="Qtotal{{ items.Trip_Id }}">{{ total}}</label>
 
                                       </tr><!-- END TR-->
                                  <script>
-                        function remove(avc) {
-                            document.getElementById("PriceTotal").innerHTML = "wait"
-                            document.getElementById("PriceTotal1").innerHTML = "wait"
-                          $.ajax({
-
-                              type:"GET",
-                              url: '/ajax/Remove_from_Cart/',
-                              dataType: 'json',
-                              data:{
-                                     Item_id: avc,
-                                },
-                            success: function (data) {
-                                    $("#abc"+avc).remove();
-                                  document.getElementById("PriceTotal").innerHTML = data.PriceTotal.toString()
-                                  document.getElementById("PriceTotal1").innerHTML = data.PriceTotal.toString();
-                                  document.getElementById("Count").innerHTML = "<span class=\"icon-shopping_cart\"></span>["+data.Count.toString()+"]";
-                            },
-                              failure: function(data) {
-                            document.getElementById("PriceTotal").innerHTML = "ServerTimeout"
-                            document.getElementById("PriceTotal1").innerHTML = "ServerTimeout"
-                              }
-
-                          });
-
-                        }
                         function Update(avc,ddlFruits) {
-                            var selectedText = ddlFruits.options[ddlFruits.selectedIndex].innerHTML;
-                            var quan = ddlFruits.value;
-                            document.getElementById("Qtotal"+avc).innerHTML = "wait"
-                            document.getElementById("PriceTotal").innerHTML = "wait"
-                            document.getElementById("PriceTotal1").innerHTML = "wait"
+                                var selectedText = ddlFruits.options[ddlFruits.selectedIndex].innerHTML;
+                                var quan = ddlFruits.value;
+                                document.getElementById("Qtotal"+avc).innerHTML = "wait"
+                                document.getElementById("PriceTotal").innerHTML = "wait"
+                                document.getElementById("PriceTotal1").innerHTML = "wait"
                           $.ajax({
                               type:"GET",
                               url: '/ajax/Add_in_Cart/',
@@ -102,26 +69,43 @@
                                      quantity:quan
                                 },
                             success: function (data) {
-                                  document.getElementById("Qtotal"+avc).innerHTML = data.mytotal.toString();
+                                  document.getElementById("Qtotal"+avc).innerHTML = data.PriceTotal.toString();
                                   document.getElementById("PriceTotal").innerHTML = data.PriceTotal.toString();
                                   document.getElementById("PriceTotal1").innerHTML = data.PriceTotal.toString();
-                                  document.getElementById("Count").innerHTML = "<span class=\"icon-shopping_cart\"></span>["+data.Count.toString()+"]";
+                                      var abc = document.getElementById('tt');
+                                      var a = document.createElement('div');
+                                      var c = abc.childElementCount;
+                                      if (quan > c) {
+                                          while (quan != c) {
+                                              var a = document.createElement('div');
+                                              a.innerHTML = "<label>Name: </label><input>";
+                                              abc.appendChild(a);
+                                              c++;
+                                          }
+                                      }
+                                      if (c > quan)
+                                          while (quan != c) {
+                                              abc.removeChild(abc.lastChild);
+                                              c--;
+                                          }
                             },
                               failure: function(data) {
                                   document.getElementById("Qtotal"+avc).innerHTML = "ServerTimeout"
-                            document.getElementById("PriceTotal").innerHTML = "ServerTimeout"
-                            document.getElementById("PriceTotal1").innerHTML = "ServerTimeout"
+                                  document.getElementById("PriceTotal").innerHTML = "ServerTimeout"
+                                  document.getElementById("PriceTotal1").innerHTML = "ServerTimeout"
                               }
 
                           });
 
                         }
                  </script>
-                             {% endfor %}
+
 						    </tbody>
 						  </table>
 					  </div>
     			</div>
+                <div id="tt">
+                </div>
     		</div>
     		<div class="row justify-content-end">
                 <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">

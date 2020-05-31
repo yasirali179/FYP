@@ -200,8 +200,9 @@ class Trips_Operators_Sraping_Url(models.Model):
 class Cart(models.Model):
     Cart_id=models.CharField(max_length=100,default=0);
     Cust = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
-    items_in_cart=models.ManyToManyField(Trip,through='Quantity',blank=True)
-    Total=models.DecimalField(default=0.000,max_digits=100,decimal_places=2)
+    items_in_cart=models.OneToOneField(Trip,blank=True,on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=0)
+    Total = models.DecimalField(default=0.000, max_digits=100, decimal_places=2)
 
     def __str__(self):
         return self.Cust.U_Name
@@ -210,7 +211,7 @@ class Order(models.Model):
     O_id=models.CharField(max_length=150,default=0)
     O_PH = models.CharField(max_length=11, null=True, blank=True)
     Cust = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
-    items_in_order = models.ManyToManyField(Trip,through='Quantity',blank=True)
+    items_in_order = models.OneToOneField(Trip,on_delete=models.CASCADE,blank=True)
     O_Total = models.DecimalField(default=0.000, max_digits=100, decimal_places=2)
     Order_Verified = models.BooleanField(default=False);
     Order_Packed = models.BooleanField(default=False);
@@ -224,12 +225,3 @@ class Order(models.Model):
     def __str__(self):
         return self.O_id
 
-class Quantity(models.Model):
-    items = models.ForeignKey(Trip, on_delete=models.CASCADE,null=True,blank=True)
-    cart = models.ForeignKey(Cart, on_delete=models.CASCADE,null=True,blank=True)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, blank=True)
-    quantity = models.PositiveIntegerField(default=0)
-    total= models.PositiveIntegerField(default=0)
-
-    def __str__(self):
-        return self.items.T_Name

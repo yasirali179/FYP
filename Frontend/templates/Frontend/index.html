@@ -214,4 +214,41 @@
         </div>
 	</main>
 	<!--//main-->
+
+<div id="login_box" class="lightbox" style="display:block; visibility: hidden" >
+		<div class="lb-wrap">
+			<a href="#" class="close">x</a>
+			<div class="lb-content">
+				<form class="row" method="POST">
+                     {% csrf_token %}
+					<h3>Log in</h3>
+					<div class="f-item full-width">
+						<label for="username">Username</label>
+						<input type="text" id="ns_name" name="ns_name"  required/>
+					</div>
+					<div class="f-item full-width">
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" required />
+					</div>
+					<div class="f-item checkbox full-width">
+						<input type="checkbox" id="remember_me" name="checkbox" />
+						<label for="remember_me">Remember me next time</label>
+					</div>
+					<div class="f-item full-width">
+						<p><a href="#" title="Forgot password?">Forgot password?</a><br />
+						Dont have an account yet? <a href="{% url 'register' %}" title="Sign up">Sign up.</a></p>
+						<input type="submit" id="login" name="login" value="login" class="gradient-button" />
+                        <label>{{ label }}</label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+    <script>
+    function myyasir(a) {
+        document.getElementById("login_box").style.visibility="visible"
+
+    }
+    </script>
+
 {% endblock %}

@@ -1,0 +1,57 @@
+def ItemCount(request):
+    C = return_or_create_cart(request)
+    items_in_cartt = 0
+    if C is not None:
+        items_in_cartt = C.items_in_cart.count()
+    return items_in_cartt
+
+
+
+
+
+
+
+def Remove_from_Cart(request):
+    abc=return_or_create_cart(request)
+    message = " "
+    asd = 0
+    PriceTotal=0
+    if abc is None:
+        message = "Login First"
+    else:
+        item_id = request.GET['Item_id']
+        iteme = Trip.objects.get(Trip_Id=item_id)
+        Quantity.objects.filter(items=iteme,cart=abc).delete()
+        abc.Total=0
+        for a in Quantity.objects.filter(cart=abc):
+            if a.items.Item_Is_Discount:
+                a.total = a.items.Discount_Price * a.quantity
+            else:
+                a.total = a.items.price * a.quantity
+            abc.Total+=a.total
+            a.save()
+            abc.save()
+        abc.save()
+    data = {
+        'Count': abc.items_in_cart.count(),
+        'PriceTotal': abc.Total,
+    }
+    return HttpResponse(json.dumps(data))
+
+
+
+
+    url(r'^ajax/Remove_from_Cart/$', Remove_from_Cart, name='Remove_from_Cart'),
+
+
+
+
+class Quantity(models.Model):
+    items = models.ForeignKey(Trip, on_delete=models.CASCADE,null=True,blank=True)
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE,null=True,blank=True)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, blank=True)
+
+    total= models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.items.T_Name

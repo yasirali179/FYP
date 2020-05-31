@@ -11,6 +11,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def index(request):
+
     if request.method == 'POST':
         radio = request.POST.get("radio")
         request.session["radio"] = radio
@@ -149,6 +150,7 @@ def trip(request, articalvalue):
     abc = Trip_History.objects.get(Trip_Name=obj)
     abc.count = abc.count + 1
     abc.save()
+    print("yasir")
     if request.method == 'POST':
         radio = request.POST.get("radio")
         request.session["radio"] = radio
@@ -268,10 +270,12 @@ def search_result(request):
     tripp = None
     destt = None
     oprr = None
+    print(request.session.get("sort", None))
     radio = request.session.get("radio", None)
     if radio == "form1":
         dest = request.session.get("dest1", None)
         type = 1
+
         tripp = Trip.objects.filter(T_Name__contains=dest)
         if Trip.objects.filter(T_Name__exact=dest).count() is not 0:
             obj = Trip.objects.get(T_Name=dest)
@@ -407,3 +411,26 @@ def sorting(request):
         print(i, x.Tour_Operator_Name, x.count, )
         i = i + 1
     return redirect(reverse('index'))
+
+def get_places(request):
+  if request.is_ajax():
+    q = request.GET.get('term', '')
+    print(q)
+    places = Trip.objects.filter(T_Name__icontains=q)
+    results = []
+    for pl in places:
+      place_json = {}
+      place_json = pl.T_Name + "," + pl.price
+      results.append(place_json)
+    data = json.dumps(results)
+  else:
+    data = 'fail'
+  mimetype = 'application/json'
+  return HttpResponse(data, mimetype)
+
+def rangess(request):
+    request.session["sort"]  = request.GET['content']
+    data = {
+        'message': "Comment Added Sucessfully",
+    }
+    return HttpResponse(json.dumps(data))

@@ -15,26 +15,123 @@
 					<div class="deals">
 						<div class="row">
 							<!--deal-->
-                            {% for trip in trips %}
-                                <article class="one-fourth">
-                                    <figure>
-                                        <a href="Trip/{{ trip.Trip_Id }}" >
-                                            <img  src="{{trip.pic.url}}"  style="height:200px;width:100%;background-size:cover;" /></a>
-                                    </figure>
-                                    <div class="details">
-                                        <a href="Trip/{{ trip.Trip_Id }}">
-                                            <h3>{{trip.T_Name}}</h3>
-                                        </a>
-                                        <span class="date"> {{trip.startDate}} </span>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									    <span class="days"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
-                                        <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. {{trip.price}}</em></span>
-										<div class="description"> <p>Starting Location: {{trip.startLocation}}</p> </div>
-                                        <a href=#" title="Book now" class="gradient-button">Book now</a>
-                                    </div>
-                                </article>
+                           <div class="container">
+				<div class="row">
+    			<div class="col-md-12 ftco-animate">
+    				<div class="cart-list">
+	    				<table class="table " >
+						    <thead class="thead-primary">
+						      <tr class="text-center">
+                                <th></th>
+						        <th><h3  > {{ t.T_Name }}</h3></th>
+						        <th><form method="post" action="abc/accending">
+                                    {% csrf_token %}
+                                    <input id="trip2" placeholder="Enter Value">
+                                    <button  type="submit"></button>
+                                    <div class="ui-widget">
+                                          <label for="places">Places: </label>
+                                          <input id="places">
+                                        </div>
+                                    </form>
+                                    <script>
 
-                            {% endfor %}
+                                          $(function() {
+                                            $("#places").autocomplete({
+                                              source: "/api/get_places/",
+                                              select: function (event, ui) {
+                                                AutoCompleteSelectHandler(event, ui)
+                                              },
+                                              minLength: 2,
+                                            });
+                                          });
+
+                                          function AutoCompleteSelectHandler(event, ui)
+                                          {
+                                            var selectedObj = ui.T_Name;
+                                          }
+
+                                        </script>
+                                    <!-- jQuery !-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+<!-- jQuery UI !-->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+                                </th>
+						      </tr>
+						    </thead>
+						    <tbody id="mytable">
+                                      <tr class="text-center">
+                                        <td>   </td>
+                                        <td class="image-prod" > <img  src="{{t.pic.url}}"  style="height:200px;width:100%;background-size:cover;"> </td>
+                                        <td>                                                                         </td>
+                                      </tr>
+                                      <tr class="text-center">
+                                        <td>  Price </td>
+                                        <td> {{ t.price }}</td>
+                                        <td>                                                                         </td>
+                                      </tr>
+                                        <tr class="text-center">
+                                        <td>  Starting Date </td>
+                                        <td> {{ t.startDate }}</td>
+                                        <td>                                                                         </td>
+                                      </tr>
+                                      <tr class="text-center">
+                                        <td>  Destination </td>
+                                        <td> {{ t.Dest }}</td>
+                                        <td>                                                                         </td>
+                                      </tr>
+                                    <tr class="text-center">
+                                        <td>  Host By </td>
+                                        <td> {{ t.event_host.Operator_Name }}</td>
+                                        <td>                                                                         </td>
+
+                                    <tr class="text-center">
+                                        <td>  No Of Days </td>
+                                        <td> {{ t.noOfDays }}</td>
+                                        <td>                                                                         </td>
+                                      </tr>
+                                    <tr class="text-center">
+                                        <td>  No of Nights </td>
+                                        <td> {{ t.noOfNights }}</td>
+                                        <td>                                                                         </td>
+                                      </tr>
+
+						    </tbody>
+						  </table>
+					  </div>
+    			</div>
+                <div id="tt">
+                </div>
+    		</div>
+    		<div class="row justify-content-end">
+                <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
+    				<div class="cart-total mb-3">
+    					<h3>Cart Totals</h3>
+    					<p class="d-flex">
+    						<span>Subtotal</span>
+    						Rs. <span id="PriceTotal" >{{ Total }}</span>
+    					</p>
+    					<p class="d-flex">
+    						<span>Delivery</span>
+    						Rs. <span>0.00</span>
+    					</p>
+    					<p class="d-flex">
+    						<span>Discount</span>
+    						Rs. <span>0.00</span>
+    					</p>
+    					<hr>
+    					<p class="d-flex total-price">
+    						<span>Total</span>
+    						Rs. <span id="PriceTotal1">{{ Total }}</span>
+    					</p>
+    				</div>
+                     <form method="POST" class="form-horizontal">
+                        {% csrf_token %}
+                        <p class="text-center"><button type="submit" class="btn btn-primary py-3 px-4">Proceed to Checkout</button></p>
+                    </form>
+    			</div>
+    		</div>
+			</div>
 
 								</div>
 								</div>

@@ -102,11 +102,11 @@
 						<h3>Sort by</h3>
 						<ul class="sort">
 							<li>Popularity <a href="#" title="ascending" class="ascending">ascending</a><a href="#" title="descending" class="descending">descending</a></li>
-							<li>Price <a href="#" title="ascending" class="ascending">ascending</a><a href="#" title="descending" class="descending">descending</a></li>
+							<li>Price <a  title="ascending" class="ascending" onclick="range(1)">ascending</a><a onclick="range(1)" title="descending" class="descending">descending</a></li>
 							<li>Stars <a href="#" title="ascending" class="ascending">ascending</a><a href="#" title="descending" class="descending">descending</a></li>
 							<li>Rating <a href="#" title="ascending" class="ascending">ascending</a><a href="#" title="descending" class="descending">descending</a></li>
 						</ul>
-						
+
 						<ul class="view-type">
 							<li class="grid-view"><a href="#" title="grid view">grid view</a></li>
 							<li class="list-view"><a href="#" title="list view">list view</a></li>
@@ -115,8 +115,8 @@
 					
 					<div class="row deals  results">
 						<!--deal-->
-
-                    {% if type  == 1 %}
+                    <div id="mytable">
+                                 {% if type  == 1 %}
                         {% for trip in trips %}
                                 <article class="one-third">
                                     <figure>
@@ -181,24 +181,18 @@
                             {% endfor %}
                     {% else %}
                     {% endif %}
-
+                        </div>
                          <script>
                         function range(hhhh) {
-                           var content=document.getElementById("reviewww").value;
-                            document.getElementById("label11").innerHTML="wait"
                           $.ajax({
                               type:"GET",
-                              url: '/ajax/Add_Review/',
+                              url: '/ajax/range/',
                               dataType: 'json',
                               data:{
-                                     Item_id: hhhh,
-                                     content: content,
+                                     content: "12",
                                 },
                             success: function (data) {
-                                document.getElementById("label11").innerHTML = data.message.toString();
-                                document.getElementById("label11").innerHTML="endwait"
-                                document.getElementById("revdes").innerHTML=content;
-                                document.getElementById("cmnt").style.display="block"
+                                $("#mytable").load( " #mytable" );
 
                             },
                               failure: function(data) {

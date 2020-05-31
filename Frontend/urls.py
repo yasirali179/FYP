@@ -11,6 +11,7 @@ urlpatterns = [
     path('MultipleDays', trips2, name="trips2"),
     path('Trip/<slug:articalvalue>', trip, name="trip"),
     path('Destinations/Trip/<slug:articalvalue>', trip, name="trip"),
+    path('cart/Trip/<slug:articalvalue>', trip, name="trip"),
     path('Blogs', blogs, name="blogs"),
     path('Blog', blog, name="blog"),
     path('NewsFeed', News, name="News"),
@@ -31,7 +32,9 @@ urlpatterns = [
     path('newsscrap/', newsScrap, name="newsScrap"),
     path('sort/', sorting, name="sort"),
     path('cart/', cart, name="cart"),
+    path('compare/<slug:articalvalue1>-vs-<slug:articalvalue2>', compare, name="compare"),
     url(r'^ajax/Add_in_Cart/$', Add_in_Cart, name='Add_in_Cart'),
-    url(r'^ajax/Remove_from_Cart/$', Remove_from_Cart, name='Remove_from_Cart'),
+    url(r'^ajax/range/$', rangess, name='range'),
+    url(r'^api/get_places/', get_places, name='get_places'),
 
 ]

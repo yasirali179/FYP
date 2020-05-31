@@ -19,7 +19,7 @@
                                 <article class="one-fourth">
                                     <figure>
                                         <a href="Trip/{{ trip.Trip_Id }}" >
-                                            <img  src="{{trip.pic.url}}"  style="height:200px;width:100%;background-size:cover;"--> /></a>
+                                            <img  src="{{trip.pic.url}}"  style="height:200px;width:100%;background-size:cover;"> /></a>
                                     </figure>
                                     <div class="details">
                                         <a href="Trip/{{ trip.Trip_Id }}">
@@ -30,10 +30,9 @@
 									    <span class="days"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
                                         <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. {{trip.price}}</em></span>
 										<div class="description"> <p>Starting Location: {{trip.startLocation}}</p> </div>
-                                        <a  id="id{{ trip.Trip_Id }}" onclick="myFunction({{ trip.Trip_Id  }})" title="Book now" class="gradient-button">Book now</a>
+                                        <a  id="id{{ trip.Trip_Id  }}" onclick="myFunction({{ trip.Trip_Id }})" title="Book now" class="gradient-button">Book now</a>
                                     </div>
                                 </article>
-
                                   <script>
                         function myFunction( avc) {
                             document.getElementById("id"+avc).innerHTML="wait"
@@ -47,12 +46,11 @@
 
                                 },
                             success: function (data) {
-                                document.getElementById("id"+avc).innerHTML = data.message;
-                                document.getElementById("Count").innerHTML = "<span class=\"icon-shopping_cart\"></span>["+data.Count.toString()+"]"
-                                //window.location.href=""
+                                var url = "{% url 'cart' %}";
+                                document.location.href = url;
                             },
                               failure: function(data) {
-                                  alert('Got an error dude');
+                                  document.getElementById("id"+avc).innerHTML = "Server Timeout";
                               }
 
                           });
