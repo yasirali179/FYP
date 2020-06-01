@@ -46,7 +46,6 @@ def trip(request, articalvalue):
     abc = Trip_History.objects.get(Trip_Name=obj)
     abc.count = abc.count + 1
     abc.save()
-    print("yasir")
     context = {
         'username': request.session.get("username", None),
         'p': obj,

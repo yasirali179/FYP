@@ -1,9 +1,12 @@
 from django.db import models
 
 class User(models.Model):
+    U_PH = models.CharField(max_length=11, default=0);
     U_Name = models.CharField(max_length=100);
     U_pswd = models.CharField(max_length=30);
     U_email = models.CharField(max_length=100, default=0);
+    U_City = models.CharField(max_length=50, default=0);
+    #C_liked = models.ManyToManyField(Trip, blank=True);
     def __str__(self):
         return self.U_Name
 
@@ -131,6 +134,7 @@ class Trip(models.Model):
     startDate = models.CharField(max_length=200);
     active=models.BooleanField(default=False)
     Item_Is_Discount=models.BooleanField(default=False);
+    No_of_Seats=models.PositiveIntegerField(default=50);
     def __str__(self):
         return self.T_Name
 
@@ -200,7 +204,7 @@ class Trips_Operators_Sraping_Url(models.Model):
 class Cart(models.Model):
     Cart_id=models.CharField(max_length=100,default=0);
     Cust = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
-    items_in_cart=models.OneToOneField(Trip,blank=True,on_delete=models.CASCADE)
+    items_in_cart=models.ForeignKey(Trip,on_delete=models.CASCADE,null=True,blank=True)
     quantity = models.PositiveIntegerField(default=0)
     Total = models.DecimalField(default=0.000, max_digits=100, decimal_places=2)
 
@@ -209,9 +213,9 @@ class Cart(models.Model):
 
 class Order(models.Model):
     O_id=models.CharField(max_length=150,default=0)
-    O_PH = models.CharField(max_length=11, null=True, blank=True)
     Cust = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
-    items_in_order = models.OneToOneField(Trip,on_delete=models.CASCADE,blank=True)
+    items_in_order = models.ForeignKey(Trip,on_delete=models.CASCADE,null=True,blank=True)
+    quantity = models.PositiveIntegerField(default=0)
     O_Total = models.DecimalField(default=0.000, max_digits=100, decimal_places=2)
     Order_Verified = models.BooleanField(default=False);
     Order_Packed = models.BooleanField(default=False);
@@ -224,4 +228,3 @@ class Order(models.Model):
 
     def __str__(self):
         return self.O_id
-

@@ -39,5 +39,7 @@ urlpatterns = [
     url(r'^api/get_places/', get_places, name='get_places'),
     url(r'^ajax/Login/$', login, name='search'),
     url(r'^ajax/signup/$', register, name='search'),
-
+    path('orders/', orderConfirm, name='orderConfirm'),
+    path('OrderDetails/<slug:OrderID>', OrderStatus,name="OrderStatus"),
+    path('OrderMain/', OrderMain, name="OrderMain"),
 ]
