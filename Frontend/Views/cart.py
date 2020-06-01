@@ -30,7 +30,7 @@ def cart(request ):
     else:
         context = {'users': None, 'Total': 0, 'username': request.session.get("username", None)}
 
-    return render(request,'Frontend/cart.html',context)
+    return render(request, 'Frontend/cart.html', context)
 
 def Add_in_Cart(request):
     abc=return_or_create_cart(request)
@@ -77,4 +77,4 @@ def compare(request,articalvalue1,articalvalue2):
     context={
         't':Trip.objects.get(Trip_Id=articalvalue1),
     }
-    return render(request, 'Frontend/comparison.html',context)
+    return render(request, 'Frontend/comparison.html', context)

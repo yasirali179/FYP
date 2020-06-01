@@ -101,10 +101,10 @@
 					<div class="sort-by">
 						<h3>Sort by</h3>
 						<ul class="sort">
-							<li>Popularity <a href="#" title="ascending" class="ascending">ascending</a><a href="#" title="descending" class="descending">descending</a></li>
-							<li>Price <a  title="ascending" class="ascending" onclick="range(1)">ascending</a><a onclick="range(1)" title="descending" class="descending">descending</a></li>
-							<li>Stars <a href="#" title="ascending" class="ascending">ascending</a><a href="#" title="descending" class="descending">descending</a></li>
-							<li>Rating <a href="#" title="ascending" class="ascending">ascending</a><a href="#" title="descending" class="descending">descending</a></li>
+							<li>Popularity <a  title="ascending" class="ascending" onclick="range(1)">ascending</a><a onclick="range(2)" title="descending" class="descending">descending</a></li>
+							<li>Price <a  title="ascending" class="ascending" onclick="range(3)">ascending</a><a onclick="range(4)" title="descending" class="descending">descending</a></li>
+							<li>Stars <a  title="ascending" class="ascending" onclick="range(5)" >ascending</a><a onclick="range(6)" title="descending" class="descending">descending</a></li>
+							<li>Rating <a  title="ascending" class="ascending" onclick="range(7)">ascending</a><a onclick="range(8)" title="descending" class="descending">descending</a></li>
 						</ul>
 
 						<ul class="view-type">
@@ -116,7 +116,7 @@
 					<div class="row deals  results">
 						<!--deal-->
                     <div id="mytable">
-                                 {% if type  == 1 %}
+                                 {% if type  == "1" %}
                         {% for trip in trips %}
                                 <article class="one-third">
                                     <figure>
@@ -137,7 +137,7 @@
                                 </article>
 
                                 {% endfor %}
-                    {% elif type  == 2 %}
+                    {% elif type  == "2" %}
                         {% for dest in destinations %}
 							<article class="one-third">
                                 <figure><a href="Destinations/{{ dest.Des_Id }}" title=""><img src="{{dest.pic.url}}" alt="" style="height:200px;width:100%;background-size:cover;"/></a></figure>
@@ -189,7 +189,7 @@
                               url: '/ajax/range/',
                               dataType: 'json',
                               data:{
-                                     content: "12",
+                                     content: hhhh,
                                 },
                             success: function (data) {
                                 $("#mytable").load( " #mytable" );

@@ -111,10 +111,10 @@
 						</ul>
 					</li>
                 {% else %}
-                    <li><a  title="Login/ Signup" >Login/ Signup</a>
+                    <li><a title="Login/ Signup" >Login/ Signup</a>
 					<ul>
-							<li><a href="{% url 'login' %}" >Login</a></li>
-							<li><a href="{% url 'register' %}">Signup</a></li>
+							<li><a  onclick="checkkill(1)" >Login</a></li>
+							<li><a  onclick="checkkill(2)">Signup</a></li>
 
 						</ul>
 					</li>
@@ -146,8 +146,7 @@
 	<!--search-->
 	<div class="main-search">
 		<div class="wrap">
-			<form id="main-search" method="POST">
-                     {% csrf_token %}
+			<div id="main-search" >
                 <div class="row">
 					<!--column-->
 					<div class="column radios one-fourth">
@@ -366,9 +365,9 @@
 						</div>
 						<!--//form hotel-->
 					</div>
-					<input type="submit" value="Proceed to results" class="gradient-button search-submit" id="search-submit" />
+					<input type="submit" onclick="search()" value="Proceed to results" class="gradient-button search-submit" id="search-submit" />
 				</div>
-			</form>
+			</div>
 		</div>
 	</div>
 	<!--//search-->
@@ -474,7 +473,50 @@
 		</div>
 	</footer>
 	<!---footer-->
+<script>
+    function search() {
+		    var val=document.getElementsByName("radio");
+		    var input;
+		    var radio;
+		    if(val[0].checked) {
+                radio = 1;
+                input = document.getElementById("destinationn1").value;
+            }
+		    else if(val[1].checked)
+            {
+                radio = 2;
+                input = document.getElementById("destinationn3").value;
+            }
+		    else if(val[2].checked)
+            {
+                radio = 3;
+                input = document.getElementById("destinationn2").value;
+            }
+		    else if(val[3].checked)
+            {
+                radio = 4;
+                input = document.getElementById("destinationn3").value;
+            }
+		    $.ajax({
+                  type:"GET",
+                  url: '/ajax/search/',
+                  dataType: 'json',
+                  data:{
+                         radio: radio,
+                         input: input,
+                    },
+                success: function (data) {
+                    var url = "{% url 'search_results' %}";
+                                document.location.href = url;
 
+                },
+                  failure: function(data) {
+                      alert('Got an error dude');
+                  }
+
+              });
+        }
+</script>
 
 
 	<script src="{% static 'Frontend/js/jquery.min.js' %}"></script>
@@ -508,7 +550,133 @@
 				});
 			});
 		})(jQuery);
+
 	</script>
+<div id="login_box" class="lightbox" style="display:block; visibility: hidden" >
+		<div class="lb-wrap">
+			<a onclick="checkkill(3)" class="close">x</a>
+			<div class="lb-content">
+					<h3>Log in</h3>
+					<div class="f-item full-width">
+						<label for="username">Username</label>
+						<input type="text" id="ns_name" name="ns_name"  required/>
+					</div>
+					<div class="f-item full-width">
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" required />
+					</div>
+					<div class="f-item checkbox full-width">
+						<input type="checkbox" id="remember_me" name="checkbox" />
+						<label for="remember_me">Remember me next time</label>
+					</div>
+					<div class="f-item full-width">
+						<p><a href="#" title="Forgot password?">Forgot password?</a><br />
+						Dont have an account yet? <a href="#" title="Sign up">Sign up.</a></p>
+						<input type="submit" id="login" name="login" value="login" class="gradient-button" onclick="login_ajax()" />
+                        <label id="login_label"></label>
+					</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+<div class="lightbox" id="registerbox" style="display:block;visibility: hidden">
+		<div class="lb-wrap">
+			<a onclick="checkkill(4)" class="close">x</a>
+			<div class="lb-content">
+
+                    <h3>Register</h3>
+					<div class="f-item full-width">
+						<label for="f_name">Username</label>
+						<input type="text" id="namee" name="ns_name"  required/>
+					</div>
+					<div class="f-item full-width">
+						<label for="email">E-mail address (optional)</label>
+						<input type="email" id="email" name="email" />
+					</div>
+					<div class="f-item full-width">
+						<label for="password">Password</label>
+						<input type="password" id="passwordd" name="password" required />
+					</div>
+					<div class="f-item checkbox full-width">
+						<input type="checkbox" id="newsldetter_s" name="newsletter" />
+						<label for="newsletter_s">Tell me about inspiring travel news, and exclusive discounts!</label>
+					</div>
+					<div class="f-item checkbox full-width">
+						<p>By clicking "Create Account" you confirm that you accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. </p>
+						<input type="submit" id="register" name="register" value="Create Account" class="gradient-button" onclick="signup_ajax()" />
+                        <label>{{ label }}</label>
+					</div>
+			</div>
+		</div>
+	</div>
+    <script>
+    function checkkill(a) {
+        if(a==1)
+        document.getElementById("login_box").style.visibility="visible"
+        else if(a==2)
+            document.getElementById("registerbox").style.visibility="visible"
+        else if(a==3)
+            document.getElementById("login_box").style.visibility="hidden"
+        else if(a==4)
+            document.getElementById("registerbox").style.visibility="hidden"
+    }
+    function login_ajax(){
+        username=document.getElementById("ns_name").value;
+        password=document.getElementById("password").value;
+        $.ajax({
+              type:"GET",
+              url: '/ajax/Login/',
+              dataType: 'json',
+              data:{
+                  username:username,
+                  password:password,
+                },
+            success: function (data) {
+                if(data.message.toString()=="sucessfully"){
+                    location.reload();
+                }
+                else{
+                    document.getElementById("login_label").innerHTML=data.message.toString();
+                }
+
+            },
+              failure: function(data) {
+                  alert('Got an error dude');
+              }
+
+          });
+    }
+    function signup_ajax() {
+        username=document.getElementById("namee").value;
+        password=document.getElementById("passwordd").value;
+        $.ajax({
+              type:"GET",
+              url: '/ajax/signup/',
+              dataType: 'json',
+              data:{
+                  username:username,
+                  password:password,
+                },
+            success: function (data) {
+                if(data.message.toString()=="sucessfully"){
+                    location.reload();
+                }
+                else{
+                    document.getElementById("login_label").innerHTML=data.message.toString();
+                }
+
+            },
+              failure: function(data) {
+                  alert('Got an error dude');
+              }
+
+          });
+
+    }
+    </script>
 
 	<!-- TEMPLATE STYLES -->
 
