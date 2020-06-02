@@ -42,4 +42,6 @@ urlpatterns = [
     path('orders/', orderConfirm, name='orderConfirm'),
     path('OrderDetails/<slug:OrderID>', OrderStatus,name="OrderStatus"),
     path('OrderMain/', OrderMain, name="OrderMain"),
+    path('api/',UserList.as_view()),
+    path('apis/', apis, name="apis"),
 ]

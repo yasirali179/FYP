@@ -3,12 +3,49 @@ from datetime import datetime
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from Frontend.models import *
 from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen as uReq
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
+from Frontend.serializers import UserSerializer
+from rest_framework import status
+
+class UserList(APIView):
+    def get(self,request):
+        user=User.objects.all();
+        serializer=UserSerializer(user,many=True)
+        return Response(serializer.data)
+
+    def post(self,request):
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            name=serializer.data.get("first");
+            message='hello[0]'.format(name)
+            return Response({'message':message})
+        return Response(UserSerializer.errors, status=status.HTTP_404_NOT_FOUND)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def index(request):
 

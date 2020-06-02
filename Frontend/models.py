@@ -98,6 +98,7 @@ class Tour_Operator(models.Model):
     pic = models.FileField(upload_to='Trip/', blank=True, verbose_name="")
     Operator_Name = models.CharField(max_length=100);
     Op_phone = models.CharField(max_length=11, default=0);
+    U_pswd = models.CharField(max_length=30);
     Op_email = models.CharField(max_length=100, default=0);
     Op_review = models.CharField(max_length=11, default=0);
     Op_rating = models.CharField(max_length=100, default=0);
