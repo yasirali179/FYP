@@ -1,5 +1,9 @@
+{% load socialaccount %}
+{% providers_media_js %}
+
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -607,6 +611,7 @@
 					<div class="f-item checkbox full-width">
 						<p>By clicking "Create Account" you confirm that you accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. </p>
 						<input type="submit" id="register" name="register" value="Create Account" class="gradient-button" onclick="signup_ajax()" />
+                        <a href="{% provider_login_url "facebook" method="js_SDK" %}"> Facebook login</a>
                         <label>{{ label }}</label>
 					</div>
 			</div>
