@@ -114,6 +114,7 @@ class Review(models.Model):
     rev_good = models.CharField(max_length=5000, default='-');
     rev_bad = models.CharField(max_length=5000, default='-');
     approved=models.BooleanField(default=False);
+    rating=models.PositiveIntegerField(default=0);
     def __str__(self):
         return str(self.reviewFor)
 
@@ -139,6 +140,9 @@ class Trip(models.Model):
     active=models.BooleanField(default=False)
     Item_Is_Discount=models.BooleanField(default=False);
     No_of_Seats=models.PositiveIntegerField(default=50);
+    Total_Reviews=models.PositiveIntegerField(default=0);
+    Total_Rating=models.PositiveIntegerField(default=0);
+    Average_Rating=models.FloatField(default=0)
     def __str__(self):
         self.startDate=format_date(self.Departure_Date, locale='en')
         return self.T_Name

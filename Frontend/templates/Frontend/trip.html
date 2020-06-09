@@ -1,7 +1,103 @@
 ﻿{% extends 'Frontend/repeater.html' %}
 {% load static %}
 {% block content %}
-	<!--main-->
+  <style type="text/css">
+    .ratings {
+      float: left;
+    }
+
+    .ratings:not(:checked)>input {
+      position: absolute;
+      top: -9999px;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    .ratings:not(:checked)>label {
+      float: right;
+      width: 1em;
+      padding: 0 .1em;
+      overflow: hidden;
+      white-space: nowrap;
+      cursor: pointer;
+      font-size: 200%;
+      line-height: 1.2;
+      color: #ddd;
+      text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5);
+    }
+
+    .ratings:not(:checked)>label:before {
+      content: '★ ';
+    }
+
+    .ratings>input:checked~label {
+      color: #f70;
+      text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0, 0, 0, .5);
+    }
+
+    .ratings:not(:checked)>label:hover,
+    .ratings:not(:checked)>label:hover~label {
+      color: gold;
+      text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+    }
+
+    .ratings>input:checked+label:hover,
+    .ratings>input:checked+label:hover~label,
+    .ratings>input:checked~label:hover,
+    .ratings>input:checked~label:hover~label,
+    .ratings>label:hover~input:checked~label {
+      color: #ea0;
+      text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+    }
+
+    .ratings>label:active {
+      position: relative;
+      top: 2px;
+      left: 2px;
+    }
+
+    /* end of Lea's code */
+
+    /*
+ * Clearfix from html5 boilerplate
+ */
+
+    .clearfix:before,
+    .clearfix:after {
+      content: " ";
+      /* 1 */
+      display: table;
+      /* 2 */
+    }
+
+    .clearfix:after {
+      clear: both;
+    }
+
+    /*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+    .clearfix {
+      *zoom: 1;
+    }
+
+    /* my stuff */
+    #status,
+    button {
+      margin: 20px 0;
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+    <!--main-->
 	<main class="main">		
 		<div class="wrap">
 		
@@ -24,7 +120,6 @@
 				<section class="three-fourth">
 				
 				    <h1>{{p.T_Name}}</h1>
-				<figure><img src="{{p.pic.url}}" alt=" " /></figure>
 					<!--gallery-->
 					<div class="gallery">
 						<ul id="image-gallery" class="cS-hidden">
@@ -179,27 +274,15 @@
 					
 					<!--Reviews-->
 					<section id="Reviews" class="tab-content">
-						<article>
+						<article id="mytable1">
 							<h2>Trip Score and Score Breakdown</h2>
 							<div class="score">
-								<span class="achieved">8 </span>
-								<span> / 10</span>
-								<p class="info">Based on <label id="reviewcount"></label> {{ totalreviews }} reviews</p>
+								<span class="achieved">{{ p.Average_Rating }} </span>
+								<span> / 5</span>
+								<p class="info">Based on <label id="reviewcount"></label> {{ p.Total_Reviews }} reviews</p>
 								<p class="disclaimer">Reviews are written by our customers after their trip to <strong>{{p.T_Name}}.</strong></p>
 							</div>
-							
-							<dl class="chart">
-								<dt>Comfort</dt>
-								<dd><span id="data-one" style="width:60%;">6</span></dd>
-								<dt>Location</dt>
-								<dd><span id="data-two" style="width:80%;">8</span></dd>
-								<dt>Guide</dt>
-								<dd><span id="data-three" style="width:100%;">10</span></dd>
-								<dt>Services</dt>
-								<dd><span id="data-four" style="width:70%;">7</span></dd>
-								<dt>Value for money</dt>
-								<dd><span id="data-five" style="width:90%;">9</span></dd>
-							</dl>
+
 						</article>
 						
 						<article>
@@ -224,10 +307,21 @@
                                     {% if username is not None %}
                                     <figure class="left">
 										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
-										<address><span>Anonymous</span><br />Solo Traveller North way<br />22/06/2016</address>
+										<address><span>{{username}}</span><br /><br /></address>
 									</figure>
-							        <input  id="reviewww" style="border: black 1px dotted " name=" " placeholder="Place your Review" />
-                                    <input type="submit" onclick="Myfuni({{ p.Trip_Id }})" value="Submit" class="gradient-button" />
+							        <input  id="reviewww" required style="border: black 1px dotted " name=" " placeholder="Place your Review" />
+                                        <div id="ratingsForm">
+                                        <fieldset class="ratings">
+                                        <input type="radio" hidden id="star5" name="ratings" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                                        <input type="radio" hidden id="star4" name="ratings" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                                        <input type="radio" hidden id="star3" name="ratings" value="3" /><label for="star3" title="Meh">3 stars</label>
+                                        <input type="radio" hidden id="star2" name="ratings" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                                        <input type="radio" hidden id="star1" name="ratings" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                                        </fieldset>
+                                        <div class="clearfix"></div>
+                                        </div>
+
+                                    <input type="submit" id="buttonc" onclick="Myfuni({{ p.Trip_Id }})" value="Submit" class="gradient-button" />
                                     <label id="label11"></label>
                                     {% else %}
                                     <label> Please login for add review</label>
@@ -239,10 +333,24 @@
 						</article>
 					</section>
 					<!--//Reviews-->
+                 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 					 <script>
+
+
+                         var rating=0;
+                         $(document).ready(function () {
+
+                            });
+
+
                         function Myfuni(hhhh) {
                             var content=document.getElementById("reviewww").value;
                             document.getElementById("label11").innerHTML="wait"
+                                if ($("#ratingsForm :radio:checked").length == 0) {
+                                  rating=0;
+                                } else {
+                                  rating= $('input:radio[name=ratings]:checked').val();
+                                }
                           $.ajax({
                               type:"GET",
                               url: '/ajax/Add_Review/',
@@ -250,12 +358,13 @@
                               data:{
                                      Item_id: hhhh,
                                      content: content,
+                                     ratings:rating,
                                 },
                             success: function (data) {
                                 document.getElementById("label11").innerHTML = data.message.toString();
                                 document.getElementById("reviewcount").innerHTML = data.totalreviews.toString();
                                 $("#mytable").load( " #mytable" );
-
+                                $("#mytable1").load( " #mytable1" );
                             },
                               failure: function(data) {
                                   alert('Got an error dude');
@@ -364,9 +473,15 @@
 				download:false
 			});
 		});
+
+
+
+
+
+
     </script>
 
 
-	<!-- TEMPLATE STYLES -->
+
 
 	{% endblock %}

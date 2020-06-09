@@ -219,16 +219,23 @@ def newsScrap(request):
     return redirect(reverse('index'))
 
 def Add_Review(request):
-    Trip_name = request.GET['Item_id']
+    Trip_id = request.GET['Item_id']
     content = request.GET['content']
-    abc=Review.objects.create(reviewFor=Trip_name)
+    rating = request.GET['ratings']
+    print(rating)
+    abc=Review.objects.create(reviewFor=Trip_id)
     abc.rev_good=content
+    abc.rating=rating
     abc.reviewBy=request.session.get("username", "Anonymouse")
     abc.save()
-
+    tripp=Trip.objects.get(Trip_Id=Trip_id)
+    tripp.Total_Reviews=int(tripp.Total_Reviews)+1;
+    tripp.Total_Rating=int(tripp.Total_Rating)+int(rating);
+    tripp.Average_Rating= float(tripp.Total_Rating)/float(tripp.Total_Reviews);
+    tripp.save();
     data = {
         'message':"Comment Added Sucessfully",
-        'totalreviews':Review.objects.filter(reviewFor=Trip_name).count(),
+        'totalreviews':Review.objects.filter(reviewFor=Trip_id).count(),
     }
     return HttpResponse(json.dumps(data))
 

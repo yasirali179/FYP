@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Destinations.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/recommender.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/des.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0040_auto_20200610_0321.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0041_review_rating.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0042_trip_total_rating.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -79,7 +81,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LE" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/star_rating_fyp/star_rating_fyp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -282,26 +284,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="168" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1583391612669" />
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1591726622812">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1591735666131">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591726622812" />
-    <state width="1322" height="220" key="GridCell.Tab.0.bottom" timestamp="1591727402659">
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591735666131" />
+    <state width="1322" height="2" key="GridCell.Tab.0.bottom" timestamp="1591742894622">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="220" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591727402659" />
-    <state width="1322" height="220" key="GridCell.Tab.0.center" timestamp="1591727402659">
+    <state width="1322" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591742894622" />
+    <state width="1322" height="2" key="GridCell.Tab.0.center" timestamp="1591742894622">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="220" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591727402659" />
-    <state width="1322" height="220" key="GridCell.Tab.0.left" timestamp="1591727402658">
+    <state width="1322" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591742894622" />
+    <state width="1322" height="2" key="GridCell.Tab.0.left" timestamp="1591742894622">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="220" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591727402658" />
-    <state width="1322" height="220" key="GridCell.Tab.0.right" timestamp="1591727402659">
+    <state width="1322" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591742894622" />
+    <state width="1322" height="2" key="GridCell.Tab.0.right" timestamp="1591742894622">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="220" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591727402659" />
+    <state width="1322" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591742894622" />
     <state x="10" y="0" key="SettingsEditor" timestamp="1589619028993">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
