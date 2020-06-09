@@ -13,6 +13,39 @@ class User(models.Model):
         return self.U_Name
 
 
+
+class TripReview(models.Model):
+    reviewFor = models.CharField(max_length=200);
+    reviewBy = models.CharField(max_length=100, default="Anonymous");
+    created_at = models.DateTimeField(auto_now_add=True);
+    rev_good = models.CharField(max_length=5000, default='-');
+    rev_bad = models.CharField(max_length=5000, default='-');
+    approved=models.BooleanField(default=False);
+    rating=models.PositiveIntegerField(default=0);
+    def __str__(self):
+        return str(self.reviewFor)
+class TourCompanyReview(models.Model):
+    reviewFor = models.CharField(max_length=200);
+    reviewBy = models.CharField(max_length=100, default="Anonymous");
+    created_at = models.DateTimeField(auto_now_add=True);
+    rev_good = models.CharField(max_length=5000, default='-');
+    rev_bad = models.CharField(max_length=5000, default='-');
+    approved=models.BooleanField(default=False);
+    rating=models.PositiveIntegerField(default=0);
+    def __str__(self):
+        return str(self.reviewFor)
+class DestincationReview(models.Model):
+    reviewFor = models.CharField(max_length=200);
+    reviewBy = models.CharField(max_length=100, default="Anonymous");
+    created_at = models.DateTimeField(auto_now_add=True);
+    rev_good = models.CharField(max_length=5000, default='-');
+    rev_bad = models.CharField(max_length=5000, default='-');
+    approved=models.BooleanField(default=False);
+    rating=models.PositiveIntegerField(default=0);
+    def __str__(self):
+        return str(self.reviewFor)
+
+
 class Destinations(models.Model):
     Des_Id = models.SlugField(max_length=150, unique=True, default=0);
     Des_Name = models.CharField(max_length=200);
@@ -27,10 +60,11 @@ class Destinations(models.Model):
     history2 = models.CharField(max_length=200);
     history3 = models.CharField(max_length=200);
     Des_H1 = models.CharField(max_length=200);
-    revs = models.ManyToManyField('Review', blank=True)
     display = models.BooleanField(default=False)
-    Op_review = models.CharField(max_length=11, default=0);
-    Op_rating = models.CharField(max_length=100, default=0);
+    revs = models.ManyToManyField(DestincationReview, blank=True)
+    Total_Reviews = models.PositiveIntegerField(default=0);
+    Total_Rating = models.PositiveIntegerField(default=0);
+    Average_Rating = models.FloatField(default=0)
 
     def __str__(self):
         return str(self.Des_Name)
@@ -102,21 +136,13 @@ class Tour_Operator(models.Model):
     Op_phone = models.CharField(max_length=11, default=0);
     U_pswd = models.CharField(max_length=30);
     Op_email = models.CharField(max_length=100, default=0);
-    Op_review = models.CharField(max_length=11, default=0);
-    Op_rating = models.CharField(max_length=100, default=0);
+    revs = models.ManyToManyField(TourCompanyReview, blank=True)
+    Total_Reviews = models.PositiveIntegerField(default=0);
+    Total_Rating = models.PositiveIntegerField(default=0);
+    Average_Rating = models.FloatField(default=0)
     def __str__(self):
         return self.Operator_Name
 
-class Review(models.Model):
-    reviewFor = models.CharField(max_length=200);
-    reviewBy = models.CharField(max_length=100, default="Anonymous");
-    created_at = models.DateTimeField(auto_now_add=True);
-    rev_good = models.CharField(max_length=5000, default='-');
-    rev_bad = models.CharField(max_length=5000, default='-');
-    approved=models.BooleanField(default=False);
-    rating=models.PositiveIntegerField(default=0);
-    def __str__(self):
-        return str(self.reviewFor)
 
 class Trip(models.Model):
     Trip_Id = models.SlugField(max_length=150, unique=True, default=0);
@@ -130,7 +156,6 @@ class Trip(models.Model):
     sers = models.ManyToManyField(Services, blank=True)
     acts = models.ManyToManyField(Activities, blank=True)
     event_host = models.ForeignKey(Tour_Operator, on_delete=models. CASCADE, null=True, blank=True)
-    revs = models.ManyToManyField(Review, blank=True)
     display = models.BooleanField(default=False)
     price = models.PositiveIntegerField(default=0);
     Discount_Price=models.PositiveIntegerField(default=0);
@@ -140,6 +165,7 @@ class Trip(models.Model):
     active=models.BooleanField(default=False)
     Item_Is_Discount=models.BooleanField(default=False);
     No_of_Seats=models.PositiveIntegerField(default=50);
+    revs = models.ManyToManyField(TripReview, blank=True)
     Total_Reviews=models.PositiveIntegerField(default=0);
     Total_Rating=models.PositiveIntegerField(default=0);
     Average_Rating=models.FloatField(default=0)

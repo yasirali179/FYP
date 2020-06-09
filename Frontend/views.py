@@ -69,10 +69,6 @@ def MultipleDays(request):
 
 def trip(request, articalvalue):
     obj = Trip.objects.get(Trip_Id=articalvalue)
-    #print(obj.Departure_Date.strftime('We are the %d, %h %Y'))
-    print(format_date(obj.Departure_Date, locale='en'))
-    #print(datetime.datetime.strftime(today,'We are the %d, %b %Y').date())
-    reviews=Review.objects.filter(reviewFor=obj.Trip_Id)
     Trip_History.objects.get_or_create(Trip_Name=obj)
     abc = Trip_History.objects.get(Trip_Name=obj)
     abc.count = abc.count + 1
@@ -80,8 +76,7 @@ def trip(request, articalvalue):
     context = {
         'username': request.session.get("username", None),
         'p': obj,
-        'revs':reviews,
-        'totalreviews': reviews.count(),
+        'revs':TripReview.objects.filter(reviewFor=obj.Trip_Id),
     }
     return render(request, 'Frontend/trip.html', context)
 
@@ -97,7 +92,8 @@ def operator(request, articalvalue):
     context = {
         'username': request.session.get("username", None),
         'p': obj,
-        'trips': obj1
+        'trips': obj1,
+        'revs': TourCompanyReview.objects.filter(reviewFor=obj.Op_Id),
     }
     return render(request, 'Frontend/operator.html', context)
 
@@ -130,7 +126,8 @@ def place(request, articalvalue):
     context = {
         'username': request.session.get("username", None),
         'p': obj,
-        'trips': obj1
+        'trips': obj1,
+        'revs': DestincationReview.objects.filter(reviewFor=obj.Des_Id),
     }
     return render(request, 'Frontend/place.html', context)
 
@@ -140,6 +137,7 @@ def touroperator(request):
     context = {
         'username': request.session.get("username", None),
         'operators': Tour_Operator.objects.all(),
+
     }
     return render(request, 'Frontend/touroperators.html', context)
 
@@ -223,7 +221,7 @@ def Add_Review(request):
     content = request.GET['content']
     rating = request.GET['ratings']
     print(rating)
-    abc=Review.objects.create(reviewFor=Trip_id)
+    abc=TripReview.objects.create(reviewFor=Trip_id)
     abc.rev_good=content
     abc.rating=rating
     abc.reviewBy=request.session.get("username", "Anonymouse")
@@ -235,7 +233,7 @@ def Add_Review(request):
     tripp.save();
     data = {
         'message':"Comment Added Sucessfully",
-        'totalreviews':Review.objects.filter(reviewFor=Trip_id).count(),
+        'totalreviews':tripp.Total_Reviews,
     }
     return HttpResponse(json.dumps(data))
 

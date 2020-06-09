@@ -1,5 +1,7 @@
 from django.conf.urls import url
 from django.urls import path
+
+from Frontend.Views.reviews import *
 from Frontend.admin import event_admin_site
 from Frontend.Views.cart import *
 from Frontend.views import *
@@ -27,7 +29,7 @@ urlpatterns = [
     url(r'^ajax/search/$', search, name='search'),
     path('logout', logout, name="logout"),
     url(r'^ajax/Subscribe_NewsLetter/$', Subscribe_NewsLetter, name='Subscribe_NewsLetter'),
-    url(r'^ajax/Add_Review/$', Add_Review, name='Add_Review'),
+
     path('myoperator/', event_admin_site.urls),
     path('tripscrap/', tripScrap, name="Scrap"),
     path('newsscrap/', newsScrap, name="newsScrap"),
@@ -44,4 +46,7 @@ urlpatterns = [
     path('OrderMain/', OrderMain, name="OrderMain"),
     #path('api/',UserList.as_view()),
    # path('apis/', apis, name="apis"),
+    url(r'^ajax/Add_Trip_Review/$', Add_Trip_Review, name='Add_Review'),
+    url(r'^ajax/Add_TourOp_Review/$', Add_TourOp_Review, name='Add_Review'),
+    url(r'^ajax/Add_Dest_Review/$', Add_Dest_Review, name='Add_Review'),
 ]

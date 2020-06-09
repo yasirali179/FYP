@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0040_auto_20200610_0321.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0041_review_rating.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0042_trip_total_rating.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Views/reviews.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0043_auto_20200610_0411.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0044_delete_review.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/operator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/operator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/place.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/place.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -288,22 +291,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591735666131" />
-    <state width="1322" height="2" key="GridCell.Tab.0.bottom" timestamp="1591742894622">
+    <state width="1322" height="2" key="GridCell.Tab.0.bottom" timestamp="1591745398555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591742894622" />
-    <state width="1322" height="2" key="GridCell.Tab.0.center" timestamp="1591742894622">
+    <state width="1322" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591745398555" />
+    <state width="1322" height="2" key="GridCell.Tab.0.center" timestamp="1591745398554">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591742894622" />
-    <state width="1322" height="2" key="GridCell.Tab.0.left" timestamp="1591742894622">
+    <state width="1322" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591745398554" />
+    <state width="1322" height="2" key="GridCell.Tab.0.left" timestamp="1591745398554">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591742894622" />
-    <state width="1322" height="2" key="GridCell.Tab.0.right" timestamp="1591742894622">
+    <state width="1322" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591745398554" />
+    <state width="1322" height="2" key="GridCell.Tab.0.right" timestamp="1591745398555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591742894622" />
+    <state width="1322" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591745398555" />
     <state x="10" y="0" key="SettingsEditor" timestamp="1589619028993">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
