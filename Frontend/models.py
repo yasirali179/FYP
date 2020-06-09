@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 
 class User(models.Model):
@@ -133,6 +135,7 @@ class Trip(models.Model):
     Discount_Price=models.PositiveIntegerField(default=0);
     startLocation = models.CharField(max_length=200);
     startDate = models.CharField(max_length=200);
+    Departure_Date=models.DateField(default=datetime.date.today, blank=True)
     active=models.BooleanField(default=False)
     Item_Is_Discount=models.BooleanField(default=False);
     No_of_Seats=models.PositiveIntegerField(default=50);

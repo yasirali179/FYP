@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+import datetime
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -14,23 +14,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 from Frontend.serializers import UserSerializer
 from rest_framework import status
-
-class UserList(APIView):
-    def get(self,request):
-        user=User.objects.all();
-        serializer=UserSerializer(user,many=True)
-        return Response(serializer.data)
-
-    def post(self,request):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            name=serializer.data.get("first");
-            message='hello[0]'.format(name)
-            return Response({'message':message})
-        return Response(UserSerializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-
 
 
 
@@ -59,25 +42,25 @@ def index(request):
     return render(request, 'Frontend/index.html', context)
 
 
-def trips1(request):
+def OneDay(request):
     context = {
         'username': request.session.get("username", None),
-        'trips': Trip.objects.filter(noOfDays=1,active=True)
+        'trips': Trip.objects.filter(noOfDays=1,active=True,Departure_Date__gte=datetime.datetime.now().date())
     }
     return render(request, 'Frontend/trips.html', context)
 
 
-def trips2(request):
-
+def MultipleDays(request):
     context = {
         'username': request.session.get("username", None),
-        'trips': Trip.objects.filter(noOfDays__gt=1,active=True),
+        'trips': Trip.objects.filter(noOfDays__gt=1,active=True,Departure_Date__gte=datetime.datetime.now().date()),
     }
     return render(request, 'Frontend/trips.html', context)
 
 
 def trip(request, articalvalue):
     obj = Trip.objects.get(Trip_Id=articalvalue)
+    print(obj.Departure_Date)
     reviews=Review.objects.filter(reviewFor=obj.Trip_Id)
     Trip_History.objects.get_or_create(Trip_Name=obj)
     abc = Trip_History.objects.get(Trip_Name=obj)

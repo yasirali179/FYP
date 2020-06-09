@@ -24,5 +24,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Frontend.urls')),
     path('accounts/', include('allauth.urls')),
-    path('abc/',TemplateView.as_view(template_name="Frontend/a.html"))
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

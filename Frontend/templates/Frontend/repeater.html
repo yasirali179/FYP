@@ -161,19 +161,19 @@
 								<label for="Trips">Trips</label>
 							</div>
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="radioo2" value="form4" />
-								<label for="self_catering">Hotels</label>
+								<input type="radio" name="radio" id="radioo2" value="form2" />
+								<label for="self_catering">Price Range</label>
 							</div>
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="radioo3" value="form2" />
+								<input type="radio" name="radio" id="radioo3" value="form3" />
 								<label for="flight">Destinatins</label>
 							</div>
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="radioo4" value="form5" />
+								<input type="radio" name="radio" id="radioo4" value="form4" />
 								<label for="cruise">Weather</label>
 							</div>
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="radioo5" value="form3" />
+								<input type="radio" name="radio" id="radioo5" value="form5" />
 								<label for="flight_and_hotel">Tour Operator</label>
 							</div>
 							<div class="f-item one-half">
@@ -193,7 +193,7 @@
 								<div class="row">
 									<div class="f-item full-width">
 										<label for="destination1">Your Trip Name</label>
-										<input type="text" placeholder="Enter Desire trip name" id="destinationn1" name="destinationn1" />
+										<input type="text" placeholder="Enter Desire trip name" id="fform1" name="fform1" />
 									</div>
 								</div>
 							</div>
@@ -216,14 +216,48 @@
 						</div>
 						<!--//form hotel-->
 <!--form hotel-->
-						<div class="form row" id="form2">
+                        <div class="form row" id="form2">
+							<!--column-->
+							<div class="column one-half">
+								<h5><span>02</span> Where?</h5>
+								<div class="row">
+									<div class="f-item full-width">
+										<label for="destination1">Select Your price Range</label>
+                                        <select type="text" id="fform2" name="fform2" >
+                                            <option value="1">0 - 3,000</option>
+                                            <option value="2">3,001 - 6,000</option>
+                                            <option value="3">6,001 - 9,000</option>
+                                            <option value="4">9,000 - 12,000</option>
+                                        </select>
+									</div>
+								</div>
+							</div>
+							<!--//column-->
+
+							<!--column-->
+							<div class="column  one-half">
+								<h5><span>03</span> When?</h5>
+								<div class="row">
+									<div class="f-item datepicker">
+										<label for="datepicker1">Destination date</label>
+										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker4" name="datepicker1" /></div>
+									</div>
+
+								</div>
+							</div>
+							<!--//column-->
+
+
+						</div>
+
+                        <div class="form row" id="form3">
 							<!--column-->
 							<div class="column one-half">
 								<h5><span>02</span> Where?</h5>
 								<div class="row">
 									<div class="f-item full-width">
 										<label for="destination1">Your destination</label>
-										<input type="text" placeholder="Enter City, region, district or Place" id="destinationn2" name="destinationn2" />
+										<input type="text" placeholder="Enter City, region, district or Place" id="fform3" name="fform3" />
 									</div>
 								</div>
 							</div>
@@ -246,14 +280,48 @@
 						</div>
 						<!--//form hotel-->
 <!--form hotel-->
-						<div class="form row" id="form3">
+                        <!--form hotel-->
+						<div class="form row" id="form4">
+							<!--column-->
+							<div class="column one-half">
+								<h5><span>02</span> Where?</h5>
+								<div class="row">
+									<div class="f-item full-width">
+										<label for="destination1">Select your Desire Weather</label>
+										 <select type="text" id="fform4" name="fform4" >
+                                            <option value="1">Snowfall</option>
+                                            <option value="2">Rain</option>
+                                            <option value="3">Sunny</option>
+                                            <option value="4">Cloudy</option>
+                                        </select>
+                                    </div>
+								</div>
+							</div>
+							<!--//column-->
+
+							<!--column-->
+							<div class="column  one-half">
+								<h5><span>03</span> When?</h5>
+								<div class="row">
+									<div class="f-item datepicker">
+										<label for="datepicker1">Destination date</label>
+										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker5" name="datepicker1" /></div>
+									</div>
+
+								</div>
+							</div>
+							<!--//column-->
+
+
+						</div>
+						<div class="form row" id="form5">
 							<!--column-->
 							<div class="column one-half">
 								<h5><span>02</span> Where?</h5>
 								<div class="row">
 									<div class="f-item full-width">
 										<label for="destination1">Trip Operator</label>
-										<input type="text" placeholder="Enter Trip Operator Name" id="destinationn3" name="destinationn3" />
+										<input type="text" placeholder="Enter Trip Operator Name" id="fform5" name="fform5" />
 									</div>
 								</div>
 							</div>
@@ -274,79 +342,15 @@
 
 
 						</div>
-						<!--//form hotel-->
 
-						<!--form hotel-->
-						<div class="form row" id="form4">
-							<!--column-->
-							<div class="column one-half">
-								<h5><span>02</span> Where?</h5>
-								<div class="row">
-									<div class="f-item full-width">
-										<label for="destination1">Your destination</label>
-										<input type="text" placeholder="City, region, district or Place" id="destination4" name="destination" />
-									</div>
-								</div>
-							</div>
-							<!--//column-->
-
-							<!--column-->
-							<div class="column  one-half">
-								<h5><span>03</span> When?</h5>
-								<div class="row">
-									<div class="f-item datepicker">
-										<label for="datepicker1">Destination date</label>
-										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker4" name="datepicker1" /></div>
-									</div>
-
-								</div>
-							</div>
-							<!--//column-->
-
-
-						</div>
-						<!--//form hotel-->
-
-						<!--form hotel-->
-						<div class="form row" id="form5">
-							<!--column-->
-							<div class="column one-half">
-								<h5><span>02</span> Where?</h5>
-								<div class="row">
-									<div class="f-item full-width">
-										<label for="destination1">Your destination</label>
-										<input type="text" placeholder="City, region, district or Place" id="destination5" name="destination" />
-									</div>
-								</div>
-							</div>
-							<!--//column-->
-
-							<!--column-->
-							<div class="column  one-half">
-								<h5><span>03</span> When?</h5>
-								<div class="row">
-									<div class="f-item datepicker">
-										<label for="datepicker1">Destination date</label>
-										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker5" name="datepicker1" /></div>
-									</div>
-
-								</div>
-							</div>
-							<!--//column-->
-
-
-						</div>
-						<!--//form hotel-->
-
-						<!--form hotel-->
 						<div class="form row" id="form6">
 							<!--column-->
 							<div class="column one-half">
 								<h5><span>02</span> Where?</h5>
 								<div class="row">
-									<div class="f-item full-width">
-										<label for="destination1">Your destination</label>
-										<input type="text" placeholder="City, region, district or Place" id="destination6" name="destination" />
+									<div class="f-item datepicker">
+										<label for="datepicker1">select your Travel date</label>
+										<div class="datepicker-wrap"><input type="text" placeholder="" id="fform6" name="fform6" /></div>
 									</div>
 								</div>
 							</div>
@@ -357,7 +361,7 @@
 								<h5><span>03</span> When?</h5>
 								<div class="row">
 									<div class="f-item datepicker">
-										<label for="datepicker1">Destination date</label>
+										<label for="datepicker1">select your Travel date</label>
 										<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker6" name="datepicker1" /></div>
 									</div>
 
@@ -484,24 +488,36 @@
 		    var radio;
 		    if(val[0].checked) {
                 radio = 1;
-                input = document.getElementById("destinationn1").value;
+               input = document.getElementById("fform1").value;
+               //$("#fform1").datepicker.val();
+
             }
 		    else if(val[1].checked)
             {
                 radio = 2;
-                input = document.getElementById("destinationn3").value;
+                input = document.getElementById("fform2").value;
             }
 		    else if(val[2].checked)
             {
                 radio = 3;
-                input = document.getElementById("destinationn2").value;
+                input = document.getElementById("fform3").value;
             }
 		    else if(val[3].checked)
             {
                 radio = 4;
-                input = document.getElementById("destinationn3").value;
+                input = document.getElementById("fform4").value;
             }
-		    $.ajax({
+		     else if(val[4].checked)
+            {
+                radio = 5;
+                input = document.getElementById("fform5").value;
+            }
+		      else if(val[5].checked) {
+                radio = 6;
+                input = document.getElementById("fform6").value;
+            }
+		    console.log(input)
+            $.ajax({
                   type:"GET",
                   url: '/ajax/search/',
                   dataType: 'json',
@@ -611,7 +627,7 @@
 					<div class="f-item checkbox full-width">
 						<p>By clicking "Create Account" you confirm that you accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. </p>
 						<input type="submit" id="register" name="register" value="Create Account" class="gradient-button" onclick="signup_ajax()" />
-                        <a href="{% provider_login_url "facebook" method="js_SDK" %}"> Facebook login</a>
+                        <a href="{% provider_login_url "facebook" method="oauth2" %}"> Facebook login</a>
                         <label>{{ label }}</label>
 					</div>
 			</div>
@@ -619,14 +635,22 @@
 	</div>
     <script>
     function checkkill(a) {
-        if(a==1)
-        document.getElementById("login_box").style.visibility="visible"
-        else if(a==2)
-            document.getElementById("registerbox").style.visibility="visible"
-        else if(a==3)
-            document.getElementById("login_box").style.visibility="hidden"
-        else if(a==4)
-            document.getElementById("registerbox").style.visibility="hidden"
+        console.log(a);
+        if(a==1){
+            $("#login_box").css("visibility", "visible");
+            return;}
+
+        else if(a==2){
+            $("#registerbox").css("visibility", "visible");
+            return;
+        }
+        else if(a==3){
+             $("#login_box").css("visibility", "hidden");
+        return;}
+        else if(a==4){
+            $("#registerbox").css("visibility", "hidden");
+        return;}
+
     }
     function login_ajax(){
         username=document.getElementById("ns_name").value;

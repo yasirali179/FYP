@@ -2,12 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/a.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0037_auto_20200609_0445.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0038_trip_departure_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/migrations/0039_auto_20200609_0458.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/static/0037_trip_starting_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/static/0038_auto_20200609_0319.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/static/0039_remove_trip_starting_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/static/Frontend/0037_trip_departure_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/static/Frontend/0038_remove_trip_departure_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/static/Frontend/0039_trip_departure_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/static/Frontend/0040_remove_trip_departure_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/static/Frontend/0041_trip_departure_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/static/Frontend/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/static/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FYP/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/FYP/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FYP/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/FYP/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Views/search.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/migrations/0036_tour_operator_u_pswd.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/migrations/0036_tour_operator_u_pswd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/static/Frontend/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/static/Frontend/js/scripts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/search_results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/abc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/abc.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,13 +63,6 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="Django default" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="Frontend_user: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Django default" type="feb32156:DbDataSourceImpl" />
         <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
@@ -64,8 +75,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -94,18 +105,19 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.project" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FYP\Frontend\static\Frontend" />
+      <recent name="D:\FYP\Frontend\static" />
+      <recent name="D:\FYP\Frontend\templates\Frontend\BookingOrders" />
+      <recent name="D:\FYP\Frontend\Views" />
+      <recent name="D:\FYP\Frontend" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\FYP\Frontend\templates\Frontend" />
       <recent name="D:\FYP\Frontend\static\Frontend\images\uploads" />
       <recent name="D:\FYP\Frontend\static\Frontend\images" />
       <recent name="D:\FYP\Frontend\static\Frontend\images\txt" />
       <recent name="D:\FYP\media\Trip" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\FYP\Frontend\templates\Frontend\BookingOrders" />
-      <recent name="D:\FYP\Frontend\Views" />
-      <recent name="D:\FYP\Frontend" />
-      <recent name="D:\FYP\media" />
     </key>
   </component>
   <component name="RunManager">
@@ -255,6 +267,9 @@
       <workItem from="1591032690764" duration="12560000" />
       <workItem from="1591398847057" duration="2846000" />
       <workItem from="1591552784206" duration="604000" />
+      <workItem from="1591637956921" duration="4148000" />
+      <workItem from="1591655074951" duration="157000" />
+      <workItem from="1591655281284" duration="5641000" />
     </task>
     <servers />
   </component>
@@ -286,22 +301,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589821116398" />
-    <state width="1322" height="206" key="GridCell.Tab.0.bottom" timestamp="1591478325913">
+    <state width="1322" height="127" key="GridCell.Tab.0.bottom" timestamp="1591661614126">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="206" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591478325913" />
-    <state width="1322" height="206" key="GridCell.Tab.0.center" timestamp="1591478325912">
+    <state width="1322" height="127" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591661614126" />
+    <state width="1322" height="127" key="GridCell.Tab.0.center" timestamp="1591661614125">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="206" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591478325912" />
-    <state width="1322" height="206" key="GridCell.Tab.0.left" timestamp="1591478325911">
+    <state width="1322" height="127" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591661614125" />
+    <state width="1322" height="127" key="GridCell.Tab.0.left" timestamp="1591661614125">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="206" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591478325911" />
-    <state width="1322" height="206" key="GridCell.Tab.0.right" timestamp="1591478325913">
+    <state width="1322" height="127" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591661614125" />
+    <state width="1322" height="127" key="GridCell.Tab.0.right" timestamp="1591661614125">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="206" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591478325913" />
+    <state width="1322" height="127" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591661614125" />
     <state x="10" y="0" key="SettingsEditor" timestamp="1589619028993">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -318,5 +333,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="328" y="91" width="709" height="546" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1590868567431" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591651333055">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1591651333055" />
   </component>
 </project>

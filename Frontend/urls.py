@@ -7,8 +7,8 @@ from Frontend.Views.loginSignup import *
 from Frontend.Views.search import *
 urlpatterns = [
     path('', index, name="index"),
-    path('OneDay', trips1, name="trips1"),
-    path('MultipleDays', trips2, name="trips2"),
+    path('OneDay', OneDay, name="trips1"),
+    path('MultipleDays', MultipleDays, name="trips2"),
     path('Trip/<slug:articalvalue>', trip, name="trip"),
     path('Destinations/Trip/<slug:articalvalue>', trip, name="trip"),
     path('cart/Trip/<slug:articalvalue>', trip, name="trip"),
@@ -42,6 +42,6 @@ urlpatterns = [
     path('orders/', orderConfirm, name='orderConfirm'),
     path('OrderDetails/<slug:OrderID>', OrderStatus,name="OrderStatus"),
     path('OrderMain/', OrderMain, name="OrderMain"),
-    path('api/',UserList.as_view()),
+    #path('api/',UserList.as_view()),
    # path('apis/', apis, name="apis"),
 ]
