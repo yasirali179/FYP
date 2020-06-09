@@ -12,10 +12,11 @@ from urllib.request import urlopen as uReq
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
+from Frontend.recommender import recommend
 from Frontend.serializers import UserSerializer
 from rest_framework import status
 
-
+from babel.dates import format_date
 
 
 
@@ -31,7 +32,7 @@ from rest_framework import status
 
 
 def index(request):
-
+    #recommend(dest_id=3, num=5)
     context = {
         'username': request.session.get("username", None),
         'trips': Trip.objects.filter(display=True),
@@ -43,24 +44,34 @@ def index(request):
 
 
 def OneDay(request):
+    trips=Trip.objects.filter(noOfDays=1, active=True, Departure_Date__gte=datetime.datetime.now().date())
+    for t in trips:
+        t.startDate=format_date(t.Departure_Date, locale='en')
+        t.save();
     context = {
         'username': request.session.get("username", None),
-        'trips': Trip.objects.filter(noOfDays=1,active=True,Departure_Date__gte=datetime.datetime.now().date())
+        'trips':trips,
     }
     return render(request, 'Frontend/trips.html', context)
 
 
 def MultipleDays(request):
+    trips = Trip.objects.filter(noOfDays__gt=1,active=True,Departure_Date__gte=datetime.datetime.now().date())
+    for t in trips:
+        t.startDate = format_date(t.Departure_Date, locale='en')
+        t.save();
     context = {
         'username': request.session.get("username", None),
-        'trips': Trip.objects.filter(noOfDays__gt=1,active=True,Departure_Date__gte=datetime.datetime.now().date()),
+        'trips': trips,
     }
     return render(request, 'Frontend/trips.html', context)
 
 
 def trip(request, articalvalue):
     obj = Trip.objects.get(Trip_Id=articalvalue)
-    print(obj.Departure_Date)
+    #print(obj.Departure_Date.strftime('We are the %d, %h %Y'))
+    print(format_date(obj.Departure_Date, locale='en'))
+    #print(datetime.datetime.strftime(today,'We are the %d, %b %Y').date())
     reviews=Review.objects.filter(reviewFor=obj.Trip_Id)
     Trip_History.objects.get_or_create(Trip_Name=obj)
     abc = Trip_History.objects.get(Trip_Name=obj)

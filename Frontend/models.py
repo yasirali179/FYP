@@ -1,5 +1,5 @@
 import datetime
-
+from babel.dates import format_date, format_datetime, format_time
 from django.db import models
 
 class User(models.Model):
@@ -140,6 +140,7 @@ class Trip(models.Model):
     Item_Is_Discount=models.BooleanField(default=False);
     No_of_Seats=models.PositiveIntegerField(default=50);
     def __str__(self):
+        self.startDate=format_date(self.Departure_Date, locale='en')
         return self.T_Name
 
 class Deal(models.Model):
