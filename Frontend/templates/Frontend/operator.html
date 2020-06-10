@@ -90,13 +90,6 @@
   </style>
 
 
-
-
-
-
-
-
-
 	<!--main-->
 	<main class="main">		
 		<div class="wrap">
@@ -226,11 +219,59 @@
                             <div id="mytable">
                                 {% for rev in revs %}
 								<li>
+
 									<figure class="left">
 										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
 										<address><span>{{rev.reviewBy}}</span><br /><br />{{rev.created_at}}</address>
 									</figure>
-									<div class="rev "><p>{{rev.rev_good}}</p></div>
+									<div class="rev "><p>{{rev.rev_good}}
+                                    <span class="stars">
+                                           {% if rev.rating == 0 %}
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif rev.rating == 1 %}
+                                             <i class="material-icons">&#xE838;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif rev.rating == 2 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif rev.rating == 3 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif drev.rating == 4 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif rev.rating == 5 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                        {% else %}
+                                              <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% endif %}
+                                     </span></p>
+                                    </div>
+
 									</li>
 								<!--//review-->
 								{% endfor %}
@@ -243,8 +284,10 @@
 										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
 										<address><span>{{username}}</span><br /><br /></address>
 									</figure>
-							        <input  id="reviewww" required style="border: black 1px dotted " name=" " placeholder="Place your Review" />
-                                        <div id="ratingsForm">
+                                        <div class="rev ">
+							                 <input  id="reviewww" required style="border: black 1px dotted " name=" " placeholder="Place your Review" />
+                                             <div id="ratingsForm">
+                                          <span class="stars">
                                         <fieldset class="ratings">
                                         <input type="radio" hidden id="star5" name="ratings" value="5" /><label for="star5" title="Rocks!">5 stars</label>
                                         <input type="radio" hidden id="star4" name="ratings" value="4" /><label for="star4" title="Pretty good">4 stars</label>
@@ -253,13 +296,15 @@
                                         <input type="radio" hidden id="star1" name="ratings" value="1" /><label for="star1" title="Sucks big time">1 star</label>
                                         </fieldset>
                                         <div class="clearfix"></div>
+                                          </span>
                                         </div>
-
-                                    <input type="submit" id="buttonc" onclick="Myfuni({{ p.Op_Id }})" value="Submit" class="gradient-button" />
-                                    <label id="label11"></label>
+                                            <input type="submit" id="buttonc" onclick="Myfuni({{ p.Op_Id }})" value="Submit" class="gradient-button" />
+                                            <label id="label11"></label>
+                                        </div>
                                     {% else %}
                                     <label> Please login for add review</label>
                                     {% endif %}
+
                                 </li>
 								<!--//review-->
 

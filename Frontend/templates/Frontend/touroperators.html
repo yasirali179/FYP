@@ -20,6 +20,45 @@
                                 <div class="details">
 
                                     <h4>{{op.Operator_Name}}</h4>
+                                     <span class="stars">
+                                        {% if op.Average_Rating < 0.6 %}
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 0.6 and op.Average_Rating < 1.6 %}
+                                             <i class="material-icons">&#xE838;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 1.6 and op.Average_Rating < 2.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 2.6 and op.Average_Rating < 3.6  %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 3.6 and op.Average_Rating < 4.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 4.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                        {% endif %}
+                                    </span>
                                     <span class="count">Reviews</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                                     <span class="">{{op.Total_Reviews}}</span>

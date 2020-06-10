@@ -45,7 +45,7 @@ urlpatterns = [
     path('OrderDetails/<slug:OrderID>', OrderStatus,name="OrderStatus"),
     path('OrderMain/', OrderMain, name="OrderMain"),
     #path('api/',UserList.as_view()),
-   # path('apis/', apis, name="apis"),
+    # path('apis/', apis, name="apis"),
     url(r'^ajax/Add_Trip_Review/$', Add_Trip_Review, name='Add_Review'),
     url(r'^ajax/Add_TourOp_Review/$', Add_TourOp_Review, name='Add_Review'),
     url(r'^ajax/Add_Dest_Review/$', Add_Dest_Review, name='Add_Review'),

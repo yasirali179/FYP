@@ -44,6 +44,46 @@
                                 <div class="details">
                                     <!--<a href="location.html" title="View all" class="gradient-button">View all</a>-->
                                     <h4>{{dest.Des_Name}}</h4>
+                                     <span class="stars">
+                                        {% if dest.Average_Rating < 0.6 %}
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif dest.Average_Rating >= 0.6 and dest.Average_Rating < 1.6 %}
+                                             <i class="material-icons">&#xE838;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif dest.Average_Rating >= 1.6 and dest.Average_Rating < 2.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif dest.Average_Rating >= 2.6 and dest.Average_Rating < 3.6  %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif dest.Average_Rating >= 3.6 and dest.Average_Rating < 4.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif dest.Average_Rating >= 4.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                        {% endif %}
+
+                                    </span>
                                     <span class="count">Reviews</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                                     <span class="">{{dest.Total_Reviews}}</span>
@@ -87,10 +127,33 @@
                                             <em itemprop="price">Rs. {{trip.price}}</em>
                                         </span>
 										<div class="description"> <p>Starting Location: {{trip.startLocation}}</p> </div>
-                                        <a href="#" title="Book now" class="gradient-button">Book now</a>
+                                        <a  id="id{{ trip.Trip_Id  }}" onclick="myFunction({{ trip.Trip_Id }})" title="Book now" class="gradient-button">Book now</a>
+
                                     </div>
                                 </article>
-								
+								 <script>
+                        function myFunction( avc) {
+                            document.getElementById("id"+avc).innerHTML="wait"
+                          $.ajax({
+                              type:"GET",
+                              url: '/ajax/Add_in_Cart/',
+                              dataType: 'json',
+                              data:{
+                                  Item_id: avc,
+                                  quantity:1,
+
+                                },
+                            success: function (data) {
+                                var url = "{% url 'cart' %}";
+                                document.location.href = url;
+                            },
+                              failure: function(data) {
+                                  document.getElementById("id"+avc).innerHTML = "Server Timeout";
+                              }
+
+                          });
+                        }
+                        </script>
                                 {% endfor %}
 								
 								</div>
@@ -107,6 +170,45 @@
                                 <div class="details">
 
                                     <h4>{{op.Operator_Name}}</h4>
+                                    <span class="stars">
+                                        {% if op.Average_Rating < 0.6 %}
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 0.6 and op.Average_Rating < 1.6 %}
+                                             <i class="material-icons">&#xE838;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 1.6 and op.Average_Rating < 2.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 2.6 and op.Average_Rating < 3.6  %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 3.6 and op.Average_Rating < 4.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 4.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                        {% endif %}
+                                    </span>
                                     <span class="count">Reviews</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                                     <span class="">{{op.Total_Reviews}}</span>

@@ -113,71 +113,183 @@
 						</ul>
 					</div>
 					
-					<div class="row deals  results">
+					<div class="row ">
 						<!--deal-->
                     <div id="mytable">
 
                         {% for trip in trips %}
-                                <article class="one-third">
+                            <div class="deals">
+						<div class="row">
+                                 <article class="one-third">
                                     <figure>
                                         <a href="Trip/{{ trip.Trip_Id }}" >
-                                            <img  src="{{trip.pic.url}}" style="height:200px;width:100%;background-size:cover;"  /></a>
+                                            <img  src="{{trip.pic.url}}" style="height:200px;width:100%;"/></a>
                                     </figure>
                                     <div class="details">
                                         <a href="Trip/{{ trip.Trip_Id }}">
                                             <h3>{{trip.T_Name}}</h3>
                                         </a>
-                                        <span class="date"> {{trip.startDate}} </span>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									    <span class="days"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
-                                        <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. {{trip.price}}</em></span>
+                                        <div class="date">
+                                            <div style="text-align: left;display: inline">{{trip.startDate}}</div>
+                                        </div>
+                                        <span  style="text-align: right"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
+                                        <span class="price" >
+                                            <meta itemprop="currency" content="PKR" />
+                                                    Price (per person)
+                                            <em itemprop="price">Rs. {{trip.price}}</em>
+                                        </span>
 										<div class="description"> <p>Starting Location: {{trip.startLocation}}</p> </div>
-                                        <a href="#" title="Book now" class="gradient-button">Book now</a>
+                                        <a  id="id{{ trip.Trip_Id  }}" onclick="myFunction({{ trip.Trip_Id }})" title="Book now" class="gradient-button">Book now</a>
+
                                     </div>
                                 </article>
+                                     <script>
+                        function myFunction( avc) {
+                            document.getElementById("id"+avc).innerHTML="wait"
+                          $.ajax({
+                              type:"GET",
+                              url: '/ajax/Add_in_Cart/',
+                              dataType: 'json',
+                              data:{
+                                  Item_id: avc,
+                                  quantity:1,
 
+                                },
+                            success: function (data) {
+                                var url = "{% url 'cart' %}";
+                                document.location.href = url;
+                            },
+                              failure: function(data) {
+                                  document.getElementById("id"+avc).innerHTML = "Server Timeout";
+                              }
+
+                          });
+                        }
+                        </script>
+                        </div>
+                            </div>
                                 {% endfor %}
 
                         {% for dest in destinations %}
+                             <div class="destinations">
+						<div class="row">
 							<article class="one-third">
                                 <figure><a href="Destinations/{{ dest.Des_Id }}" title=""><img src="{{dest.pic.url}}" alt="" style="height:200px;width:100%;background-size:cover;"/></a></figure>
                                 <div class="details">
                                     <!--<a href="location.html" title="View all" class="gradient-button">View all</a>-->
-                                    <h4>{{dest.Des_Name}}</h4> <span class="count">{{dest.Op_review}} Rreviews</span>
-                                    <span class="stars">
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
+                                    <h4>{{dest.Des_Name}}</h4>
+                                     <span class="stars">
+                                        {% if dest.Average_Rating < 0.6 %}
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif dest.Average_Rating >= 0.6 and dest.Average_Rating < 1.6 %}
+                                             <i class="material-icons">&#xE838;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif dest.Average_Rating >= 1.6 and dest.Average_Rating < 2.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif dest.Average_Rating >= 2.6 and dest.Average_Rating < 3.6  %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif dest.Average_Rating >= 3.6 and dest.Average_Rating < 4.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif dest.Average_Rating >= 4.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                        {% endif %}
+
                                     </span>
+                                    <span class="count">Reviews</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    <span class="">{{dest.Total_Reviews}}</span>
                                     <span class="count">Average Rating</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">{{dest.Op_rating}}</span>
+                                    <span class="">{{dest.Average_Rating}}</span>
                                     <span class="count">Total Trips</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">150</span>
+                                    <span class="">{{dest.Total_Trips}}</span>
                                 </div>
                             </article>
+                        </div>
+                             </div>
                             {% endfor %}
 
                         {% for op in operators %}
+                              <div class="destinations">
+						<div class="row">
 							<article class="one-third">
                                 <figure><a href="Operator/{{ op.Op_Id }}" title=""><img src="{{op.pic.url}}" alt="" style="height:200px;width:100%;background-size:cover;"/></a></figure>
                                 <div class="details">
 
-                                    <h4>{{op.Operator_Name}}</h4> <span class="count">{{op.Op_review}} Rreviews</span>
-                                    <span class="stars">
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
+                                    <h4>{{op.Operator_Name}}</h4> <span class="stars">
+                                        {% if op.Average_Rating < 0.6 %}
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 0.6 and op.Average_Rating < 1.6 %}
+                                             <i class="material-icons">&#xE838;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                             <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 1.6 and op.Average_Rating < 2.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 2.6 and op.Average_Rating < 3.6  %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 3.6 and op.Average_Rating < 4.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xe83a;</i>
+                                        {% elif op.Average_Rating >= 4.6 %}
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                            <i class="material-icons">&#xE838;</i>
+                                        {% endif %}
                                     </span>
+                                    <span class="count">Reviews</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    <span class="">{{op.Total_Reviews}}</span>
                                     <span class="count">Average Rating</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">{{op.Op_rating}}</span>
+                                    <span class="">{{op.Average_Rating}}</span>
                                     <span class="count">Total Trips</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">150</span>
+                                    <span class="">{{op.Total_Trips}}</span>
                                 </div>
                             </article>
+                        </div>
+                              </div>
                             {% endfor %}
 
                         </div>
@@ -201,7 +313,7 @@
                           });
                         }
                         </script>
-
+                    </div>
 						<!--bottom navigation-->
 						<div class="bottom-nav">
 							<!--back up button-->
