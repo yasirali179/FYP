@@ -262,6 +262,5 @@ class Order(models.Model):
     Order_Canceled = models.BooleanField(default=False);
     Finish = models.BooleanField(default=False);
     Comments = models.CharField(max_length=500,default=0)
-
     def __str__(self):
         return self.O_id

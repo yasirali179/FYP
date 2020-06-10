@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +80,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -255,7 +255,9 @@
       <workItem from="1591777142054" duration="1614000" />
       <workItem from="1591794403624" duration="3167000" />
       <workItem from="1591797722980" duration="613000" />
-      <workItem from="1591798513346" duration="17000" />
+      <workItem from="1591798513346" duration="108000" />
+      <workItem from="1591806331696" duration="392000" />
+      <workItem from="1591808339877" duration="699000" />
     </task>
     <servers />
   </component>
@@ -279,14 +281,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="168" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583391612670">
+    <state x="168" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591809264150">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="168" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1583391612669" />
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1591735666131">
+    <state x="168" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1591809264150" />
+    <state x="321" y="0" key="CommitChangelistDialog2" timestamp="1591809390019">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591735666131" />
+    <state x="321" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591809390019" />
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1591809228056">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591809228056" />
     <state width="1322" height="13" key="GridCell.Tab.0.bottom" timestamp="1591798340952">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -303,10 +309,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1322" height="13" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591798340952" />
-    <state x="10" y="0" key="SettingsEditor" timestamp="1591748677190">
+    <state x="10" y="0" key="SettingsEditor" timestamp="1591809326105">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="10" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591748677190" />
+    <state x="10" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591809326105" />
     <state x="413" y="170" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1586333200616">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
