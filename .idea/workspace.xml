@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/operator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/operator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/place.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/place.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/places.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/places.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/search_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/touroperators.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/touroperators.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trips.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trips.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/repeater.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -262,6 +254,8 @@
       <workItem from="1591746920089" duration="1790000" />
       <workItem from="1591777142054" duration="1614000" />
       <workItem from="1591794403624" duration="3167000" />
+      <workItem from="1591797722980" duration="613000" />
+      <workItem from="1591798513346" duration="17000" />
     </task>
     <servers />
   </component>
@@ -293,22 +287,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591735666131" />
-    <state width="1322" height="13" key="GridCell.Tab.0.bottom" timestamp="1591797576237">
+    <state width="1322" height="13" key="GridCell.Tab.0.bottom" timestamp="1591798340952">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="13" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591797576237" />
-    <state width="1322" height="13" key="GridCell.Tab.0.center" timestamp="1591797576237">
+    <state width="1322" height="13" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591798340952" />
+    <state width="1322" height="13" key="GridCell.Tab.0.center" timestamp="1591798340952">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="13" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591797576237" />
-    <state width="1322" height="13" key="GridCell.Tab.0.left" timestamp="1591797576237">
+    <state width="1322" height="13" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591798340952" />
+    <state width="1322" height="13" key="GridCell.Tab.0.left" timestamp="1591798340951">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="13" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591797576237" />
-    <state width="1322" height="13" key="GridCell.Tab.0.right" timestamp="1591797576237">
+    <state width="1322" height="13" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591798340951" />
+    <state width="1322" height="13" key="GridCell.Tab.0.right" timestamp="1591798340952">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="13" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591797576237" />
+    <state width="1322" height="13" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591798340952" />
     <state x="10" y="0" key="SettingsEditor" timestamp="1591748677190">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
