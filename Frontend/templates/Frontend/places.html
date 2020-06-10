@@ -19,18 +19,21 @@
                                 <figure><a href="Destinations/{{ dest.Des_Id }}" title=""><img src="{{dest.pic.url}}" alt="" style="height:200px;width:100%;background-size:cover;"/></a></figure>
                                 <div class="details">
                                     <!--<a href="location.html" title="View all" class="gradient-button">View all</a>-->
-                                    <h4>{{dest.Des_Name}}</h4> <span class="count">{{dest.Op_review}} Rreviews</span>
+                                    <h4>{{dest.Des_Name}}</h4>
                                     <span class="stars">
                                         <i class="material-icons">&#xE838;</i>
                                         <i class="material-icons">&#xE838;</i>
                                         <i class="material-icons">&#xE838;</i>
                                         <i class="material-icons">&#xE838;</i>
                                     </span>
+                                    <span class="count">Reviews</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    <span class="">{{dest.Total_Reviews}}</span>
                                     <span class="count">Average Rating</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">{{dest.Op_rating}}</span>
+                                    <span class="">{{dest.Average_Rating}}</span>
                                     <span class="count">Total Trips</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">150</span>
+                                    <span class="">{{dest.Total_Trips}}</span>
                                 </div>
                             </article>
                             {% endfor %}

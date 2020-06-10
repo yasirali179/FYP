@@ -65,6 +65,7 @@ class Destinations(models.Model):
     Total_Reviews = models.PositiveIntegerField(default=0);
     Total_Rating = models.PositiveIntegerField(default=0);
     Average_Rating = models.FloatField(default=0)
+    Total_Trips = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return str(self.Des_Name)
@@ -140,6 +141,7 @@ class Tour_Operator(models.Model):
     Total_Reviews = models.PositiveIntegerField(default=0);
     Total_Rating = models.PositiveIntegerField(default=0);
     Average_Rating = models.FloatField(default=0)
+    Total_Trips=models.PositiveIntegerField(default=0)
     def __str__(self):
         return self.Operator_Name
 

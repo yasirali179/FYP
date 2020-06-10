@@ -12,32 +12,27 @@
 					</header>
                 </div>
 					
-					<div class="deals">
+					<div class="destinations">
 						<div class="row">
-							<!--deal-->
                             {% for op in operators %}
 							<article class="one-fourth">
                                 <figure><a href="Operator/{{ op.Op_Id }}" title=""><img src="{{op.pic.url}}" alt="" style="height:200px;width:100%;background-size:cover;"/></a></figure>
                                 <div class="details">
 
-                                    <h4>{{op.Operator_Name}}</h4> <span class="count">{{op.Op_review}} Rreviews</span>
-                                    <span class="stars">
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                    </span>
+                                    <h4>{{op.Operator_Name}}</h4>
+                                    <span class="count">Reviews</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    <span class="">{{op.Total_Reviews}}</span>
                                     <span class="count">Average Rating</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">{{op.Op_rating}}</span>
+                                    <span class="">{{op.Average_Rating}}</span>
                                     <span class="count">Total Trips</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">150</span>
+                                    <span class="">{{op.Total_Trips}}</span>
                                 </div>
                             </article>
                             {% endfor %}
-
-								</div>
-								</div>
+						</div>
+					</div>
 			<div class="bottom-nav">
 						<!--back up button-->
 						<a href="#" class="scroll-to-top" title="Back up">Back up</a> 

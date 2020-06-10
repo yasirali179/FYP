@@ -44,18 +44,14 @@
                                 <div class="details">
                                     <!--<a href="location.html" title="View all" class="gradient-button">View all</a>-->
                                     <h4>{{dest.Des_Name}}</h4>
-                                    <span class="count">{{dest.Op_review}} Rreviews</span>
-                                    <span class="stars">
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                    </span>
+                                    <span class="count">Reviews</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    <span class="">{{dest.Total_Reviews}}</span>
                                     <span class="count">Average Rating</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">{{dest.Op_rating}}</span>
+                                    <span class="">{{dest.Average_Rating}}</span>
                                     <span class="count">Total Trips</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">150</span>
+                                    <span class="">{{dest.Total_Trips}}</span>
                                 </div>
                             </article>
                             {% endfor %}
@@ -83,7 +79,6 @@
                                         </a>
                                         <div class="date">
                                             <div style="text-align: left;display: inline">{{trip.startDate}}</div>
-                                            <div style="text-align: right;display: inline">{{trip.startDate}}</div>
                                         </div>
                                         <span  style="text-align: right"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
                                         <span class="price" >
@@ -111,18 +106,15 @@
                                 <figure><a href="Operator/{{ op.Op_Id }}" title=""><img src="{{op.pic.url}}" alt="" style="height:200px;width:100%;background-size:cover;"/></a></figure>
                                 <div class="details">
 
-                                    <h4>{{op.Operator_Name}}</h4> <span class="count">{{op.Op_review}} Rreviews</span>
-                                    <span class="stars">
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                        <i class="material-icons">&#xE838;</i>
-                                    </span>
+                                    <h4>{{op.Operator_Name}}</h4>
+                                    <span class="count">Reviews</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    <span class="">{{op.Total_Reviews}}</span>
                                     <span class="count">Average Rating</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">{{op.Op_rating}}</span>
+                                    <span class="">{{op.Average_Rating}}</span>
                                     <span class="count">Total Trips</span>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="">150</span>
+                                    <span class="">{{op.Total_Trips}}</span>
                                 </div>
                             </article>
                             {% endfor %}

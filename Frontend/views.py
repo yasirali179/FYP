@@ -19,18 +19,6 @@ from rest_framework import status
 from babel.dates import format_date
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 def index(request):
     #recommend(dest_id=3, num=5)
     context = {
@@ -107,10 +95,13 @@ def blogs(request):
 
 
 def Places(request):
-
+    abc=Destinations.objects.all()
+    for a in abc:
+        a.Total_Trips=Trip.objects.filter(Dest=a).count()
+        a.save();
     context = {
         'username': request.session.get("username", None),
-        'destinations': Destinations.objects.all(),
+        'destinations':abc,
     }
     return render(request, 'Frontend/places.html', context)
 
@@ -133,10 +124,13 @@ def place(request, articalvalue):
 
 
 def touroperator(request):
-
+    abc=Tour_Operator.objects.all()
+    for a in abc:
+        a.Total_Trips=Trip.objects.filter(event_host=a).count()
+        a.save();
     context = {
         'username': request.session.get("username", None),
-        'operators': Tour_Operator.objects.all(),
+        'operators':abc,
 
     }
     return render(request, 'Frontend/touroperators.html', context)
