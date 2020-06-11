@@ -20,7 +20,7 @@ from babel.dates import format_date
 
 
 def index(request):
-    #recommend(dest_id=3, num=5)
+    recommend(dest_id=3, num=5)
     context = {
         'username': request.session.get("username", None),
         'trips': Trip.objects.filter(display=True),
@@ -132,7 +132,6 @@ def touroperator(request):
     context = {
         'username': request.session.get("username", None),
         'operators':abc,
-
     }
     return render(request, 'Frontend/touroperators.html', context)
 

@@ -271,10 +271,8 @@ class Order(models.Model):
     quantity = models.PositiveIntegerField(default=0)
     O_Total = models.DecimalField(default=0.000, max_digits=100, decimal_places=2)
     Order_Verified = models.BooleanField(default=False);
-    Order_Packed = models.BooleanField(default=False);
-    Order_shipped = models.BooleanField(default=False);
-    Order_Received = models.BooleanField(default=False);
-    Order_Claimed = models.BooleanField(default=False);
+    Payment_Received = models.BooleanField(default=False);
+    Order_Booked = models.BooleanField(default=False);
     Order_Canceled = models.BooleanField(default=False);
     Finish = models.BooleanField(default=False);
     Comments = models.CharField(max_length=500,default=0)

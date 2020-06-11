@@ -25,12 +25,12 @@
                                             <td>
                                                 {% if order.Order_Canceled%}
                                                     Order Canceled
-                                                {% elif order.Order_shipped%}
-                                                    Shipped to Address
-                                                {% elif order.Order_Packed%}
-                                                    Order Packing Completed
+                                                {% elif order.Order_Booked%}
+                                                    Order Completed
+                                                {% elif order.Payment_Received%}
+                                                    process the Booking
                                                 {% elif order.Order_Verified %}
-                                                    Packing Order
+                                                    Waiting for Payment
                                                 {% else %}
                                                     verifying Order
                                                 {% endif %}

@@ -60,8 +60,8 @@
 
                       </div>
                     <div class="form-group">
-                          <Label id="PH" >Order Packing Completed
-                              {% if order.Order_Packed %}
+                          <Label id="PH" >Payment Received
+                              {% if order.Payment_Received %}
                                     <i style="color:green;font-size:24px" class="fa">&#10004;</i>
                                 {% else %}
                                  <i style="color:darkred;font-size:24px" class="fa">&#10008;</i>
@@ -69,8 +69,8 @@
                           </label>
                       </div>
                    <div class="form-group">
-                          <Label class="active" >Shipped to Address
-                          {% if order.Order_shipped %}
+                          <Label class="active" >Booking Completed
+                          {% if order.Order_Booked %}
                                     <i style="color:green;font-size:24px" class="fa">&#10004;</i>
                                 {% else %}
                                  <i style="color:darkred;font-size:24px" class="fa">&#10008;</i>

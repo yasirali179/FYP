@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
           <div class="col-xl-8 ftco-animate">
               <form class="billing-form bg-light p-3 p-md-5">
-                  <h3 class="billing-heading mb-4">Shipment Details</h3>
+                  <h3 class="billing-heading mb-4">Confirm your Order Details</h3>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Name:&Tab;&Tab;</label>
                          <Label id="Name" >{{ data.Cust.U_Name }}</label>
@@ -35,7 +35,7 @@
                           <a id="Password" >{{ data.items_in_cart.T_Name }}</a>
                       </div>
                   <div class="form-group">
-                        <label for="exampleInputPassword1">No of People &nbsp;</label>
+                        <label for="exampleInputPassword1">No of People(s): &nbsp;</label>
                           <a id="Password" >{{ data.quantity }}</a>
                       </div>
                   <p class="border-right"><a href="#" class="btn btn-primary">Edit Profile</a></p>
@@ -45,7 +45,7 @@
 
 
 	          <div class="row mt-5 pt-3 d-flex">
-	          	<div class="col-md-6 d-flex">
+                  	<div class="col-md-6 d-flex">
 	          		<div class="cart-detail cart-total bg-light p-3 p-md-4">
 	          			<h3 class="billing-heading mb-4">Cart Total</h3>
 	          			<p class="d-flex">
@@ -63,47 +63,33 @@
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span id="PriceTotal1">Rs. {{ Total }}</span>
+    						<span id="PriceTotal1">Rs. {{ data.Total }}</span>
     					</p>
 								</div>
 	          	</div>
-	          	<div class="col-md-6">
-	          		<div class="cart-detail bg-light p-3 p-md-4">
+	          	<div class="row mt-5 pt-3 d-flex">
+	          	<div class="col-md-6 d-flex">
+	          		<div class="cart-detail cart-total bg-light p-3 p-md-4">
 	          			<h3 class="billing-heading mb-4">Payment Method</h3>
-                        <form method="POST" class="form-horizontal">
+                        <form method="POST" class=" ">
                                         {% csrf_token %}
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" disabled class="mr-2"> EasyPaisa</label>
-											</div>
-										</div>
+
+                                    <label><input type="radio" name="optradio" disabled class="mr-2"> EasyPaisa</label>
+
+                                    <label><input type="radio" name="optradio" disabled class="mr-2"> Credit Card</label>
+
+                                    <label><input type="radio" name="optradio" required  class="mr-2"> Cash on Hand</label>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="checkbox"  >
+                                        <label><input type="checkbox" id="checkbox9" required name="checkbox9" value="1" class="mr-2"> I have read and accept the <a href="#">Terms and Conditions</a></label>
                                     </div>
-                                        <div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" disabled class="mr-2"> Credit Card</label>
-											</div>
-										</div>
-
-									    </div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" required  class="mr-2"> Cash on Delivery</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="checkbox"  >
-											   <label><input type="checkbox" id="checkbox9" required name="checkbox9" value="1" class="mr-2"> I have read and accept the <a href="#">Terms and Conditions</a></label>
-											</div>
-										</div>
-									</div>
-									<p><button type="submit" id="submit" class="btn btn-primary py-3 px-4">Place order</button></p>
-                                    </form>
+                                </div>
+                            </div>
+                            <p><button type="submit" id="submit" class="btn btn-primary py-3 px-4">Place order</button></p>
+                        </form>
+                    </div>
 								</div>
 	          	</div>
 	          </div>
