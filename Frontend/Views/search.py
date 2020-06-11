@@ -24,10 +24,6 @@ def search_results(request):
             abc = Trip_History.objects.get(Trip_Name=obj)
             abc.count = abc.count + 1
             abc.save()
-    if radio == "3":
-        destt = Destinations.objects.filter(Des_Name__contains=input)
-    if radio == "5":
-        oprr = Tour_Operator.objects.filter(Operator_Name__contains=input)
     if radio == "2":
         if input == "1":
             tripp = Trip.objects.filter(price__gte=0 , price__lte=5000)
@@ -39,11 +35,15 @@ def search_results(request):
             tripp = Trip.objects.filter(price__gte=10001,price__lte=15000)
         if input == "4":
             tripp = Trip.objects.filter(price__gte=15001,price__lte=20000)
+    if radio == "3":
+        destt = Destinations.objects.filter(Des_Name__contains=input)
     if radio == "4":
         print("abc")
+    if radio == "5":
+        oprr = Tour_Operator.objects.filter(Operator_Name__contains=input)
+
     if radio == "6":
         tripp = Trip.objects.filter(Departure_Date__gte=input)
-        print(input)
     context = {
         'username': request.session.get("username", None),
         'trips': tripp,
@@ -59,7 +59,7 @@ def search(request):
     request.session["input"]  =request.GET['input']
 
     data = {
-        'message': "Comment Added Sucessfully",
+        'message': "Sucessfully",
     }
     return HttpResponse(json.dumps(data))
 

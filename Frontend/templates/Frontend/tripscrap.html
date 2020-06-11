@@ -1,0 +1,51 @@
+{% extends 'Frontend/repeater.html' %}
+{% load static %}
+{% block content %}
+	<!--main-->
+	<main class="main">		
+		<div class="wrap">
+			<div class="row">
+		
+				<div class="full-width">
+					<header class="s-title">
+						<h2>Most popular Trips</h2>
+					</header>
+                </div>
+					
+					<div class="deals">
+						<div class="row">
+							<!--deal-->
+                            {% for trip in trips %}
+                                <article class="one-fourth">
+                                    <figure>
+                                        <a href="#" >
+                                            <img  src="{{trip.pic}}"  style="height:200px;width:100%;background-size:cover;"> </a>
+                                    </figure>
+                                    <div class="details">
+                                        <a href="#">
+                                            <h3>{{trip.T_Name}}</h3>
+                                        </a>
+                                        <span class="date"> {{trip.startDate}} </span>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									    <span class="days"> {{trip.noOfDays}} Days/ {{ trip.noOfNights }} Night </span>
+                                        <span class="price" ><meta itemprop="currency" content="PKR" />Price (per person)<em itemprop="price">Rs. {{trip.price}}</em></span>
+										<div class="description"> <p>Starting Location: {{trip.startLocation}}</p> </div>
+                                        <a  title="Book now" class="gradient-button">Book now</a>
+                                    </div>
+                                </article>
+
+                            {% endfor %}
+
+								</div>
+								</div>
+			                <div class="bottom-nav">
+							    <a href="#" class="scroll-to-top" title="Back up">Back up</a>
+						    </div>
+					
+		</div>
+        </div>
+	</main>
+	<!--//main-->
+	
+
+	{% endblock %}

@@ -15,10 +15,8 @@ for idx, row in dataset.iterrows():
     similar_items = [(cosine_similarities[idx][i], dataset['dest_id'][i]) for i in similar_indices]
     results[row['dest_id']] = similar_items[1:]
 
-
 def destination(id):
     return dataset.loc[dataset['dest_id'] == id]['dest_name'].tolist()[0].split(' - ')[0]
-
 
 # Just reads the results out of the dictionary
 def recommend(dest_id, num):

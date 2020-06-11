@@ -57,10 +57,12 @@ def MultipleDays(request):
 
 def trip(request, articalvalue):
     obj = Trip.objects.get(Trip_Id=articalvalue)
+
     Trip_History.objects.get_or_create(Trip_Name=obj)
     abc = Trip_History.objects.get(Trip_Name=obj)
     abc.count = abc.count + 1
     abc.save()
+
     context = {
         'username': request.session.get("username", None),
         'p': obj,
@@ -72,7 +74,6 @@ def trip(request, articalvalue):
 def operator(request, articalvalue):
     obj = Tour_Operator.objects.get(Op_Id=articalvalue)
     obj1 = Trip.objects.filter(event_host=obj)
-
     Tour_Operator_History.objects.get_or_create(Tour_Operator_Name=obj)
     abc = Tour_Operator_History.objects.get(Tour_Operator_Name=obj)
     abc.count = abc.count + 1
@@ -162,13 +163,13 @@ def News(request):
     return render(request, 'Frontend/News.html',context)
 
 def tripScrap(request):
+    TripScrap.objects.all().delete()
     my_url = 'https://pakistantourntravel.com/tours/hunza-valley-tour-package/'
     uClient = uReq(my_url)
     page_html = uClient.read()
     uClient.close()
     page_soup = soup(page_html, "html.parser")
     containers = page_soup.findAll("div", {"class": "wpb_column vc_column_container vc_col-sm-4"})
-    # print(len(containers))
 
     for container in containers:
         print(container.div.h2.a.text)
@@ -176,21 +177,36 @@ def tripScrap(request):
         print(price[0].text)
 
     myurl = 'https://www.travelo.pk/packages.php'
+    myurl1 = 'https://www.travelo.pk'
     uClients = uReq(myurl)
     pageHtml = uClients.read()
     uClients.close()
     pageSoup = soup(pageHtml, "html.parser")
     Containers = pageSoup.findAll("div", {"class": "col-sm-4"})
-    # print(len(Containers))
 
     for Container in Containers:
-        print(Container.div.img["alt"])
+        abc=TripScrap.objects.create();
+        abc.T_Name=Container.div.h5.text
+        pic=myurl1 + '/' + Container.div.img["src"]
+        abc.pic=pic
+        aaa=Container.div.p.text
+        aaa = " ".join(aaa)
+        digits = [int(s) for s in aaa.split() if s.isdigit()]
+        abc.noOfDays=digits[0]
+        if len(digits) >=2:
+            abc.noOfNights=digits[1]
+        else:
+            abc.noOfNights = 1
         price = Container.findAll("div", {"class": "price"})
-        print(price[0].text)
-
-    return redirect(reverse('index'))
+        abc.price=price[0].text[1:7]
+        abc.startLocation="Lahore"
+        abc.startDate="24th July"
+        abc.save()
+    return render(request,"Frontend/tripscrap.html",{'trips':TripScrap.objects.all(),})
+    #return redirect(reverse('index'))
 
 def newsScrap(request):
+    newsfeed.objects.all().delete()
     import requests
     urls = News_Sraping_Url.objects.all()
     for url in urls:
@@ -206,15 +222,21 @@ def newsScrap(request):
             abc.Source = a["name"]
             abc.date = ar["publishedAt"]
             abc.description = ar["description"]
-            abc.url = ar["urlToImage"]
+            urll=ar["urlToImage"]
+            if urll is not None:
+                abc.url = urll
+            else:
+                abc.url = " "
             abc.save()
-    return redirect(reverse('index'))
+    context = {
+        'news': newsfeed.objects.all(),
+    }
+    return render(request, 'Frontend/News.html', context)
 
 def Add_Review(request):
     Trip_id = request.GET['Item_id']
     content = request.GET['content']
     rating = request.GET['ratings']
-    print(rating)
     abc=TripReview.objects.create(reviewFor=Trip_id)
     abc.rev_good=content
     abc.rating=rating
@@ -234,14 +256,14 @@ def Add_Review(request):
 def sorting(request):
     obj = Trip_History.objects.order_by('-count')
     print("----------------------------------------")
-    print("Top trending Trips  ")
+    print("Top trending Trips based on User data ")
     i = 1
     for x in obj:
         print(i, x.Trip_Name, x.count, )
         i = i + 1
     obj = Destination_History.objects.order_by('-count')
     print("----------------------------------------")
-    print("Top trending Destinations  ")
+    print("Top trending Destinations based on User data  ")
     i = 1
     for x in obj:
         print(i, x.Destination_Name, x.count, )
@@ -249,17 +271,41 @@ def sorting(request):
 
     obj = Tour_Operator_History.objects.order_by('-count')
     print("----------------------------------------")
-    print("Top trending Tour Operators ")
+    print("Top trending Tour Operators based on User data ")
     i = 1
     for x in obj:
         print(i, x.Tour_Operator_Name, x.count, )
         i = i + 1
     return redirect(reverse('index'))
 
+def sorting1(request):
+    obj=Trip.objects.order_by('-Average_Rating')
+    print("----------------------------------------")
+    print("Top trending Trips based on User Rating  ")
+    i = 1
+    for x in obj:
+        print(i, x.T_Name, x.Average_Rating, )
+        i = i + 1
+    obj = Destinations.objects.order_by('-Average_Rating')
+    print("----------------------------------------")
+    print("Top trending Destinations based on User Rating")
+    i = 1
+    for x in obj:
+        print(i, x.Des_Name, x.Average_Rating, )
+        i = i + 1
+
+    obj = Tour_Operator.objects.order_by('-Average_Rating')
+    print("----------------------------------------")
+    print("Top trending Tour Operators based on User Rating")
+    i = 1
+    for x in obj:
+        print(i, x.Operator_Name, x.Average_Rating, )
+        i = i + 1
+    return redirect(reverse('index'))
+
 def get_places(request):
   if request.is_ajax():
     q = request.GET.get('term', '')
-    print(q)
     places = Trip.objects.filter(T_Name__icontains=q)
     results = []
     for pl in places:

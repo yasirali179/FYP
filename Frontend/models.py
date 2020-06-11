@@ -12,6 +12,7 @@ class User(models.Model):
     def __str__(self):
         return self.U_Name
 
+#class UserHistory(models.Model):
 
 
 class TripReview(models.Model):
@@ -173,6 +174,21 @@ class Trip(models.Model):
     Average_Rating=models.FloatField(default=0)
     def __str__(self):
         self.startDate=format_date(self.Departure_Date, locale='en')
+        return self.T_Name
+
+
+
+class TripScrap(models.Model):
+    T_Name = models.CharField(max_length=200);
+    pic = models.URLField( blank=True, verbose_name="")
+    noOfDays = models.PositiveIntegerField(default=0);
+    noOfNights = models.PositiveIntegerField(default=0);
+    display = models.BooleanField(default=False)
+    price = models.CharField(max_length=20);
+    startLocation = models.CharField(max_length=200);
+    startDate = models.CharField(max_length=200);
+    active=models.BooleanField(default=False)
+    def __str__(self):
         return self.T_Name
 
 class Deal(models.Model):

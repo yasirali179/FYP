@@ -140,3 +140,9 @@ def OrderMain(request):
         abc=Order.objects.filter(Cust=custm,Finish=False)
         print(abc)
     return render(request, 'frontend/BookingOrders/Orderlist.html',{'orders':abc,'username': request.session.get("username", None),'message':message});
+
+def apis(request,a):
+    data={
+       'abc':a,
+    }
+    return HttpResponse(json.dumps(data))
