@@ -8,7 +8,7 @@
 		
 				<div class="full-width">
 					<header class="s-title">
-						<h2>Most popular Trips</h2>
+
 					</header>
                 </div>
 					
@@ -24,126 +24,67 @@
 						      <tr class="text-center">
                                 <th></th>
 						        <th><h3  > {{ t.T_Name }}</h3></th>
-						        <th><form method="post" action="abc/accending">
-                                    {% csrf_token %}
-                                    <input id="trip2" placeholder="Enter Value">
-                                    <button  type="submit"></button>
-                                    <div class="ui-widget">
-                                          <label for="places">Places: </label>
-                                          <input id="places">
-                                        </div>
-                                    </form>
-                                    <script>
-
-                                          $(function() {
-                                            $("#places").autocomplete({
-                                              source: "/api/get_places/",
-                                              select: function (event, ui) {
-                                                AutoCompleteSelectHandler(event, ui)
-                                              },
-                                              minLength: 2,
-                                            });
-                                          });
-
-                                          function AutoCompleteSelectHandler(event, ui)
-                                          {
-                                            var selectedObj = ui.T_Name;
-                                          }
-
-                                        </script>
-                                    <!-- jQuery !-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
-<!-- jQuery UI !-->
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-                                </th>
+						        <th><h3  > {{ u.T_Name }}</h3></th>
 						      </tr>
 						    </thead>
 						    <tbody id="mytable">
                                       <tr class="text-center">
                                         <td>   </td>
                                         <td class="image-prod" > <img  src="{{t.pic.url}}"  style="height:200px;width:100%;background-size:cover;"> </td>
-                                        <td>                                                                         </td>
+                                        <td class="image-prod"><img  src="{{u.pic.url}}"  style="height:200px;width:100%;background-size:cover;"></td>
                                       </tr>
                                       <tr class="text-center">
                                         <td>  Price </td>
                                         <td> {{ t.price }}</td>
-                                        <td>                                                                         </td>
+                                        <td> {{ u.price }}</td>
                                       </tr>
                                         <tr class="text-center">
                                         <td>  Starting Date </td>
                                         <td> {{ t.startDate }}</td>
-                                        <td>                                                                         </td>
+                                        <td> {{ u.startDate }}</td>
                                       </tr>
                                       <tr class="text-center">
                                         <td>  Destination </td>
                                         <td> {{ t.Dest }}</td>
-                                        <td>                                                                         </td>
+                                         <td> {{ u.Dest }}</td>
                                       </tr>
                                     <tr class="text-center">
                                         <td>  Host By </td>
                                         <td> {{ t.event_host.Operator_Name }}</td>
-                                        <td>                                                                         </td>
+                                        <td> {{ u.event_host.Operator_Name }}</td>
 
                                     <tr class="text-center">
                                         <td>  No Of Days </td>
                                         <td> {{ t.noOfDays }}</td>
-                                        <td>                                                                         </td>
+                                        <td> {{ u.noOfDays }}</td>
                                       </tr>
                                     <tr class="text-center">
                                         <td>  No of Nights </td>
                                         <td> {{ t.noOfNights }}</td>
-                                        <td>                                                                         </td>
+                                        <td> {{ u.noOfNights }}</td>
+                                      </tr>
+                            <tr class="text-center">
+                                        <td> Total Reviews </td>
+                                        <td> {{ t.Total_Reviews }}</td>
+                                        <td> {{ u.Total_Reviews }}</td>
+                                      </tr>
+                            <tr class="text-center">
+                                        <td>  Rating Out of 5 </td>
+                                        <td> {{ t.Average_Rating }}</td>
+                                        <td> {{ u.Average_Rating }}</td>
                                       </tr>
 
 						    </tbody>
 						  </table>
 					  </div>
     			</div>
-                <div id="tt">
-                </div>
+
     		</div>
-    		<div class="row justify-content-end">
-                <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
-    				<div class="cart-total mb-3">
-    					<h3>Cart Totals</h3>
-    					<p class="d-flex">
-    						<span>Subtotal</span>
-    						Rs. <span id="PriceTotal" >{{ Total }}</span>
-    					</p>
-    					<p class="d-flex">
-    						<span>Delivery</span>
-    						Rs. <span>0.00</span>
-    					</p>
-    					<p class="d-flex">
-    						<span>Discount</span>
-    						Rs. <span>0.00</span>
-    					</p>
-    					<hr>
-    					<p class="d-flex total-price">
-    						<span>Total</span>
-    						Rs. <span id="PriceTotal1">{{ Total }}</span>
-    					</p>
-    				</div>
-                     <form method="POST" class="form-horizontal">
-                        {% csrf_token %}
-                        <p class="text-center"><button type="submit" class="btn btn-primary py-3 px-4">Proceed to Checkout</button></p>
-                    </form>
-    			</div>
-    		</div>
+
 			</div>
 
 								</div>
 								</div>
-			<div class="bottom-nav">
-							<!--back up button-->
-							<a href="#" class="scroll-to-top" title="Back up">Back up</a>
-							<!--//back up button-->
-
-							<!--pager-->
-						
-							<!--//pager-->
-						</div>
 					
 		</div>
         </div>

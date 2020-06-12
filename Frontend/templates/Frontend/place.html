@@ -535,22 +535,16 @@
                         lng: position.coords.longitude
 
                     };
-                    console.log(position);
                     window.pos = pos;
 
                     var directionsService = new google.maps.DirectionsService;
                     var directionsDisplay = new google.maps.DirectionsRenderer;
-                    //  ourOrigin = new google.maps.LatLng(pos.lat, pos.lng);
                     map = new google.maps.Map(document.getElementById('map1'), {
                         zoom: 7,
                         center: { lat: pos.lat, lng: pos.lng }
-
                     });
                     directionsDisplay.setMap(map);
-
                     calculateAndDisplayRoute(directionsService, directionsDisplay);
-
-
                 }, function () {
 
                     handleLocationError(true, infoWindow, map.getCenter());

@@ -19,10 +19,10 @@ def return_or_create_cart(request):
 
 
 def cart(request ):
-    abc = return_or_create_cart(request)
-    if request.method == 'POST':
+    abc = return_or_create_cart(request)    # create cart of register user or get cart object is already created
+    if request.method == 'POST':           # confirm order
         if abc.items_in_cart is not None:
-            return redirect(reverse('orderConfirm'))
+            return redirect(reverse('orderConfirm')) #redirect to order
     if abc is not None:
         context = {
                     'items': abc.items_in_cart,
@@ -36,31 +36,21 @@ def cart(request ):
     return render(request, 'Frontend/BookingOrders/cart.html', context)
 
 def Add_in_Cart(request):
-    print("idr")
-    abc=return_or_create_cart(request)
+    abc=return_or_create_cart(request)  # create cart of register user or get cart object is already created
     message=" "
     total=0
     if abc is None:
         message="Login First"
     else:
-        item_id = request.GET['Item_id']
-        quantity = request.GET['quantity']
-        print(item_id)
-        print(quantity)
-       # if int(quantity) is 0:
-           # abc.items_in_cart=""
-           # abc.quantity=0
-           # abc.Total=0
-          #  abc.save()
-         #   message = "removed"
-        #else:
-        iteme = Trip.objects.get(Trip_Id=item_id)
-        abc.items_in_cart = iteme;
+        trip = request.GET['Item_id']
+        quantity = request.GET['quantity']  #get item_id and quantity from frontend through Ajax query
+        tripp = Trip.objects.get(Trip_Id=trip) #get trip object for database
+        abc.items_in_cart = tripp;
         abc.quantity = quantity;
-        if iteme.Item_Is_Discount:
-            abc.Total = iteme.Discount_Price * int(quantity)
+        if tripp.Item_Is_Discount:
+            abc.Total = tripp.Discount_Price * int(quantity)
         else:
-            abc.Total = iteme.price * int(quantity)
+            abc.Total = tripp.price * int(quantity)
         abc.save();
         message = "Added"
         total=abc.Total
@@ -68,18 +58,13 @@ def Add_in_Cart(request):
         'message': message,
         'PriceTotal': total,
     }
-    return HttpResponse(json.dumps(data))
+    return HttpResponse(json.dumps(data)) #dumps data in jason format to frontend
 
 
 def compare(request,articalvalue1,articalvalue2):
-    onetrip=False;
-    if articalvalue2 is 'Z':
-        onetrip=True
-    if request.method == 'POST':
-        radio = request.POST.get("trip2")
-        print(radio)
     context={
         't':Trip.objects.get(Trip_Id=articalvalue1),
+        'u': Trip.objects.get(Trip_Id=articalvalue2)
     }
     return render(request, 'Frontend/comparison.html', context)
 
@@ -114,7 +99,7 @@ def orderConfirm(request):
     else:
         cust = User.objects.get(U_Name=PH)
         if abc.items_in_cart is None:
-            return redirect(reverse('shop'))
+            return redirect(reverse('index'))
 
     context = {
         'data': abc,
