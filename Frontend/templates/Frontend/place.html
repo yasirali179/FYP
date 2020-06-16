@@ -415,7 +415,7 @@
                             </div>
 
 								<!--review-->
-								<li style="background-color: red">
+								<li >
                                     {% if username is not None %}
                                     <figure class="left">
 										<img src="{% static 'Frontend/images/uploads/avatar.jpg' %}" alt="avatar" />
@@ -570,7 +570,15 @@
 
             }, function (response, status) {
                 var leng=response.routes.length;
+                console.log(leng)
                 var gt=0;
+                if(leng==1){
+                        document.getElementById("dist1").innerHTML = response.routes[0].legs[0].distance.text
+                        document.getElementById("time1").innerHTML = response.routes[0].legs[0].duration.text
+                        document.getElementById("summery1").innerHTML = response.routes[0].summary
+                        document.getElementById("start1").innerHTML = response.routes[0].legs[0].start_address
+                        document.getElementById("end1").innerHTML = response.routes[0].legs[0].end_address
+                }
                 if(leng==2)
                 {
                     var max=Math.min(response.routes[0].legs[0].duration.value, response.routes[1].legs[0].duration.value,);

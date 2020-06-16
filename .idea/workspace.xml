@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80f63bd7-5719-47cf-917f-12ee194a6cf1" name="Default Changelist" comment="update">
-      <change afterPath="$PROJECT_DIR$/media/Trip/upper-chitral-torkhow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/Trip/fairy-meadows-trek.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/cart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Views/reviews.py" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Views/reviews.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/comparison.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/comparison.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/BookingOrders/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/BookingOrders/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/BookingOrders/orderconfirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/BookingOrders/orderconfirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/operator.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/operator.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/place.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/place.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/templates/Frontend/trip.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
@@ -251,6 +251,7 @@
       <workItem from="1591869117203" duration="3300000" />
       <workItem from="1591874343058" duration="6603000" />
       <workItem from="1591891611526" duration="18098000" />
+      <workItem from="1591925058604" duration="2790000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1591809441564</created>
@@ -296,22 +297,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591809228056" />
-    <state width="1322" height="184" key="GridCell.Tab.0.bottom" timestamp="1591921306484">
+    <state width="1322" height="12" key="GridCell.Tab.0.bottom" timestamp="1592279366317">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="184" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591921306484" />
-    <state width="1322" height="184" key="GridCell.Tab.0.center" timestamp="1591921306484">
+    <state width="1322" height="12" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592279366317" />
+    <state width="1322" height="12" key="GridCell.Tab.0.center" timestamp="1592279366316">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="184" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591921306484" />
-    <state width="1322" height="184" key="GridCell.Tab.0.left" timestamp="1591921306483">
+    <state width="1322" height="12" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592279366316" />
+    <state width="1322" height="12" key="GridCell.Tab.0.left" timestamp="1592279366316">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="184" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591921306483" />
-    <state width="1322" height="184" key="GridCell.Tab.0.right" timestamp="1591921306484">
+    <state width="1322" height="12" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592279366316" />
+    <state width="1322" height="12" key="GridCell.Tab.0.right" timestamp="1592279366317">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="184" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591921306484" />
+    <state width="1322" height="12" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592279366317" />
     <state x="276" y="0" width="916" height="728" key="SettingsEditor" timestamp="1591811166717">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -332,17 +333,5 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1591651333055" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Frontend/templates/Frontend/place.html</url>
-          <line>467</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
